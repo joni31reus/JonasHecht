@@ -297,7 +297,6 @@
                 'sap/m/MessageBox',
                 'sap/ui/unified/DateRange',
                 'sap/ui/core/format/DateFormat',
-                "sap/ui/model/BindingMode",
                 "sap/ui/unified/CalendarLegendItem",
                 "sap/ui/unified/DateTypeRange",
                 "sap/ui/unified/library",
@@ -307,7 +306,7 @@
                 "sap/m/Select",
                 "sap/ui/core/Item",
                 "sap/suite/ui/commons/networkgraph/layout/SwimLaneChainLayout"
-            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, BindingMode, CalendarLegendItem, DateTypeRange, unifiedLibrary, Popover, ListBase, StandardListItem, Select, Item, SwimLaneChainLayout) {
+            ], function(jQuery, Controller, JSONModel, MessageToast, coreLibrary, Core, Filter, mobileLibrary, MessageBox, DateRange, DateFormat, CalendarLegendItem, DateTypeRange, unifiedLibrary, Popover, ListBase, StandardListItem, Select, Item, SwimLaneChainLayout) {
                 "use strict";
 
                 var CalendarDayType = unifiedLibrary.CalendarDayType;
