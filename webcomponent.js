@@ -46,7 +46,7 @@
             var sStartKlammer = "{",
                 sEndKlammer = "}",
                 nodes = [];
-            for(var i = 0; i > 2; i++){
+            for(var i = 0; i <= 2; i++){
                 nodes.push("Test");
             }
         }
