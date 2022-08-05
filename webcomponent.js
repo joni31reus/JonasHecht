@@ -62,7 +62,10 @@
                     });
                 }
             }
-            data.push(nodes, lines);
+            data.push({
+                nodes: nodes,
+                lines: lines
+            });
         }
 
         connectedCallback() {
