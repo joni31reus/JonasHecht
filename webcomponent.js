@@ -66,6 +66,8 @@
                 nodes: nodes,
                 lines: lines
             });
+
+            loadthis(that);
         }
 
         connectedCallback() {
@@ -161,7 +163,7 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             console.log(changedProperties);
             var that = this;
-            loadthis(that, changedProperties);
+            //loadthis(that, changedProperties);
         }
 
         _renderExportButton() {
@@ -240,10 +242,10 @@
     customElements.define("com-fd-djaja-sap-sac-networkgraphforcebased", NetworkGraphForceBased);
 
     // UTILS
-    function loadthis(that, changedProperties) {
+    function loadthis(that) {
         var that_ = that;
 
-        widgetName = changedProperties.widgetName;
+        widgetName = "networkgraphForcebased_1";
         console.log("widgetName:" + widgetName);
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
