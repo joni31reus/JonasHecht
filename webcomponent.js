@@ -47,7 +47,10 @@
                 sEndKlammer = "}",
                 nodes = [];
             for(var i = 0; i <= 2; i++){
-                nodes.push("Test");
+                nodes.push({
+                    key: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
+                    title: source[i]._C_Botec_B.properties._C_Botec_B_Child_BotecMaterialDesc
+                });
             }
         }
 
