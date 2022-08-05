@@ -44,7 +44,7 @@
         async setDataSource(source) {
             console.log(source);
             var sStartKlammer = "{",
-                sEndKlammer = "}"
+                sEndKlammer = "}",
                 nodes = [];
             for(var i = 0; i > 2; i++){
                 nodes.push("Test");
