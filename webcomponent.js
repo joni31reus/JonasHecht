@@ -43,6 +43,12 @@
 
         async setDataSource(source) {
             console.log(source);
+            var sStartKlammer = "{",
+                sEndKlammer = "}"
+                nodes = [];
+            for(var i = 0; i > 2; i++){
+                nodes.push("Test");
+            }
         }
 
         connectedCallback() {
