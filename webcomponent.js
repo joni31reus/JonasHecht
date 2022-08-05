@@ -66,7 +66,7 @@
                 nodes: nodes,
                 lines: lines
             });
-
+            var that = this;
             loadthis(that);
         }
 
