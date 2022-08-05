@@ -701,8 +701,8 @@
                             ];
                             
                             var oGraph;
-                            if(this.data !== undefined){
-                                var oModel = new JSONModel(this.data[0]);
+                            if(that.data !== undefined){
+                                var oModel = new JSONModel(that.data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
