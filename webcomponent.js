@@ -43,14 +43,23 @@
 
         async setDataSource(source) {
             console.log(source);
-            var sStartKlammer = "{",
-                sEndKlammer = "}",
+            var lines = [],
                 nodes = [];
             for(var i = 0; i <= 2; i++){
+
+                //Build Nodes Array for NetworkGraph
                 nodes.push({
                     key: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
                     title: source[i]._C_Botec_B.properties._C_Botec_B_Child_BotecMaterialDesc
                 });
+
+                if(i > 0){
+                    //Build Lines Array for NetworkGraph
+                    nodes.push({
+                        from: source[i-1]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
+                        to: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0]
+                    });
+                }
             }
         }
 
