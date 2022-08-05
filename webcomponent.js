@@ -39,13 +39,13 @@
             });
 
             this._firstConnection = 0;
+            this.data = [];
         }
 
         async setDataSource(source) {
             console.log(source);
             var lines = [],
-                nodes = [],
-                data = [];
+                nodes = [];
             for(var i = 0; i <= 2; i++){
 
                 //Build Nodes Array for NetworkGraph
@@ -62,7 +62,7 @@
                     });
                 }
             }
-            data.push({
+            this.data.push({
                 nodes: nodes,
                 lines: lines
             });
@@ -699,7 +699,7 @@
                             ];
                             
                             var oGraph,
-                            oModel = new JSONModel(data[0]);
+                            oModel = new JSONModel(this.data[0]);
                             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
                             this_.getView().setModel(oModel, that.widgetName);
