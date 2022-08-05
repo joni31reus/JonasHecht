@@ -321,6 +321,36 @@
 
                             that._firstConnection = 1;
 
+                            /*$.ajax({
+                                url: 'http://127.0.0.1:8856/hierarchy', //R Plumber REST API URL
+                                type: 'GET',
+                                async: true,
+                                timeout: 0,
+                                contentType: 'application/json',
+                                success: function(data) {
+                                    var oGraph,
+                                    oModel = new JSONModel(data[0]);
+                                    oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
+
+                                    this_.getView().setModel(oModel, that.widgetName);
+
+                                    this_.oModelSettings = new JSONModel({
+                                        maxIterations: 200,
+                                        maxTime: 500,
+                                        initialTemperature: 200,
+                                        coolDownStep: 1
+                                    });
+                                    this_.getView().setModel(this_.oModelSettings, "settings");
+
+                                    this_.oGraph = this_.byId("graph_" + widgetName);
+                                    this_.oGraph._fZoomLevel = 0.75;
+                                },
+                                error: function(e) {
+                                    console.log("error: " + e);
+                                    console.log(e);
+                                }
+                            });*/
+
                             var data = [
                                 {
                                     "nodes": [
