@@ -44,7 +44,8 @@
         async setDataSource(source) {
             console.log(source);
             var lines = [],
-                nodes = [];
+                nodes = [],
+                data = [];
             for(var i = 0; i <= 2; i++){
 
                 //Build Nodes Array for NetworkGraph
@@ -61,6 +62,7 @@
                     });
                 }
             }
+            data.push(nodes, lines);
         }
 
         connectedCallback() {
