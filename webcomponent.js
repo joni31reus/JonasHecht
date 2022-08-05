@@ -55,7 +55,7 @@
 
                 if(i > 0){
                     //Build Lines Array for NetworkGraph
-                    nodes.push({
+                    lines.push({
                         from: source[i-1]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
                         to: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0]
                     });
