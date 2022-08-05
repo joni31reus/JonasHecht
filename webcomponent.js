@@ -698,8 +698,13 @@
                                 }
                             ];
                             
-                            var oGraph,
-                            oModel = new JSONModel(this.data[0]);
+                            var oGraph;
+                            if(this.data !== undefined){
+                                var oModel = new JSONModel(this.data[0]);
+                            } else{
+                                var oModel = new JSONModel(data[0]);
+                            }
+                            
                             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
                             this_.getView().setModel(oModel, that.widgetName);
