@@ -41,6 +41,10 @@
             this._firstConnection = 0;
         }
 
+        async setDataSource(source) {
+            console.log(source);
+        }
+
         connectedCallback() {
             try {
                 if (window.commonApp) {
