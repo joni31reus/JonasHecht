@@ -47,7 +47,7 @@
             console.log(source);
             var lines = [],
                 nodes = [];
-            for(var i = 0; i < source.length; i++){
+            for(var i = 0; i < 10; i++){
 
                 //Build Nodes Array for NetworkGraph
                 nodes.push({
