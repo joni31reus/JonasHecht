@@ -42,6 +42,7 @@
             this.data = [];
         }
 
+        //Get Table Data into Custom Widget Function
         async setDataSource(source) {
             console.log(source);
             var lines = [],
@@ -219,17 +220,6 @@
         }
         set footer(value) {
             this._export_settings.footer = value;
-        }
-
-        static get observedAttributes() {
-            return [
-                "title",
-                "subtitle",
-                "icon",
-                "unit",
-                "footer",
-                "link"
-            ];
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
