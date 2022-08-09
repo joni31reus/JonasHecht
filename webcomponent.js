@@ -289,8 +289,153 @@
 
                             that._firstConnection = 1;
 
+                            var data = [{
+                                "nodes": [{
+                                    "key": "L",
+                                    "title": "L",
+                                    "group": 1,
+                                    "status": "Error",
+                                    "icon": "sap-icon://key-user-settings",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "May 2, 2008"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Jon Favreau"
+                                    }]
+                                }, {
+                                    "key": "G",
+                                    "title": "G",
+                                    "group": 1,
+                                    "status": "Error",
+                                    "icon": "sap-icon://key-user-settings",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "May 7, 2010"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Jon Favreau"
+                                    }]
+                                }, {
+                                    "key": "E",
+                                    "title": "E",
+                                    "group": 1,
+                                    "icon": "sap-icon://theater",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "June 13, 2008"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Louis Leterrier"
+                                    }]
+                                }, {
+                                    "key": "F",
+                                    "title": "F",
+                                    "group": 1,
+                                    "status": "Warning",
+                                    "icon": "sap-icon://wrench",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "May 6, 2011"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Kenneth Branagh"
+                                    }]
+                                }, {
+                                    "key": "D",
+                                    "title": "D",
+                                    "group": 1,
+                                    "status": "Success",
+                                    "icon": "sap-icon://unfavorite",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "July 22, 2011"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Joe Johnston"
+                                    }]
+                                }, {
+                                    "key": "C",
+                                    "title": "C",
+                                    "group": 1,
+                                    "status": "Error",
+                                    "icon": "sap-icon://text-color",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "May 4, 2012"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Joss Whedon"
+                                    }]
+                                }, {
+                                    "key": "B",
+                                    "title": "B",
+                                    "group": 2,
+                                    "status": "Error",
+                                    "icon": "sap-icon://key-user-settings",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "May 3, 2013"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Shane Black"
+                                    }]
+                                }, {
+                                    "key": "A",
+                                    "title": "A",
+                                    "group": 2,
+                                    "status": "Warning",
+                                    "icon": "sap-icon://wrench",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "November 8, 2013"
+                                    }, {
+                                        "label": "Director",
+                                        "value": "Alan Taylor"
+                                    }]
+                                }],
+                                "lines": [{
+                                    "from": "L",
+                                    "to": "F"
+                                }, {
+                                    "from": "G",
+                                    "to": "F"
+                                }, {
+                                    "from": "E",
+                                    "to": "C"
+                                }, {
+                                    "from": "F",
+                                    "to": "C"
+                                }, {
+                                    "from": "G",
+                                    "to": "D"
+                                }, {
+                                    "from": "C",
+                                    "to": "B"
+                                }, {
+                                    "from": "D",
+                                    "to": "B"
+                                }, {
+                                    "from": "B",
+                                    "to": "A"
+                                }, {
+                                    "from": "C",
+                                    "to": "A"
+                                }],
+                                "groups": [{
+                                    "key": 1,
+                                    "title": "Produktphase 1"
+                                }, {
+                                    "key": 2,
+                                    "title": "Endproduktphase"
+                                }, {
+                                    "key": 3,
+                                    "title": "Phase Three"
+                                }]
+                            }]
+
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(that.data[0]);
+                                var oModel = new JSONModel(data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
