@@ -303,7 +303,11 @@
                                 maxIterations: 200,
                                 maxTime: 500,
                                 initialTemperature: 200,
-                                coolDownStep: 1
+                                coolDownStep: 1,
+                                mergeEdges: true,
+                                nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
+                                nodeSpacing: 50,
+                                lineSpacingFactor: 0.25
                             });
                             this_.getView().setModel(this_.oModelSettings, "settings");
 
