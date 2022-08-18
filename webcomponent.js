@@ -398,8 +398,29 @@
                                     "from": "L",
                                     "to": "F"
                                 }, {
-                                    "from": "L",
+                                    "from": "G",
                                     "to": "F"
+                                }, {
+                                    "from": "E",
+                                    "to": "C"
+                                }, {
+                                    "from": "F",
+                                    "to": "C"
+                                }, {
+                                    "from": "G",
+                                    "to": "D"
+                                }, {
+                                    "from": "C",
+                                    "to": "B"
+                                }, {
+                                    "from": "D",
+                                    "to": "B"
+                                }, {
+                                    "from": "B",
+                                    "to": "A"
+                                }, {
+                                    "from": "C",
+                                    "to": "A"
                                 }],
                                 "groups": [{
                                     "key": 1,
@@ -414,7 +435,7 @@
                             }]
 
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(data[0]);
+                                var oModel = new JSONModel(that.data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
