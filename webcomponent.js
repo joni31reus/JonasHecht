@@ -398,29 +398,8 @@
                                     "from": "L",
                                     "to": "F"
                                 }, {
-                                    "from": "G",
+                                    "from": "L",
                                     "to": "F"
-                                }, {
-                                    "from": "E",
-                                    "to": "C"
-                                }, {
-                                    "from": "F",
-                                    "to": "C"
-                                }, {
-                                    "from": "G",
-                                    "to": "D"
-                                }, {
-                                    "from": "C",
-                                    "to": "B"
-                                }, {
-                                    "from": "D",
-                                    "to": "B"
-                                }, {
-                                    "from": "B",
-                                    "to": "A"
-                                }, {
-                                    "from": "C",
-                                    "to": "A"
                                 }],
                                 "groups": [{
                                     "key": 1,
