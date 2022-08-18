@@ -414,7 +414,7 @@
                             }]
 
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(that.data[0]);
+                                var oModel = new JSONModel(data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
