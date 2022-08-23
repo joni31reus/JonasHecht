@@ -396,7 +396,11 @@
                                 }],
                                 "lines": [{
                                     "from": "L",
-                                    "to": "F"
+                                    "to": "F",
+                                    "attributes": [{
+                                        "label": "Release date",
+                                        "value": "November 8, 2013"
+                                    }]
                                 }, {
                                     "from": "G",
                                     "to": "F"
@@ -435,7 +439,7 @@
                             }]
 
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(that.data[0]);
+                                var oModel = new JSONModel(data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
