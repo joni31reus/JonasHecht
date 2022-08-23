@@ -12,7 +12,7 @@
     </style>      
     `;
 
-    class TreeTable extends HTMLElement {
+    class NetworkGraphForceBased extends HTMLElement {
 
         constructor() {
             super();
@@ -42,10 +42,31 @@
             this.data = [];
         }
 
-        //Get Table Data into Custom Widget Function; Von der Tabelle im FrontEnd zum Custom Widget; Code in der SAC zusätzlich erforderlich
+        //Get Table Data into Custom Widget Function
         async setDataSource(source) {
             console.log(source);
+            var lines = [],
+                nodes = [];
+            for(var i = 0; i < 10; i++){
 
+                //Build Nodes Array for NetworkGraph
+                nodes.push({
+                    key: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
+                    title: source[i]._C_Botec_B.properties._C_Botec_B_Child_BotecMaterialDesc
+                });
+
+                if(i > 0){
+                    //Build Lines Array for NetworkGraph
+                    lines.push({
+                        from: source[i-1]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
+                        to: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0]
+                    });
+                }
+            }
+            this.data.push({
+                nodes: nodes,
+                lines: lines
+            });
             var that = this;
             loadthis(that);
         }
@@ -208,13 +229,13 @@
         }
 
     }
-    customElements.define("SAC-CW-TreeTable", TreeTable);
+    customElements.define("com-fd-djaja-sap-sac-networkgraphforcebased", NetworkGraphForceBased);
 
     // UTILS
     function loadthis(that) {
         var that_ = that;
 
-        widgetName = "TreeTable";
+        widgetName = "networkgraphForcebased_1";
         console.log("widgetName:" + widgetName);
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
@@ -229,7 +250,7 @@
 
             let div0 = document.createElement('div');
             //Create SAPUI5 Element 
-                div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View id="graph_' + widgetName + '" controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/categories}" selectionMode="None" enableSelectAll="false"> <columns> <Column> <m:Label text="Categories"/> <template> <m:Text text="{'+ widgetName +'>/name}"/> </template> </Column> <Column> <m:Label text="Price"/> <template> <m:Text text="{'+ widgetName +'>/amount}"/> </template> </Column> </columns> </TreeTable> </mvc:View></script>';
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View id="graph_' + widgetName + '" controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/categories}" selectionMode="None" enableSelectAll="false"> <columns> <Column> <m:Label text="Categories"/> <template> <m:Text text="{'+ widgetName +'>/name}"/> </template> </Column> <Column> <m:Label text="Price"/> <template> <m:Text text="{'+ widgetName +'>/amount}"/> </template> </Column> </columns> </TreeTable> </mvc:View></script>';
             //Create SAPUI5 Element
             _shadowRoot.appendChild(div0);
 
@@ -262,6 +283,17 @@
 
                 return Controller.extend("myView.Template", {
 
+                    linePress: function (oEvent) {
+                        if (!this._oPopoverForLine) {
+                            this._oPopoverForLine = new Popover({
+                                title: "Line popover"
+                            });
+                        }
+                        // Prevents render a default tooltip
+                        oEvent.preventDefault();
+                        this._oPopoverForLine.openBy(oEvent.getParameter("opener"));
+                    },
+
                     onInit: function () {
                         var this_ = this;
                         if (that._firstConnection === 0) {
@@ -269,32 +301,32 @@
                             that._firstConnection = 1;
 
                             var data = [
-                                            {"categories": [
-                                                {"name": "Women", "categories": [
-                                                    {"name":"Clothing", "categories": [
-                                                        {"name": "Dresses", "categories": [
-                                                            {"name": "Casual Red Dress", "amount": 16.99, "currency": "EUR", "size": "S"},
-                                                            {"name": "Short Black Dress", "amount": 47.99, "currency": "EUR", "size": "M"},
-                                                            {"name": "Long Blue Dinner Dress", "amount": 103.99, "currency": "USD", "size": "L"}
-                                                        ]},
-                                                        {"name": "Tops", "categories": [
-                                                            {"name": "Printed Shirt", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                            {"name": "Tank Top", "amount": 14.99, "currency": "USD", "size": "S"}
-                                                        ]},
-                                                        {"name": "Pants", "categories": [
-                                                            {"name": "Red Pant", "amount": 32.99, "currency": "USD", "size": "M"},
-                                                            {"name": "Skinny Jeans", "amount": 44.99, "currency": "USD", "size": "S"},
-                                                            {"name": "Black Jeans", "amount": 99.99, "currency": "USD", "size": "XS"},
-                                                            {"name": "Relaxed Fit Jeans", "amount": 56.99, "currency": "USD", "size": "L"}
-                                                        ]},
-                                                        {"name": "Skirts", "categories": [
-                                                            {"name": "Striped Skirt", "amount": 24.99, "currency": "USD", "size": "M"},
-                                                            {"name": "Black Skirt", "amount": 44.99, "currency": "USD", "size": "S"}
-                                                        ]}
-                                                    ]}
-                                                ]}
+                                {"categories": [
+                                    {"name": "Women", "categories": [
+                                        {"name":"Clothing", "categories": [
+                                            {"name": "Dresses", "categories": [
+                                                {"name": "Casual Red Dress", "amount": 16.99, "currency": "EUR", "size": "S"},
+                                                {"name": "Short Black Dress", "amount": 47.99, "currency": "EUR", "size": "M"},
+                                                {"name": "Long Blue Dinner Dress", "amount": 103.99, "currency": "USD", "size": "L"}
+                                            ]},
+                                            {"name": "Tops", "categories": [
+                                                {"name": "Printed Shirt", "amount": 24.99, "currency": "USD", "size": "M"},
+                                                {"name": "Tank Top", "amount": 14.99, "currency": "USD", "size": "S"}
+                                            ]},
+                                            {"name": "Pants", "categories": [
+                                                {"name": "Red Pant", "amount": 32.99, "currency": "USD", "size": "M"},
+                                                {"name": "Skinny Jeans", "amount": 44.99, "currency": "USD", "size": "S"},
+                                                {"name": "Black Jeans", "amount": 99.99, "currency": "USD", "size": "XS"},
+                                                {"name": "Relaxed Fit Jeans", "amount": 56.99, "currency": "USD", "size": "L"}
+                                            ]},
+                                            {"name": "Skirts", "categories": [
+                                                {"name": "Striped Skirt", "amount": 24.99, "currency": "USD", "size": "M"},
+                                                {"name": "Black Skirt", "amount": 44.99, "currency": "USD", "size": "S"}
                                             ]}
-                                        ]       
+                                        ]}
+                                    ]}
+                                ]}
+                            ] 
 
                             if(that.data !== undefined){
                                 var oModel = new JSONModel(data[0]);
