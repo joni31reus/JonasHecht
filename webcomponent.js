@@ -250,7 +250,7 @@
 
             let div0 = document.createElement('div');
             //div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%"><Graph enableWheelZoom="false" height="100%" width="100%" nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '"><layoutData><m:FlexItemData minWidth="75%" maxWidth="75%"/></layoutData><layoutAlgorithm><layout:ForceDirectedLayout optimalDistanceConstant="0.26" maxIterations="{settings>/maxIterations}" maxTime="{settings>/maxTime}" initialTemperature="{settings>/initialTemperature}" coolDownStep="{settings>/coolDownStep}"></layout:ForceDirectedLayout></layoutAlgorithm><nodes><Node height="{settings>/height}" key="{' + widgetName +'>key}" title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}" shape="{' + widgetName + '>shape}" status="{' + widgetName + '>status}" x="{' + widgetName + '>x}" y="{' + widgetName + '>y}"><attributes><ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/></attributes></Node></nodes><lines><Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}"></Line></lines><groups><Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group></groups></Graph></mvc:View></script>';
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"><Graph  enableWheelZoom="false" height="100%" width="100%"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="TopBottom"> <layoutData> <m:FlexItemData minWidth="100%" maxWidth="100%"/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <nodes> <Node   height="{settings>/height}" key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="{' + widgetName + '>status}" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph> </mvc:View></script>';
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"><Graph  enableWheelZoom="false" height="100%" width="100%"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="TopBottom"> <layoutData> <m:FlexItemData minWidth="100%" maxWidth="100%"/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <nodes> <Node   height="{settings>/height}" key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="{' + widgetName + '>status}" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status} press="linePress""></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph> </mvc:View></script>';
 
             _shadowRoot.appendChild(div0);
 
@@ -277,14 +277,25 @@
             sap.ui.define([
                 "sap/ui/core/mvc/Controller",
                 "sap/ui/model/json/JSONModel",
-            ], function(Controller, JSONModel,) {
+                "sap/m/Popover"
+            ], function(Controller, JSONModel, Popover) {
                 "use strict";
 
                 return Controller.extend("myView.Template", {
 
+                    linePress: function (oEvent) {
+                        if (!this._oPopoverForLine) {
+                            this._oPopoverForLine = new Popover({
+                                title: "Line popover"
+                            });
+                        }
+                        // Prevents render a default tooltip
+                        oEvent.preventDefault();
+                        this._oPopoverForLine.openBy(oEvent.getParameter("opener"));
+                    },
+
                     onInit: function () {
                         var this_ = this;
-
                         if (that._firstConnection === 0) {
 
                             that._firstConnection = 1;
@@ -396,11 +407,7 @@
                                 }],
                                 "lines": [{
                                     "from": "L",
-                                    "to": "F",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "November 8, 2013"
-                                    }]
+                                    "to": "F"
                                 }, {
                                     "from": "G",
                                     "to": "F"
@@ -462,7 +469,7 @@
 
                             this_.oGraph = this_.byId("graph_" + widgetName);
                             //this_.oGraph._fZoomLevel = 0.75;
-                        } 
+                        }
                     }
                 });
             });
