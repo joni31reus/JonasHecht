@@ -338,7 +338,7 @@
 
                             this_.getView().setModel(oModel, that.widgetName);
 
-                            this_.oModelSettings = new JSONModel({
+                            /*this_.oModelSettings = new JSONModel({
                                 maxIterations: 200,
                                 maxTime: 500,
                                 initialTemperature: 200,
@@ -348,7 +348,7 @@
                                 nodeSpacing: 50,
                                 lineSpacingFactor: 0.25
                             });
-                            this_.getView().setModel(this_.oModelSettings, "settings");
+                            this_.getView().setModel(this_.oModelSettings, "settings");*/
 
                             this_.oGraph = this_.byId("graph_" + widgetName);
                             //this_.oGraph._fZoomLevel = 0.75;
