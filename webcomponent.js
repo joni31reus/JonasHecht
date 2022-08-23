@@ -250,7 +250,7 @@
 
             let div0 = document.createElement('div');
             //div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%"><Graph enableWheelZoom="false" height="100%" width="100%" nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '"><layoutData><m:FlexItemData minWidth="75%" maxWidth="75%"/></layoutData><layoutAlgorithm><layout:ForceDirectedLayout optimalDistanceConstant="0.26" maxIterations="{settings>/maxIterations}" maxTime="{settings>/maxTime}" initialTemperature="{settings>/initialTemperature}" coolDownStep="{settings>/coolDownStep}"></layout:ForceDirectedLayout></layoutAlgorithm><nodes><Node height="{settings>/height}" key="{' + widgetName +'>key}" title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}" shape="{' + widgetName + '>shape}" status="{' + widgetName + '>status}" x="{' + widgetName + '>x}" y="{' + widgetName + '>y}"><attributes><ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/></attributes></Node></nodes><lines><Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}"></Line></lines><groups><Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group></groups></Graph></mvc:View></script>';
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"><Graph  enableWheelZoom="false" height="100%" width="100%"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="TopBottom"> <layoutData> <m:FlexItemData minWidth="100%" maxWidth="100%"/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <nodes> <Node   height="{settings>/height}" key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="{' + widgetName + '>status}" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}" press="linePress"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph> </mvc:View></script>';
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/categories}" selectionMode="None" enableSelectAll="false"> <columns> <Column> <m:Label text="Categories"/> <template> <m:Text text="{'+ widgetName +'>/name}"/> </template> </Column> <Column> <m:Label text="Price"/> <template> <m:Text text="{'+ widgetName +'>/amount}"/> </template> </Column> </columns> </TreeTable> </mvc:View></script>';
 
             _shadowRoot.appendChild(div0);
 
@@ -300,150 +300,33 @@
 
                             that._firstConnection = 1;
 
-                            var data = [{
-                                "nodes": [{
-                                    "key": "L",
-                                    "title": "L",
-                                    "group": 1,
-                                    "status": "Error",
-                                    "icon": "sap-icon://key-user-settings",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 2, 2008"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Jon Favreau"
-                                    }]
-                                }, {
-                                    "key": "G",
-                                    "title": "G",
-                                    "group": 1,
-                                    "status": "Error",
-                                    "icon": "sap-icon://key-user-settings",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 7, 2010"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Jon Favreau"
-                                    }]
-                                }, {
-                                    "key": "E",
-                                    "title": "E",
-                                    "group": 1,
-                                    "icon": "sap-icon://theater",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "June 13, 2008"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Louis Leterrier"
-                                    }]
-                                }, {
-                                    "key": "F",
-                                    "title": "F",
-                                    "group": 1,
-                                    "status": "Warning",
-                                    "icon": "sap-icon://wrench",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 6, 2011"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Kenneth Branagh"
-                                    }]
-                                }, {
-                                    "key": "D",
-                                    "title": "D",
-                                    "group": 1,
-                                    "status": "Success",
-                                    "icon": "sap-icon://unfavorite",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "July 22, 2011"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Joe Johnston"
-                                    }]
-                                }, {
-                                    "key": "C",
-                                    "title": "C",
-                                    "group": 1,
-                                    "status": "Error",
-                                    "icon": "sap-icon://text-color",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 4, 2012"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Joss Whedon"
-                                    }]
-                                }, {
-                                    "key": "B",
-                                    "title": "B",
-                                    "group": 2,
-                                    "status": "Error",
-                                    "icon": "sap-icon://key-user-settings",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 3, 2013"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Shane Black"
-                                    }]
-                                }, {
-                                    "key": "A",
-                                    "title": "A",
-                                    "group": 2,
-                                    "status": "Warning",
-                                    "icon": "sap-icon://wrench",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "November 8, 2013"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Alan Taylor"
-                                    }]
-                                }],
-                                "lines": [{
-                                    "from": "L",
-                                    "to": "F"
-                                }, {
-                                    "from": "G",
-                                    "to": "F"
-                                }, {
-                                    "from": "E",
-                                    "to": "C"
-                                }, {
-                                    "from": "F",
-                                    "to": "C"
-                                }, {
-                                    "from": "G",
-                                    "to": "D"
-                                }, {
-                                    "from": "C",
-                                    "to": "B"
-                                }, {
-                                    "from": "D",
-                                    "to": "B"
-                                }, {
-                                    "from": "B",
-                                    "to": "A"
-                                }, {
-                                    "from": "C",
-                                    "to": "A"
-                                }],
-                                "groups": [{
-                                    "key": 1,
-                                    "title": "Produktphase 1"
-                                }, {
-                                    "key": 2,
-                                    "title": "Endproduktphase"
-                                }, {
-                                    "key": 3,
-                                    "title": "Phase Three"
-                                }]
-                            }]
+                            var data = [
+                                {"categories": [
+                                    {"name": "Women", "categories": [
+                                        {"name":"Clothing", "categories": [
+                                            {"name": "Dresses", "categories": [
+                                                {"name": "Casual Red Dress", "amount": 16.99, "currency": "EUR", "size": "S"},
+                                                {"name": "Short Black Dress", "amount": 47.99, "currency": "EUR", "size": "M"},
+                                                {"name": "Long Blue Dinner Dress", "amount": 103.99, "currency": "USD", "size": "L"}
+                                            ]},
+                                            {"name": "Tops", "categories": [
+                                                {"name": "Printed Shirt", "amount": 24.99, "currency": "USD", "size": "M"},
+                                                {"name": "Tank Top", "amount": 14.99, "currency": "USD", "size": "S"}
+                                            ]},
+                                            {"name": "Pants", "categories": [
+                                                {"name": "Red Pant", "amount": 32.99, "currency": "USD", "size": "M"},
+                                                {"name": "Skinny Jeans", "amount": 44.99, "currency": "USD", "size": "S"},
+                                                {"name": "Black Jeans", "amount": 99.99, "currency": "USD", "size": "XS"},
+                                                {"name": "Relaxed Fit Jeans", "amount": 56.99, "currency": "USD", "size": "L"}
+                                            ]},
+                                            {"name": "Skirts", "categories": [
+                                                {"name": "Striped Skirt", "amount": 24.99, "currency": "USD", "size": "M"},
+                                                {"name": "Black Skirt", "amount": 44.99, "currency": "USD", "size": "S"}
+                                            ]}
+                                        ]}
+                                    ]}
+                                ]}
+                            ]
 
                             if(that.data !== undefined){
                                 var oModel = new JSONModel(data[0]);
