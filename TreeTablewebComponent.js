@@ -63,13 +63,13 @@
                         if(bFirstRun === false){
                             if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 2){
                                 transfers[0].transfers[0].transfers.push({
-                                    "Batchname": source[0].Child_SourceBatch.description,
+                                    "Batchname": source[i].Child_SourceBatch.description,
                                     "transfers": []
                                 });
                             }
                             else if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 1){
                                 transfers[0].transfers.push({
-                                    "Batchname": source[0].Child_SourceBatch.description,
+                                    "Batchname": source[i].Child_SourceBatch.description,
                                     "transfers": []
                                 });
                             }
