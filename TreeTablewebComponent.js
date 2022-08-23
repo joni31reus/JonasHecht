@@ -48,8 +48,7 @@
                 
                 //Preparing the data
                     var transfers = [],
-                        bFirstRun = true,
-                        sHelper = transfers[0];
+                        bFirstRun = true;
 
                     for(var i = 0; i < source.length; i++){
                         if(bFirstRun === true){
@@ -62,8 +61,17 @@
                         }
 
                         if(bFirstRun === false){
-                            for(var j = 0; j <  parseInt(source[0].ReferenceID_Child.id.length / 36); j++){
-                                sHelper = sHelper + "."+ transfers[0];
+                            if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 2){
+                                transfers[0].transfers[0].transfers.push({
+                                    "Batchname": source[0].Child_SourceBatch.description,
+                                    "transfers": []
+                                });
+                            }
+                            else if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 1){
+                                transfers[0].transfers.push({
+                                    "Batchname": source[0].Child_SourceBatch.description,
+                                    "transfers": []
+                                });
                             }
                         }
                     }
