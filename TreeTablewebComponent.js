@@ -64,7 +64,7 @@
                         if(bFirstRun === false){
                             if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 2){
                                 
-                                if(i ===  6 || i === 12){
+                                if(i ===  7 || i === 13){
                                     j++;
                                 }
 
