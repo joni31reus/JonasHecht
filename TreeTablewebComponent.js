@@ -82,7 +82,9 @@
                         }
                     }
                 //Preparing the data
-
+                this.data.push({
+                    transfers: transfers
+                });
                 var that = this;
                 loadthis(that);
             }
@@ -346,7 +348,7 @@
                             ] 
 
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(data[0]);
+                                var oModel = new JSONModel(that.data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
