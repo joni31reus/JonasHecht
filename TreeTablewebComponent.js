@@ -46,6 +46,21 @@
             async setDataSource(source) {
                 console.log(source);
                 
+                //Preparing the data
+                    var aTransfers = [],
+                        bFirstRun = true;
+
+                    for(var i = 0; i < source.length; i++){
+                        if(bFirstRun === true){
+                            aTransfers.push({
+                                "Batchname": source[i].Child_TargetBatch.description
+                            });
+
+                            bFirstRun = false;
+                        }
+                    }
+                //Preparing the data
+
                 var that = this;
                 loadthis(that);
             }
