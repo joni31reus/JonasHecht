@@ -269,7 +269,7 @@
 
             let div0 = document.createElement('div');
             //Create SAPUI5 Element 
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View id="graph_' + widgetName + '" controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/transfers}" selectionMode="None" enableSelectAll="false"> <columns> <Column> <m:Label text="Batch"/> <template> <m:Text text="{'+ widgetName +'>Batchname}"/> </template> </Column></columns> </TreeTable> </mvc:View></script>';
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View id="graph_' + widgetName + '" controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/categories}" selectionMode="None" enableSelectAll="false"> <columns> <Column> <m:Label text="Categories"/> <template> <m:Text text="{'+ widgetName +'>name}"/> </template> </Column> <Column> <m:Label text="Price"/> <template> <m:Text text="{'+ widgetName +'>amount}"/> </template> </Column> </columns> </TreeTable> </mvc:View></script>';
             //Create SAPUI5 Element
             _shadowRoot.appendChild(div0);
 
