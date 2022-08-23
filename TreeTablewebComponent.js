@@ -49,7 +49,7 @@
                 //Preparing the data
                     var transfers = [],
                         bFirstRun = true,
-                        iHelperTransferLvl = 0;
+                        sHelper = transfers[0];
 
                     for(var i = 0; i < source.length; i++){
                         if(bFirstRun === true){
@@ -58,12 +58,13 @@
                                 "transfers": [{"Batchname": source[0].Child_SourceBatch.description, "transfers": []}]
                             });
 
-                            iHelperTransferLvl++;
                             bFirstRun = false;
                         }
 
                         if(bFirstRun === false){
-
+                            for(var j = 0; j <  parseInt(source[0].ReferenceID_Child.id.length / 36); j++){
+                                sHelper = sHelper + "."+ transfers[0];
+                            }
                         }
                     }
                 //Preparing the data
