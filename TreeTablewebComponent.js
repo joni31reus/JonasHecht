@@ -45,28 +45,7 @@
         //Get Table Data into Custom Widget Function
         async setDataSource(source) {
             console.log(source);
-            var lines = [],
-                nodes = [];
-            for(var i = 0; i < 10; i++){
-
-                //Build Nodes Array for NetworkGraph
-                nodes.push({
-                    key: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
-                    title: source[i]._C_Botec_B.properties._C_Botec_B_Child_BotecMaterialDesc
-                });
-
-                if(i > 0){
-                    //Build Lines Array for NetworkGraph
-                    lines.push({
-                        from: source[i-1]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
-                        to: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0]
-                    });
-                }
-            }
-            this.data.push({
-                nodes: nodes,
-                lines: lines
-            });
+            
             var that = this;
             loadthis(that);
         }
