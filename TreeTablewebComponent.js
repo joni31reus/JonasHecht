@@ -47,17 +47,23 @@
                 console.log(source);
                 
                 //Preparing the data
-                    var aTransfers = [],
-                        bFirstRun = true;
+                    var transfers = [],
+                        bFirstRun = true,
+                        iHelperTransferLvl = 0;
 
                     for(var i = 0; i < source.length; i++){
                         if(bFirstRun === true){
-                            aTransfers.push({
+                            transfers.push({
                                 "Batchname": source[0].Child_TargetBatch.description,
-                                "transfer": [{"Batchname": source[0].Child_SourceBatch.description}]
+                                "transfers": [{"Batchname": source[0].Child_SourceBatch.description, "transfers": []}]
                             });
 
+                            iHelperTransferLvl++;
                             bFirstRun = false;
+                        }
+
+                        if(bFirstRun === false){
+
                         }
                     }
                 //Preparing the data
