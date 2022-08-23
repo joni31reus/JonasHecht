@@ -234,7 +234,7 @@
     // UTILS
     function loadthis(that) {
         var that_ = that;
-
+        //WidgetName in the SAC
         widgetName = "cw_TreeTable";
         console.log("widgetName:" + widgetName);
         if (typeof widgetName === "undefined") {
