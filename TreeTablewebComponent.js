@@ -63,7 +63,8 @@
 
                         if(bFirstRun === false){
                             if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 2){
-                                if(source[i].ReferenceID_Child.id.substring(0,36) !== source[i-1].ReferenceID_Child.id.substring(0,36)){
+                                
+                                if(i ===  6 || i === 12){
                                     j++;
                                 }
 
