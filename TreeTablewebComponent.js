@@ -43,12 +43,13 @@
         }
 
         //Get Table Data into Custom Widget Function
-        async setDataSource(source) {
-            console.log(source);
-            
-            var that = this;
-            loadthis(that);
-        }
+            async setDataSource(source) {
+                console.log(source);
+                
+                var that = this;
+                loadthis(that);
+            }
+        //Get Table Data into Custom Widget Function
 
         connectedCallback() {
             try {
