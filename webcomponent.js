@@ -234,8 +234,8 @@
     // UTILS
     function loadthis(that) {
         var that_ = that;
-        //WidgetName in the SAC
-        widgetName = "cw_TreeTable";
+
+        widgetName = "networkgraphForcebased_1";
         console.log("widgetName:" + widgetName);
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
