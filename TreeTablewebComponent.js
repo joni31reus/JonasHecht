@@ -53,7 +53,8 @@
                     for(var i = 0; i < source.length; i++){
                         if(bFirstRun === true){
                             aTransfers.push({
-                                "Batchname": source[i].Child_TargetBatch.description
+                                "Batchname": source[0].Child_TargetBatch.description,
+                                "transfer": [{"Batchname": source[0].Child_SourceBatch.description}]
                             });
 
                             bFirstRun = false;
