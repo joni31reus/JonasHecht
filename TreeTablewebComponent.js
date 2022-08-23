@@ -208,7 +208,7 @@
         }
 
     }
-    customElements.define("SAC-CW-TreeTable-T-AND-T", TreeTable);
+    customElements.define("SAC-CW-TreeTable", TreeTable);
 
     // UTILS
     function loadthis(that) {
