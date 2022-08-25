@@ -195,7 +195,7 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            console.log(changedProperties);
+            console.log("AfterUpdate" + changedProperties);
             var that = this;
             //loadthis(that, changedProperties);
         }
