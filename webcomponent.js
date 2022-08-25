@@ -56,11 +56,31 @@
                 if(i === 0){
                     nodes.push({
                         key: source[i].Child_TargetBatch.id,
-                        title: source[i].Child_TargetBatch.id
+                        title: source[i].Child_TargetBatch.id,
+                        attributes: [{
+                            label: "Transfer status",
+                            value: source[i].TRANSFERTYPE.id
+                        },{
+                            label: "Materialnumber",
+                            value: source[i].DESTPRODUCTID.id
+                        },{
+                            label: "Equipment",
+                            value: source[i].DESTEQUIIDENT.id
+                        }]
                     })
                     nodes.push({
                         key: source[i].Child_SourceBatch.id,
-                        title: source[i].Child_SourceBatch.id
+                        title: source[i].Child_SourceBatch.id,
+                        attributes: [{
+                            label: "Transfer status",
+                            value: source[i].TRANSFERTYPE.id
+                        },{
+                            label: "Materialnumber",
+                            value: source[i].SOURCEPRODUCTID.id
+                        },{
+                            label: "Equipment",
+                            value: source[i].SOURCEEQUIIDENT.id
+                        }]
                     })
                     lines.push({
                         from: source[i].Child_TargetBatch.id,
