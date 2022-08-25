@@ -507,7 +507,7 @@
                                 coolDownStep: 1,
                                 mergeEdges: true,
                                 nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
-                                nodeSpacing: 50,
+                                nodeSpacing: 150,
                                 lineSpacingFactor: 0.25
                             });
                             this_.getView().setModel(this_.oModelSettings, "settings");
