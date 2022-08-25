@@ -491,7 +491,7 @@
                             }]
 
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(that.data[0]);
+                                var oModel = new JSONModel(data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
@@ -507,13 +507,13 @@
                                 coolDownStep: 1,
                                 mergeEdges: true,
                                 nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
-                                nodeSpacing: 150,
+                                nodeSpacing: 50,
                                 lineSpacingFactor: 0.25
                             });
                             this_.getView().setModel(this_.oModelSettings, "settings");
 
                             this_.oGraph = this_.byId("graph_" + widgetName);
-                            this_.oGraph._fZoomLevel = 0.75;
+                            //this_.oGraph._fZoomLevel = 0.75;
                         }
                     }
                 });
