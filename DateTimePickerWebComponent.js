@@ -122,5 +122,5 @@
         }
     }
 
-    customElements.define('nkappler-date-picker', DatePicker);
+    customElements.define('sac-date-time-picker', DatePicker);
 })();
