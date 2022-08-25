@@ -45,6 +45,31 @@
         //Get Table Data into Custom Widget Function
         async setDataSource(source) {
             console.log(source);
+
+            //Variablen Deklaration/Initalisierung
+            var nodes = [], 
+                lines = [];
+
+            //Schleife über alle vorhandenen Zeilen
+            for(var i = 0; i < source.length; i++){
+                //Bei dem ersten Eintrag die TargetBacht holen
+                if(i === 0){
+                    nodes.push({
+                        key: source[i].Child_TargetBatch.id,
+                        title: source[i].Child_TargetBatch.id
+                    })
+                    nodes.push({
+                        key: source[i].Child_SourceBatch.id,
+                        title: source[i].Child_SourceBatch.id
+                    })
+                    lines.push({
+                        from: source[i].Child_TargetBatch.id,
+                        to: source[i].Child_SourceBatch.id
+                    })
+                }
+            }
+
+
             /*var lines = [],
                 nodes = [];
             for(var i = 0; i < 10; i++){
@@ -62,11 +87,11 @@
                         to: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0]
                     });
                 }
-            }
+            }*/
             this.data.push({
                 nodes: nodes,
                 lines: lines
-            });*/
+            });
             var that = this;
             loadthis(that);
         }
@@ -446,7 +471,7 @@
                             }]
 
                             if(that.data !== undefined){
-                                var oModel = new JSONModel(data[0]);
+                                var oModel = new JSONModel(that.data[0]);
                             } else{
                                 var oModel = new JSONModel(data[0]);
                             }
