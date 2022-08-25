@@ -70,12 +70,26 @@
 
                                 transfers[0].transfers[j].transfers.push({
                                     "Batchname": source[i].Child_SourceBatch.description,
+                                    "Unit": source[i].SOURCEEQUIIDENT.description,
+                                    "MatNr": source[i].SOURCEPRODUCTID.description,
+                                    "Material": "",
+                                    "QTY": source[i]['@MeasureDimension'].formattedValue,
+                                    "UOM": source[i].UNITOFMEASURE.description,
+                                    "StartTransfer": source[i].STARTTRANSFER.description,
+                                    "EndTransfer": source[i].ENDTRANSFER.description,
                                     "transfers": []
                                 });
                             }
                             else if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 1){
                                 transfers[0].transfers.push({
                                     "Batchname": source[i].Child_SourceBatch.description,
+                                    "Unit": source[i].SOURCEEQUIIDENT.description,
+                                    "MatNr": source[i].SOURCEPRODUCTID.description,
+                                    "Material": "",
+                                    "QTY": source[i]['@MeasureDimension'].formattedValue,
+                                    "UOM": source[i].UNITOFMEASURE.description,
+                                    "StartTransfer": source[i].STARTTRANSFER.description,
+                                    "EndTransfer": source[i].ENDTRANSFER.description,
                                     "transfers": []
                                 });
                             }
