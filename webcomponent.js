@@ -45,7 +45,7 @@
         //Get Table Data into Custom Widget Function
         async setDataSource(source) {
             console.log(source);
-            var lines = [],
+            /*var lines = [],
                 nodes = [];
             for(var i = 0; i < 10; i++){
 
@@ -66,7 +66,7 @@
             this.data.push({
                 nodes: nodes,
                 lines: lines
-            });
+            });*/
             var that = this;
             loadthis(that);
         }
