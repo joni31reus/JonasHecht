@@ -160,7 +160,7 @@
         set dateVal(value){
             if(value == undefined) return;
             if(typeof (value) === "string") value = new Date(value);
-            this_.byId("graph_" + widgetName).setDateValue(value);
+            this.byId("graph_" + widgetName).setDateValue(value);
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
