@@ -157,40 +157,10 @@
         }
 
         // SETTINGS
-        get title() {
-            return this._export_settings.title;
-        }
-        set title(value) {
-            console.log("setTitle:" + value);
-            this._export_settings.title = value;
-        }
-
-        get subtitle() {
-            return this._export_settings.subtitle;
-        }
-        set subtitle(value) {
-            this._export_settings.subtitle = value;
-        }
-
-        get icon() {
-            return this._export_settings.icon;
-        }
-        set icon(value) {
-            this._export_settings.icon = value;
-        }
-
-        get unit() {
-            return this._export_settings.unit;
-        }
-        set unit(value) {
-            this._export_settings.unit = value;
-        }
-
-        get footer() {
-            return this._export_settings.footer;
-        }
-        set footer(value) {
-            this._export_settings.footer = value;
+        set dateVal(value){
+            if(value == undefined) return;
+            if(typeof (value) === "string") value = new Date(value);
+            this_.byId("graph_" + widgetName).setDateValue(value);
         }
 
         attributeChangedCallback(name, oldValue, newValue) {
