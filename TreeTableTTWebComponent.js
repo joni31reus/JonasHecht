@@ -49,7 +49,7 @@
                 //Preparing the data
                     var aRootNodes = source.filter(source => source.ReferenceID_Child.id.length / 36 === 1);
 
-                    aTransferOverviewTree = {
+                    that.aTransferOverviewTree = {
                         "Transfers":{
                             "Multiple": []
                         }
@@ -98,7 +98,7 @@
                             var oCurrRootObj = aRootNodes[i],
                                 aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_SourceBatch.id);
 
-                            aTransferOverviewTree.Transfers.Multiple.push({
+                            that.aTransferOverviewTree.Transfers.Multiple.push({
                                 "Batch": oCurrRootObj.Child_SourceBatch.id,
                                 "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
                                 "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
@@ -113,7 +113,7 @@
                         }
                     }
 
-                console.log(aTransferOverviewTree);
+                console.log(that.aTransferOverviewTree);
                 //Preparing the data
                 var that = this;
                 loadthis(that);
