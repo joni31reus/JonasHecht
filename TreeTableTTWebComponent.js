@@ -47,60 +47,77 @@
                 console.log(source);
                 
                 //Preparing the data
-                    var transfers = [],
-                        bFirstRun = true,
-                        j = 0;
+                    var aTransferOverviewTree = null,
+                        aRootNodes = source.filter(source => source.ReferenceID_Child.id.length / 36 === 1);
 
-                    for(var i = 0; i < source.length; i++){
-                        if(bFirstRun === true){
-                            transfers.push({
-                                "Batchname": source[0].Child_TargetBatch.description,
-                                "transfers": []
-                            });
+                    aTransferOverviewTree = {
+                        "Transfers":{
+                            "Multiple": []
+                        }
+                    };
 
-                            bFirstRun = false;
+                    if(aRootNodes !== undefined && aRootNodes.length > 0){
+                        function recrusiveHeriarchie(sID){
+                            var aChildNodes = [],
+                                aNodes = source.filter(source => source.Child_TargetBatch.id === sID );
+                            if(aNodes !== undefined && aNodes.length > 0){
+                                for(var j in aNodes){
+                                    var oCurrObj = aNodes[j],
+                                        aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
+                                    
+                                    if(aChildItems.length > 0){
+                                        aChildNodes.push({
+                                            "Batch": oCurrObj.Child_SourceBatch.id,
+                                            "Unit": oCurrObj.SOURCEEQUIIDENT.id,
+                                            "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                            "MaterialDesc": "",
+                                            "QTY": oCurrObj['@MeasureDimension'].rawValue,
+                                            "UOM": oCurrObj.UNITOFMEASURE.id,
+                                            "TransferStart": oCurrObj.STARTTRANSFER,
+                                            "TransferEnd": oCurrObj.ENDTRANSFER
+                                        });
+                                    }
+                                    else{
+                                        aChildNodes.push({
+                                            "Batch": oCurrObj.Child_SourceBatch.id,
+                                            "Unit": oCurrObj.SOURCEEQUIIDENT.id,
+                                            "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                            "MaterialDesc": "",
+                                            "QTY": oCurrObj['@MeasureDimension'].rawValue,
+                                            "UOM": oCurrObj.UNITOFMEASURE.id,
+                                            "TransferStart": oCurrObj.STARTTRANSFER,
+                                            "TransferEnd": oCurrObj.ENDTRANSFER
+                                        });
+                                    }
+                                }
+                            }
+
+                            return aChildNodes;
                         }
 
-                        if(bFirstRun === false){
-                            if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 2){
-                                
-                                if(i ===  7 || i === 13){
-                                    j++;
-                                }
+                        for(var i in aRootNodes){
+                            var oCurrRootObj = aRootNodes[i],
+                                aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_SourceBatch.id);
 
-                                transfers[0].transfers[j].transfers.push({
-                                    "Batchname": source[i].Child_SourceBatch.description,
-                                    "Unit": source[i].SOURCEEQUIIDENT.description,
-                                    "MatNr": source[i].SOURCEPRODUCTID.description,
-                                    "Material": "",
-                                    "QTY": source[i]['@MeasureDimension'].formattedValue,
-                                    "UOM": source[i].UNITOFMEASURE.description,
-                                    "StartTransfer": source[i].STARTTRANSFER.description,
-                                    "EndTransfer": source[i].ENDTRANSFER.description,
-                                    "transfers": []
-                                });
-                            }
-                            else if(parseInt(source[i].ReferenceID_Child.id.length / 36) === 1){
-                                transfers[0].transfers.push({
-                                    "Batchname": source[i].Child_SourceBatch.description,
-                                    "Unit": source[i].SOURCEEQUIIDENT.description,
-                                    "MatNr": source[i].SOURCEPRODUCTID.description,
-                                    "Material": "",
-                                    "QTY": source[i]['@MeasureDimension'].formattedValue,
-                                    "UOM": source[i].UNITOFMEASURE.description,
-                                    "StartTransfer": source[i].STARTTRANSFER.description,
-                                    "EndTransfer": source[i].ENDTRANSFER.description,
-                                    "transfers": []
-                                });
-                            }
+                            aTransferOverviewTree.Transfers.Multiple.push({
+                                "Batch": oCurrRootObj.Child_SourceBatch.id,
+                                "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
+                                "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
+                                "MaterialDesc": "",
+                                "QTY": oCurrRootObj['@MeasureDimension'].rawValue,
+                                "UOM": oCurrRootObj.UNITOFMEASURE.id,
+                                "TransferStart": oCurrRootObj.STARTTRANSFER,
+                                "TransferEnd": oCurrRootObj.ENDTRANSFER,
+                                "Multiple": aChildItems,
+                                "RootNode": true
+                            });
                         }
                     }
+
+                console.log(aTransferOverviewTree);
                 //Preparing the data
-                this.data.push({
-                    transfers: transfers
-                });
-                var that = this;
-                loadthis(that);
+                /*var that = this;
+                loadthis(that);*/
             }
         //Get Table Data into Custom Widget Function
 
