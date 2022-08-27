@@ -354,25 +354,20 @@
 
                     onInit: function () {
                         var this_ = this;
-                        if (that._firstConnection === 0) {
 
-                            that._firstConnection = 1;
+                        that._firstConnection = 1;
 
-                            var oModel = new JSONModel(that.aTransferOverviewTree);
-                            
-                            oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
+                        var oModel = new JSONModel(that.aTransferOverviewTree);
+                        
+                        oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
-                            this_.getView().setModel(oModel, that.widgetName);
+                        this_.getView().setModel(oModel, that.widgetName);
 
-                            this_.oModelSettings = new JSONModel({
-                                RowCount: 20
-                            });
-                            this_.getView().setModel(this_.oModelSettings, "settings");
-
-                            this_.oGraph = this_.byId("graph_" + widgetName);
-                            //this_.oGraph._fZoomLevel = 0.75;
+                        this_.oModelSettings = new JSONModel({
+                            RowCount: 20
+                        });
+                        this_.getView().setModel(this_.oModelSettings, "settings");
                         }
-                    }
                 });
             });
 
