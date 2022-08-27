@@ -222,7 +222,7 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             console.log("AfterUpdate" + changedProperties);
             var that = this;
-            loadthis(that);
+            
         }
 
         _renderExportButton() {
