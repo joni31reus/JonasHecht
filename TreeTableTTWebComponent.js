@@ -51,6 +51,7 @@
 
                     this.aTransferOverviewTree = {
                         "Transfers":{
+                            "Multiple": [ {                         
                             "Batch": aRootNodes[0].Child_TargetBatch.id,
                             "Unit": "",
                             "MaterialNr": "",
@@ -58,8 +59,7 @@
                             "QTY": "",
                             "UOM": "",
                             "TransferStart": "",
-                            "TransferEnd": "",
-                            "Multiple": []
+                            "TransferEnd": ""}]
                         }
                     };
 
