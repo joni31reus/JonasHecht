@@ -315,6 +315,9 @@
             div1.innerHTML = '<div id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div>';
             _shadowRoot.appendChild(div1);
 
+            if(that_.childElementCount > 0){
+                that_.removeChild(that_.firstChild);
+            }
             that_.appendChild(div);
 
             var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
