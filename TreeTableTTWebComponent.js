@@ -354,7 +354,6 @@
 
                     onInit: function () {
                         var this_ = this;
-                        if (that._firstConnection === 0) {
 
                             that._firstConnection = 1;
 
@@ -371,7 +370,6 @@
 
                             this_.oGraph = this_.byId("graph_" + widgetName);
                             //this_.oGraph._fZoomLevel = 0.75;
-                        }
                     }
                 });
             });
