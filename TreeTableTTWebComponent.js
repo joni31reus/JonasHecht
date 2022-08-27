@@ -107,7 +107,7 @@
                             var oCurrRootObj = aRootNodes[i],
                                 aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_SourceBatch.id);
 
-                            this.aTransferOverviewTree.Transfers.Multiple.Multiple.push({
+                            this.aTransferOverviewTree.Transfers.Multiple[0].Multiple.push({
                                 "Batch": oCurrRootObj.Child_SourceBatch.id,
                                 "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
                                 "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
