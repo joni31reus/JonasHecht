@@ -225,12 +225,12 @@
             
         }
 
-        _renderExportButton() {
+        /*_renderExportButton() {
             let components = this.metadata ? JSON.parse(this.metadata)["components"] : {};
             console.log("_renderExportButton-components");
             console.log(components);
             console.log("end");
-        }
+        }*/
 
         _firePropertiesChanged() {
             this.title = "FD";
@@ -326,7 +326,7 @@
             console.log(Ar);
         }
 
-        that_._renderExportButton();
+        //that_._renderExportButton();
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
