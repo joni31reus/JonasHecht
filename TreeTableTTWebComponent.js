@@ -318,6 +318,7 @@
             that_.appendChild(div);
 
             var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
+            Ar = [];
             Ar.push({
                 'id': widgetName,
                 'div': mapcanvas_divstr
