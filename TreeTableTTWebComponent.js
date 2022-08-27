@@ -39,7 +39,7 @@
             });
 
             this._firstConnection = 0;
-            this.data = [];
+            this.aTransferOverviewTree = null;
         }
 
         //Get Table Data into Custom Widget Function
@@ -47,8 +47,7 @@
                 console.log(source);
                 
                 //Preparing the data
-                    var aTransferOverviewTree = null,
-                        aRootNodes = source.filter(source => source.ReferenceID_Child.id.length / 36 === 1);
+                    var aRootNodes = source.filter(source => source.ReferenceID_Child.id.length / 36 === 1);
 
                     aTransferOverviewTree = {
                         "Transfers":{
@@ -300,7 +299,7 @@
 
             let div0 = document.createElement('div');
             //Create SAPUI5 Element 
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View id="graph_' + widgetName + '" controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/aTransferOverviewTree}" selectionMode="None" enableSelectAll="false"> <columns><Column><m:Label text="Batch"/><template><m:Text text="{'+ widgetName +'>/Batchname}"/></template></Column><Column><m:Label text="Unit"/><template><m:Text text="{'+ widgetName +'>Unit}"/></template></Column><Column><m:Label text="Materialnumber"/><template><m:Text text="{'+ widgetName +'>MatNr}"/></template></Column><Column><m:Label text="Material"/><template><m:Text text="{'+ widgetName +'>Material}"/></template></Column><Column><m:Label text="Quantity"/><template><m:Text text="{'+ widgetName +'>QTY}"/></template></Column><Column><m:Label text="UOM"/><template><m:Text text="{'+ widgetName +'>UOM}"/></template></Column><Column><m:Label text="Transfer-Start"/><template><m:Text text="{'+ widgetName +'>StartTransfer}"/></template></Column><Column><m:Label text="EndTransfer"/><template><m:Text text="{'+ widgetName +'>EndTransfer}"/></template></Column></columns> </TreeTable> </mvc:View></script>';
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View id="graph_' + widgetName + '" controllerName="myView.Template" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout" height="100%" displayBlock="true"> <TreeTable rows="{' + widgetName + '>/Transfers}" selectionMode="None" enableSelectAll="false"> <columns><Column><m:Label text="Batch"/><template><m:Text text="{'+ widgetName +'>/Batchname}"/></template></Column><Column><m:Label text="Unit"/><template><m:Text text="{'+ widgetName +'>Unit}"/></template></Column><Column><m:Label text="Materialnumber"/><template><m:Text text="{'+ widgetName +'>MatNr}"/></template></Column><Column><m:Label text="Material"/><template><m:Text text="{'+ widgetName +'>Material}"/></template></Column><Column><m:Label text="Quantity"/><template><m:Text text="{'+ widgetName +'>QTY}"/></template></Column><Column><m:Label text="UOM"/><template><m:Text text="{'+ widgetName +'>UOM}"/></template></Column><Column><m:Label text="Transfer-Start"/><template><m:Text text="{'+ widgetName +'>StartTransfer}"/></template></Column><Column><m:Label text="EndTransfer"/><template><m:Text text="{'+ widgetName +'>EndTransfer}"/></template></Column></columns> </TreeTable> </mvc:View></script>';
             //Create SAPUI5 Element
             _shadowRoot.appendChild(div0);
 
@@ -350,7 +349,7 @@
 
                             that._firstConnection = 1;
 
-                            var oModel = new JSONModel(that.data[0]);
+                            var oModel = new JSONModel(that.aTransferOverviewTree[0]);
                             
                             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
