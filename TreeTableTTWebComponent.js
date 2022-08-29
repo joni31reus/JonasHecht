@@ -86,7 +86,7 @@
                             else{
                                 var aNodes = source.filter(source => source.Child_SourceBatch.id === sID);
                             }
-                            if(aNodes !== undefined && aNodes.length > 0){
+                            if(aNodes !== undefined){
                                 for(var j in aNodes){
                                     var oCurrObj = aNodes[j];                                    
                                     if(aRootNodes[0].HierarchyType.id === "Upstream"){
@@ -95,7 +95,7 @@
                                     else{
                                         var aChildItems = recrusiveHeriarchie(oCurrObj.Child_TargetBatch.id);
                                     }
-                                    
+
                                     if(aChildItems.length > 0){
                                         aChildNodes.push({
                                             "Batch": oCurrObj.Child_SourceBatch.id,
