@@ -120,18 +120,34 @@
                             var oCurrRootObj = aRootNodes[i],
                                 aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_SourceBatch.id);
 
-                            this.aTransferOverviewTree.Transfers.Multiple[0].Multiple.push({
-                                "Batch": oCurrRootObj.Child_SourceBatch.id,
-                                "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
-                                "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
-                                "MaterialDesc": "",
-                                "QTY": oCurrRootObj['@MeasureDimension'].rawValue,
-                                "UOM": oCurrRootObj.UNITOFMEASURE.id,
-                                "TransferStart": oCurrRootObj.STARTTRANSFER.id,
-                                "TransferEnd": oCurrRootObj.ENDTRANSFER.id,
-                                "Multiple": aChildItems,
-                                "RootNode": true
-                            });
+                            if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                                this.aTransferOverviewTree.Transfers.Multiple[0].Multiple.push({
+                                    "Batch": oCurrRootObj.Child_SourceBatch.id,
+                                    "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
+                                    "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
+                                    "MaterialDesc": "",
+                                    "QTY": oCurrRootObj['@MeasureDimension'].rawValue,
+                                    "UOM": oCurrRootObj.UNITOFMEASURE.id,
+                                    "TransferStart": oCurrRootObj.STARTTRANSFER.id,
+                                    "TransferEnd": oCurrRootObj.ENDTRANSFER.id,
+                                    "Multiple": aChildItems,
+                                    "RootNode": true
+                                });
+                            }
+                            else{
+                                this.aTransferOverviewTree.Transfers.Multiple.push({
+                                    "Batch": oCurrRootObj.Child_SourceBatch.id,
+                                    "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
+                                    "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
+                                    "MaterialDesc": "",
+                                    "QTY": oCurrRootObj['@MeasureDimension'].rawValue,
+                                    "UOM": oCurrRootObj.UNITOFMEASURE.id,
+                                    "TransferStart": oCurrRootObj.STARTTRANSFER.id,
+                                    "TransferEnd": oCurrRootObj.ENDTRANSFER.id,
+                                    "Multiple": aChildItems,
+                                    "RootNode": true
+                                });
+                            }
                         }
                     }
 
