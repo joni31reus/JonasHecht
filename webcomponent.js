@@ -274,7 +274,7 @@
         }
 
     }
-    customElements.require("com-fd-djaja-sap-sac-networkgraphforcebased", NetworkGraphForceBased);
+    customElements.define("com-fd-djaja-sap-sac-networkgraphforcebased", NetworkGraphForceBased);
 
     // UTILS
     function loadthis(that) {
