@@ -79,8 +79,13 @@
 
                     if(aRootNodes !== undefined && aRootNodes.length > 0){
                         function recrusiveHeriarchie(sID){
-                            var aChildNodes = [],
-                                aNodes = source.filter(source => source.Child_TargetBatch.id === sID );
+                            var aChildNodes = [];
+                            if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                                var aNodes = source.filter(source => source.Child_TargetBatch.id === sID );
+                            }
+                            else{
+                                var aNodes = source.filter(source => source.Child_SourceBatch.id === sID );
+                            }
                             if(aNodes !== undefined && aNodes.length > 0){
                                 for(var j in aNodes){
                                     var oCurrObj = aNodes[j],
