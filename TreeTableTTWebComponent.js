@@ -42,6 +42,10 @@
             this.aTransferOverviewTree = null;
         }
 
+        async setHierarchyWay(source){
+            console.log(source);
+        }
+
         //Get Table Data into Custom Widget Function
             async setDataSource(source) {
                 console.log(source);
