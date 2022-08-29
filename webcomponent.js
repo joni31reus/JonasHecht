@@ -108,7 +108,7 @@
                     });
                 }
             }*/
-            this.data = null;
+            this.data = [];
             this.data.push({
                 nodes: nodes,
                 lines: lines
