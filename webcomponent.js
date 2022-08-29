@@ -51,7 +51,7 @@
                 lines = [];
 
             //Schleife über alle vorhandenen Zeilen
-            for(var i = 0; i < source.length; i++){
+            /*for(var i = 0; i < source.length; i++){
                 //Bei dem ersten Eintrag die TargetBacht holen
                 if(i === 0){
                     nodes.push({
