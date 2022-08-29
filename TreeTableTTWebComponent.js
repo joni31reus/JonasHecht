@@ -81,15 +81,21 @@
                         function recrusiveHeriarchie(sID){
                             var aChildNodes = [];
                             if(aRootNodes[0].HierarchyType.id === "Upstream"){
-                                var aNodes = source.filter(source => source.Child_TargetBatch.id === sID );
+                                var aNodes = source.filter(source => source.Child_TargetBatch.id === sID);
                             }
                             else{
-                                var aNodes = source.filter(source => source.Child_SourceBatch.id === sID );
+                                var aNodes = source.filter(source => source.Child_SourceBatch.id === sID);
                             }
                             if(aNodes !== undefined && aNodes.length > 0){
                                 for(var j in aNodes){
-                                    var oCurrObj = aNodes[j],
-                                        aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
+                                    var oCurrObj = aNodes[j];
+                                    if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                                        var aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
+                                    }
+                                    else{
+                                        var aChildItems = recrusiveHeriarchie(oCurrObj.Child_TargetBatch.id);
+                                    }
+                                    
                                     
                                     if(aChildItems.length > 0){
                                         aChildNodes.push({
@@ -122,8 +128,13 @@
                         }
 
                         for(var i in aRootNodes){
-                            var oCurrRootObj = aRootNodes[i],
-                                aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_SourceBatch.id);
+                            var oCurrRootObj = aRootNodes[i];
+                            if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                                var aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
+                            }
+                            else{
+                                var aChildItems = recrusiveHeriarchie(oCurrObj.Child_TargetBatch.id);
+                            }
 
                             if(aRootNodes[0].HierarchyType.id === "Upstream"){
                                 this.aTransferOverviewTree.Transfers.Multiple[0].Multiple.push({
