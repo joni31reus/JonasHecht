@@ -89,6 +89,12 @@
                             if(aNodes !== undefined && aNodes.length > 0){
                                 for(var j in aNodes){
                                     var oCurrObj = aNodes[j];                                    
+                                    if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                                        var aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
+                                    }
+                                    else{
+                                        var aChildItems = recrusiveHeriarchie(oCurrObj.Child_TargetBatch.id);
+                                    }
                                     
                                     if(aChildItems.length > 0){
                                         aChildNodes.push({
@@ -113,13 +119,6 @@
                                             "TransferStart": oCurrObj.STARTTRANSFER.id,
                                             "TransferEnd": oCurrObj.ENDTRANSFER.id
                                         });
-                                    }
-
-                                    if(aRootNodes[0].HierarchyType.id === "Upstream"){
-                                        var aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
-                                    }
-                                    else{
-                                        var aChildItems = recrusiveHeriarchie(oCurrObj.Child_TargetBatch.id);
                                     }
                                 }
                             }
