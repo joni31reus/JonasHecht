@@ -290,7 +290,6 @@
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
 
-        if (that._firstConnection === 0) {
             console.log("--First Time --");
 
             let div0 = document.createElement('div');
@@ -303,15 +302,20 @@
             div1.innerHTML = '<div id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div>';
             _shadowRoot.appendChild(div1);
 
+
+            if(that_.childElementCount > 0){
+                that_.removeChild(that_.firstChild);
+            }
+            
             that_.appendChild(div);
 
             var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
+            Ar = [];
             Ar.push({
                 'id': widgetName,
                 'div': mapcanvas_divstr
             });
             console.log(Ar);
-        }
 
         that_._renderExportButton();
 
@@ -341,7 +345,6 @@
 
                     onInit: function () {
                         var this_ = this;
-                        if (that._firstConnection === 0) {
 
                             that._firstConnection = 1;
 
@@ -515,8 +518,7 @@
                             this_.oGraph = this_.byId("graph_" + widgetName);
                             //this_.oGraph._fZoomLevel = 0.75;
                         }
-                    }
-                });
+                    });
             });
 
             console.log("widgetName Final:" + widgetName);
