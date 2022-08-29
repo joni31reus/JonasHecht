@@ -110,16 +110,40 @@
                                         });
                                     }
                                     else{
-                                        aChildNodes.push({
-                                            "Batch": oCurrObj.Child_SourceBatch.id,
-                                            "Unit": oCurrObj.SOURCEEQUIIDENT.id,
-                                            "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
-                                            "MaterialDesc": "",
-                                            "QTY": oCurrObj['@MeasureDimension'].rawValue,
-                                            "UOM": oCurrObj.UNITOFMEASURE.id,
-                                            "TransferStart": oCurrObj.STARTTRANSFER.id,
-                                            "TransferEnd": oCurrObj.ENDTRANSFER.id
-                                        });
+                                        if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                                            aChildNodes.push({
+                                                "Batch": oCurrObj.Child_SourceBatch.id,
+                                                "Unit": oCurrObj.SOURCEEQUIIDENT.id,
+                                                "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                                "MaterialDesc": "",
+                                                "QTY": oCurrObj['@MeasureDimension'].rawValue,
+                                                "UOM": oCurrObj.UNITOFMEASURE.id,
+                                                "TransferStart": oCurrObj.STARTTRANSFER.id,
+                                                "TransferEnd": oCurrObj.ENDTRANSFER.id
+                                            });
+                                        }
+                                        else{
+                                            aChildNodes.push({
+                                                "Batch": oCurrObj.Child_SourceBatch.id,
+                                                "Unit": oCurrObj.SOURCEEQUIIDENT.id,
+                                                "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                                "MaterialDesc": "",
+                                                "QTY": oCurrObj['@MeasureDimension'].rawValue,
+                                                "UOM": oCurrObj.UNITOFMEASURE.id,
+                                                "TransferStart": oCurrObj.STARTTRANSFER.id,
+                                                "TransferEnd": oCurrObj.ENDTRANSFER.id,
+                                                "Multiple": [ {                         
+                                                    "Batch": oCurrObj.Child_TargetBatch.id,
+                                                    "Unit": "",
+                                                    "MaterialNr": "",
+                                                    "MaterialDesc": "",
+                                                    "QTY": "",
+                                                    "UOM": "",
+                                                    "TransferStart": "",
+                                                    "TransferEnd": "",
+                                                    "Multiple": []}]
+                                            });
+                                        }
                                     }
                                 }
                             }
