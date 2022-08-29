@@ -53,20 +53,29 @@
                 //Preparing the data
                     var aRootNodes = source.filter(source => source.ReferenceID_Child.id.length / 36 === 1);
 
-                    this.aTransferOverviewTree = {
-                        "Transfers":{
-                            "Multiple": [ {                         
-                            "Batch": aRootNodes[0].Child_TargetBatch.id,
-                            "Unit": "",
-                            "MaterialNr": "",
-                            "MaterialDesc": "",
-                            "QTY": "",
-                            "UOM": "",
-                            "TransferStart": "",
-                            "TransferEnd": "",
-                            "Multiple": []}]
+                    if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                        this.aTransferOverviewTree = {
+                            "Transfers":{
+                                "Multiple": [ {                         
+                                "Batch": aRootNodes[0].Child_TargetBatch.id,
+                                "Unit": "",
+                                "MaterialNr": "",
+                                "MaterialDesc": "",
+                                "QTY": "",
+                                "UOM": "",
+                                "TransferStart": "",
+                                "TransferEnd": "",
+                                "Multiple": []}]
+                            }
+                        };
+                    }
+                    else{
+                        this.aTransferOverviewTree = {
+                            "Transfers":{
+                                "Multiple":[]
+                            }
                         }
-                    };
+                    }
 
                     if(aRootNodes !== undefined && aRootNodes.length > 0){
                         function recrusiveHeriarchie(sID){
