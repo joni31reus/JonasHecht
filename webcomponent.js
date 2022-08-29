@@ -306,7 +306,7 @@
             if(that_.childElementCount > 0){
                 that_.removeChild(that_.firstChild);
             }
-            
+
             that_.appendChild(div);
 
             var mapcanvas_divstr = _shadowRoot.getElementById('oView_' + widgetName);
@@ -317,7 +317,7 @@
             });
             console.log(Ar);
 
-        that_._renderExportButton();
+        //that_._renderExportButton();
 
         sap.ui.getCore().attachInit(function() {
             "use strict";
