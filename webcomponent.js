@@ -39,7 +39,7 @@
             });
 
             this._firstConnection = 0;
-            this.data = [];
+            this.data = null;
         }
 
         //Get Table Data into Custom Widget Function
@@ -108,6 +108,7 @@
                     });
                 }
             }*/
+            this.data = null;
             this.data.push({
                 nodes: nodes,
                 lines: lines
