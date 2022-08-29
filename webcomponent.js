@@ -289,7 +289,7 @@
 
         div = document.createElement('div');
         div.slot = "content_" + widgetName;
-
+        if(that._firstConnection === 0){
             console.log("--First Time --");
 
             let div0 = document.createElement('div');
@@ -316,7 +316,7 @@
                 'div': mapcanvas_divstr
             });
             console.log(Ar);
-
+        }
         //that_._renderExportButton();
 
         sap.ui.getCore().attachInit(function() {
