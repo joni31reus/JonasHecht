@@ -130,10 +130,10 @@
                         for(var i in aRootNodes){
                             var oCurrRootObj = aRootNodes[i];
                             if(aRootNodes[0].HierarchyType.id === "Upstream"){
-                                var aChildItems = recrusiveHeriarchie(oCurrObj.Child_SourceBatch.id);
+                                var aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_SourceBatch.id);
                             }
                             else{
-                                var aChildItems = recrusiveHeriarchie(oCurrObj.Child_TargetBatch.id);
+                                var aChildItems = recrusiveHeriarchie(oCurrRootObj.Child_TargetBatch.id);
                             }
 
                             if(aRootNodes[0].HierarchyType.id === "Upstream"){
