@@ -422,13 +422,22 @@
 
                         var sFromNode = oEvent.getSource().getProperty("from"),
                             sToNode = oEvent.getSource().getProperty("to"),
-                            oOverallModel = that.oModel;
+                            oOverallModel = that.oModel,
+                            aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
 
-
-                        console.log(that.oModel);
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
-                                title: "Line popover"
+                                title: "Line popover",
+                                content: [
+                                    new sap.m.Label({
+                                        text: "Test",
+                                        labelFor: "123"
+                                    }),
+                                    new sap.m.Text({
+                                        text: "Test",
+                                        id: "123"
+                                    })
+                                ]
                             });
                         }
                         // Prevents render a default tooltip
