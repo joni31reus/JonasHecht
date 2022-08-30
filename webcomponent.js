@@ -419,7 +419,13 @@
                 return Controller.extend("myView.Template", {
 
                     linePress: function (oEvent) {
-                        console.log(this.oModel);
+
+                        var sFromNode = oEvent.getSource().getProperty("from"),
+                            sToNode = oEvent.getSource().getProperty("to"),
+                            oOverallModel = that.oModel;
+
+
+                        console.log(that.oModel);
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
                                 title: "Line popover"
