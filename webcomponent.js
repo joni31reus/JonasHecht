@@ -117,7 +117,7 @@
                 }
                 else{
                     //Alle anderen Einträge 
-                    if(i < source.length){
+                    if(i < source.length-1){
                         //Source Batch
                         nodes.push({
                             key: source[i].Child_SourceBatch.id,
@@ -140,7 +140,7 @@
                         })
                     }
 
-                    if(i === source.length){
+                    if(i === source.length-1){
                         //Holen der Source Batch
                         nodes.push({
                             key: source[i].Child_SourceBatch.id,
