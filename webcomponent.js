@@ -428,7 +428,7 @@
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
                                 title: "From " + sFromNode + " to " + sToNode,
-                                contentWidth: "30%",
+                                contentWidth: "10%",
                                 content: [
                                     new sap.m.HBox({
                                         items:[
@@ -444,6 +444,9 @@
                                                                 items:[
                                                                     new sap.m.Label({
                                                                         text: "Transferstart: "
+                                                                    }),
+                                                                    new sap.mLabel({
+                                                                        text: "Transferend: "
                                                                     })
                                                                 ]
                                                             }),
@@ -453,6 +456,9 @@
                                                                 items:[
                                                                     new sap.m.Label({
                                                                         text: aSelectedSource[0].STARTTRANSFER.id
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: aSelectedSource[0].ENDTRANSFER.id
                                                                     })
                                                                 ]
                                                             })
