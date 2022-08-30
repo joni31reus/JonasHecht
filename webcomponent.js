@@ -443,7 +443,7 @@
                                                     items:[
                                                         new sap.m.VBox({
                                                             width: "50%",
-                                                            alignItems: "End",
+                                                            alignItems: "Start",
                                                             items:[
                                                                 new sap.m.Label({
                                                                     text: "Transferstart: "
