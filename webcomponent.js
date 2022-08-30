@@ -40,6 +40,7 @@
 
             this._firstConnection = 0;
             this.data = null;
+            this.oModel = null;
         }
 
         //Get Table Data into Custom Widget Function
@@ -47,6 +48,7 @@
             //Variablen Deklaration/Initalisierung
             var nodes = [], 
                 lines = [];
+            this.oModel = source;
 
             //Schleife über alle vorhandenen Zeilen
             for(var i = 0; i < source.length; i++){
@@ -417,6 +419,7 @@
                 return Controller.extend("myView.Template", {
 
                     linePress: function (oEvent) {
+                        console.log(this.oModel);
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
                                 title: "Line popover"
