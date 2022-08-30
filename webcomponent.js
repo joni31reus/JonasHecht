@@ -422,15 +422,18 @@
 
                         var sFromNode = oEvent.getSource().getProperty("from"),
                             sToNode = oEvent.getSource().getProperty("to"),
-                            oOverallModel = that.oModel,
+                            oOverallModel = [],
+                            aSelectedSource = [];
+                            oOverallModel = aSelectedSource[0].ENDTRANSFER.id;
                             aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
                         console.log(aSelectedSource);
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
                                 title: "From " + sFromNode + " to " + sToNode,
-                                contentWidth: "10%",
+                                contentWidth: "15%",
                                 content: [
                                     new sap.m.HBox({
+                                        width: "100%",
                                         items:[
                                             new sap.m.VBox({
                                                 width: "50%",
