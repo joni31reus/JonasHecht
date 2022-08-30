@@ -445,8 +445,20 @@
                                                                     new sap.m.Label({
                                                                         text: "Transferstart: "
                                                                     }),
-                                                                    new sap.mLabel({
+                                                                    new sap.m.Label({
                                                                         text: "Transferend: "
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: "Quantity: "
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: "Best before date: "
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: "Status: "
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: "System ID: "
                                                                     })
                                                                 ]
                                                             }),
@@ -455,10 +467,22 @@
                                                                 alignItems: "Start",
                                                                 items:[
                                                                     new sap.m.Label({
-                                                                        text: aSelectedSource[0].STARTTRANSFER.id
+                                                                        text: " " + aSelectedSource[0].STARTTRANSFER.id
                                                                     }),
                                                                     new sap.m.Label({
-                                                                        text: aSelectedSource[0].ENDTRANSFER.id
+                                                                        text: " " + aSelectedSource[0].ENDTRANSFER.id
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: " " + aSelectedSource[0]['@MeasureDimension'].formattedValue
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: " " + "Noch null Werte in der Tabelle"
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: " " + aSelectedSource[0].SOURCESTATUS.id
+                                                                    }),
+                                                                    new sap.m.Label({
+                                                                        text: " " + aSelectedSource[0].SOURCESYSTEMIDENT.id
                                                                     })
                                                                 ]
                                                             })
