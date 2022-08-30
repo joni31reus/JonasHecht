@@ -429,7 +429,7 @@
                         console.log(aSelectedSource);
 
                         this._oPopoverForLine = new Popover({
-                            title: "From " + sFromNode + " to " + sToNode,
+                            title: "From " + sToNode + " to " + sFromNode,
                             contentWidth: "15%",
                             content: [
                                 new sap.m.HBox({
@@ -443,7 +443,7 @@
                                                     items:[
                                                         new sap.m.VBox({
                                                             width: "50%",
-                                                            alignItems: "End",
+                                                            alignItems: "Start",
                                                             items:[
                                                                 new sap.m.Label({
                                                                     text: "Transferstart: "
