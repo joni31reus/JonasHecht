@@ -58,7 +58,7 @@
                             key: source[i].Child_TargetBatch.id,
                             title: source[i].Child_TargetBatch.id,
                             attributes: [{
-                                label: "Transfer status",
+                                label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Materialnumber",
@@ -73,7 +73,7 @@
                             key: source[i].Child_SourceBatch.id,
                             title: source[i].Child_SourceBatch.id,
                             attributes: [{
-                                label: "Transfer status",
+                                label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Materialnumber",
@@ -96,7 +96,7 @@
                             key: source[i].Child_SourceBatch.id,
                             title: source[i].Child_SourceBatch.id,
                             attributes:[{
-                                label: "Transfer status",
+                                label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Materialnumber",
@@ -121,7 +121,7 @@
                             key: source[i].Child_SourceBatch.id,
                             title: source[i].Child_SourceBatch.id,
                             attributes:[{
-                                label: "Transfer status",
+                                label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Materialnumber",
@@ -144,7 +144,7 @@
                             key: source[i].Child_SourceBatch.id,
                             title: source[i].Child_SourceBatch.id,
                             attributes: [{
-                                label: "Transfer status",
+                                label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Materialnumber",
@@ -159,7 +159,7 @@
                             key: source[i].Child_TargetBatch.id,
                             title: source[i].Child_TargetBatch.id,
                             attributes: [{
-                                label: "Transfer status",
+                                label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Materialnumber",
