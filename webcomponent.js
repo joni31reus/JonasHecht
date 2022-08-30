@@ -430,7 +430,7 @@
 
                         this._oPopoverForLine = new Popover({
                             title: "From " + sToNode + " to " + sFromNode,
-                            contentWidth: "15%",
+                            contentWidth: "20%",
                             content: [
                                 new sap.m.HBox({
                                     width: "100%",
