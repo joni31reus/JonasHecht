@@ -434,8 +434,7 @@
                                 mergeEdges: true,
                                 nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
                                 nodeSpacing: 50,
-                                lineSpacingFactor: 0.25,
-                                ArrowOrientation: sap.suite.ui.commons.networkgraph.LineArrowOrientation.ParentOf
+                                lineSpacingFactor: 0.25
                             });
                             
                             this_.getView().setModel(this_.oModelSettings, "settings");
