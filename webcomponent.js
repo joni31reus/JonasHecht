@@ -427,15 +427,42 @@
                         console.log(aSelectedSource);
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
-                                title: "Line popover",
+                                title: "From" + sFromNode + "to" + sToNode,
                                 content: [
-                                    new sap.m.Label({
-                                        text: "Test",
-                                        labelFor: "txt_Batch"
-                                    }),
-                                    new sap.m.Text({
-                                        text: "Test",
-                                        id: "txt_Batch"
+                                    new sap.m.HBox({
+                                        class: "sapUiSmallMargin",
+                                        items:[
+                                            new sap.m.VBox({
+                                                width: "50%",
+                                                items:[
+                                                    new sap.m.HBox({
+                                                        width: "100%",
+                                                        items:[
+                                                            new sap.m.VBox({
+                                                                width: "35%",
+                                                                alignItems: "End",
+                                                                items:[
+                                                                    new sap.m.Label({
+                                                                        text: "Transferstart:",
+                                                                        class: "sapUiTinyMarginEnd sapUiSmallMarginBottom"
+                                                                    })
+                                                                ]
+                                                            }),
+                                                            new sap.m.VBox({
+                                                                width: "65%",
+                                                                alignItems: "Start",
+                                                                items:[
+                                                                    new sap.m.Label({
+                                                                        text: aSelectedSource[0].STARTTRANSFER.id,
+                                                                        class: "sapUiTinyMarginEnd sapUiSmallMarginBottom"
+                                                                    })
+                                                                ]
+                                                            })
+                                                        ]
+                                                    })
+                                                ]
+                                            })
+                                        ]
                                     })
                                 ]
                             });
