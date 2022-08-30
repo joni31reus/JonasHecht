@@ -52,88 +52,134 @@
 
             //Schleife über alle vorhandenen Zeilen
             for(var i = 0; i < source.length; i++){
-                //Bei dem ersten Eintrag die TargetBatch holen
-                if(i === 0){
-                    //Holen der Target Batch
-                    nodes.push({
-                        key: source[i].Child_TargetBatch.id,
-                        title: source[i].Child_TargetBatch.id,
-                        attributes: [{
-                            label: "Transfer status",
-                            value: source[i].TRANSFERTYPE.id
-                        },{
-                            label: "Materialnumber",
-                            value: source[i].DESTPRODUCTID.id
-                        },{
-                            label: "Equipment",
-                            value: source[i].DESTEQUIIDENT.id
-                        }]
-                    })
-                    //Holen der Source Batch
-                    nodes.push({
-                        key: source[i].Child_SourceBatch.id,
-                        title: source[i].Child_SourceBatch.id,
-                        attributes: [{
-                            label: "Transfer status",
-                            value: source[i].TRANSFERTYPE.id
-                        },{
-                            label: "Materialnumber",
-                            value: source[i].SOURCEPRODUCTID.id
-                        },{
-                            label: "Equipment",
-                            value: source[i].SOURCEEQUIIDENT.id
-                        }]
-                    })
-                    //Create Lines
-                    lines.push({
-                        from: source[i].Child_TargetBatch.id,
-                        to: source[i].Child_SourceBatch.id
-                    })
+                if(source[0].HierarchyType.id === "Upstream"){
+                    //Bei dem ersten Eintrag die TargetBatch holen
+                    if(i === 0){
+                        //Holen der Target Batch
+                        nodes.push({
+                            key: source[i].Child_TargetBatch.id,
+                            title: source[i].Child_TargetBatch.id,
+                            attributes: [{
+                                label: "Transfer status",
+                                value: source[i].TRANSFERTYPE.id
+                            },{
+                                label: "Materialnumber",
+                                value: source[i].DESTPRODUCTID.id
+                            },{
+                                label: "Equipment",
+                                value: source[i].DESTEQUIIDENT.id
+                            }]
+                        })
+                        //Holen der Source Batch
+                        nodes.push({
+                            key: source[i].Child_SourceBatch.id,
+                            title: source[i].Child_SourceBatch.id,
+                            attributes: [{
+                                label: "Transfer status",
+                                value: source[i].TRANSFERTYPE.id
+                            },{
+                                label: "Materialnumber",
+                                value: source[i].SOURCEPRODUCTID.id
+                            },{
+                                label: "Equipment",
+                                value: source[i].SOURCEEQUIIDENT.id
+                            }]
+                        })
+                        //Create Lines
+                        lines.push({
+                            from: source[i].Child_TargetBatch.id,
+                            to: source[i].Child_SourceBatch.id
+                        })
+                    }
+                    //Alle anderen Einträge 
+                    if(i > 0){
+                        //Source Batch
+                        nodes.push({
+                            key: source[i].Child_SourceBatch.id,
+                            title: source[i].Child_SourceBatch.id,
+                            attributes:[{
+                                label: "Transfer status",
+                                value: source[i].TRANSFERTYPE.id
+                            },{
+                                label: "Materialnumber",
+                                value: source[i].SOURCEPRODUCTID.id
+                            },{
+                                label: "Equipment",
+                                value: source[i].SOURCEEQUIIDENT.id
+                            }]
+                        })
+                        //Lines
+                        lines.push({
+                            from: source[i].Child_TargetBatch.id,
+                            to: source[i].Child_SourceBatch.id
+                        })
+                    }
                 }
-                //Alle anderen Einträge 
-                if(i > 0){
-                    //Source Batch
-                    nodes.push({
-                        key: source[i].Child_SourceBatch.id,
-                        title: source[i].Child_SourceBatch.id,
-                        attributes:[{
-                            label: "Transfer status",
-                            value: source[i].TRANSFERTYPE.id
-                        },{
-                            label: "Materialnumber",
-                            value: source[i].SOURCEPRODUCTID.id
-                        },{
-                            label: "Equipment",
-                            value: source[i].SOURCEEQUIIDENT.id
-                        }]
-                    })
-                    //Lines
-                    lines.push({
-                        from: source[i].Child_TargetBatch.id,
-                        to: source[i].Child_SourceBatch.id
-                    })
+                else{
+                    //Alle anderen Einträge 
+                    if(i < source.length){
+                        //Source Batch
+                        nodes.push({
+                            key: source[i].Child_SourceBatch.id,
+                            title: source[i].Child_SourceBatch.id,
+                            attributes:[{
+                                label: "Transfer status",
+                                value: source[i].TRANSFERTYPE.id
+                            },{
+                                label: "Materialnumber",
+                                value: source[i].SOURCEPRODUCTID.id
+                            },{
+                                label: "Equipment",
+                                value: source[i].SOURCEEQUIIDENT.id
+                            }]
+                        })
+                        //Lines
+                        lines.push({
+                            from: source[i].Child_SourceBatch.id,
+                            to: source[i].Child_TargetBatch.id
+                        })
+                    }
+
+                    if(i === source.length){
+                        //Holen der Source Batch
+                        nodes.push({
+                            key: source[i].Child_SourceBatch.id,
+                            title: source[i].Child_SourceBatch.id,
+                            attributes: [{
+                                label: "Transfer status",
+                                value: source[i].TRANSFERTYPE.id
+                            },{
+                                label: "Materialnumber",
+                                value: source[i].SOURCEPRODUCTID.id
+                            },{
+                                label: "Equipment",
+                                value: source[i].SOURCEEQUIIDENT.id
+                            }]
+                        })
+                        //Holen der Target Batch
+                        nodes.push({
+                            key: source[i].Child_TargetBatch.id,
+                            title: source[i].Child_TargetBatch.id,
+                            attributes: [{
+                                label: "Transfer status",
+                                value: source[i].TRANSFERTYPE.id
+                            },{
+                                label: "Materialnumber",
+                                value: source[i].DESTPRODUCTID.id
+                            },{
+                                label: "Equipment",
+                                value: source[i].DESTEQUIIDENT.id
+                            }]
+                        })
+                        //Create Lines
+                        lines.push({
+                            from: source[i].Child_SourceBatch.id,
+                            to: source[i].Child_TargetBatch.id
+                        })
+                    }
                 }
             }
 
-
-            /*var lines = [],
-                nodes = [];
-            for(var i = 0; i < 10; i++){
-
-                //Build Nodes Array for NetworkGraph
-                nodes.push({
-                    key: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
-                    title: source[i]._C_Botec_B.properties._C_Botec_B_Child_BotecMaterialDesc
-                });
-
-                if(i > 0){
-                    //Build Lines Array for NetworkGraph
-                    lines.push({
-                        from: source[i-1]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0],
-                        to: source[i]._C_Botec_B.id.split("&")[1].split("[")[1].split("]")[0]
-                    });
-                }
-            }*/
             this.data = [];
             this.data.push({
                 nodes: nodes,
@@ -373,156 +419,7 @@
 
                             that._firstConnection = 1;
 
-                            var data = [{
-                                "nodes": [{
-                                    "key": "L",
-                                    "title": "L",
-                                    "group": 1,
-                                    "status": "Error",
-                                    "icon": "sap-icon://key-user-settings",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 2, 2008"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Jon Favreau"
-                                    }]
-                                }, {
-                                    "key": "G",
-                                    "title": "G",
-                                    "group": 1,
-                                    "status": "Error",
-                                    "icon": "sap-icon://key-user-settings",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 7, 2010"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Jon Favreau"
-                                    }]
-                                }, {
-                                    "key": "E",
-                                    "title": "E",
-                                    "group": 1,
-                                    "icon": "sap-icon://theater",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "June 13, 2008"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Louis Leterrier"
-                                    }]
-                                }, {
-                                    "key": "F",
-                                    "title": "F",
-                                    "group": 1,
-                                    "status": "Warning",
-                                    "icon": "sap-icon://wrench",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 6, 2011"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Kenneth Branagh"
-                                    }]
-                                }, {
-                                    "key": "D",
-                                    "title": "D",
-                                    "group": 1,
-                                    "status": "Success",
-                                    "icon": "sap-icon://unfavorite",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "July 22, 2011"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Joe Johnston"
-                                    }]
-                                }, {
-                                    "key": "C",
-                                    "title": "C",
-                                    "group": 1,
-                                    "status": "Error",
-                                    "icon": "sap-icon://text-color",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 4, 2012"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Joss Whedon"
-                                    }]
-                                }, {
-                                    "key": "B",
-                                    "title": "B",
-                                    "group": 2,
-                                    "status": "Error",
-                                    "icon": "sap-icon://key-user-settings",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "May 3, 2013"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Shane Black"
-                                    }]
-                                }, {
-                                    "key": "A",
-                                    "title": "A",
-                                    "group": 2,
-                                    "status": "Warning",
-                                    "icon": "sap-icon://wrench",
-                                    "attributes": [{
-                                        "label": "Release date",
-                                        "value": "November 8, 2013"
-                                    }, {
-                                        "label": "Director",
-                                        "value": "Alan Taylor"
-                                    }]
-                                }],
-                                "lines": [{
-                                    "from": "L",
-                                    "to": "F"
-                                }, {
-                                    "from": "G",
-                                    "to": "F"
-                                }, {
-                                    "from": "E",
-                                    "to": "C"
-                                }, {
-                                    "from": "F",
-                                    "to": "C"
-                                }, {
-                                    "from": "G",
-                                    "to": "D"
-                                }, {
-                                    "from": "C",
-                                    "to": "B"
-                                }, {
-                                    "from": "D",
-                                    "to": "B"
-                                }, {
-                                    "from": "B",
-                                    "to": "A"
-                                }, {
-                                    "from": "C",
-                                    "to": "A"
-                                }],
-                                "groups": [{
-                                    "key": 1,
-                                    "title": "Produktphase 1"
-                                }, {
-                                    "key": 2,
-                                    "title": "Endproduktphase"
-                                }, {
-                                    "key": 3,
-                                    "title": "Phase Three"
-                                }]
-                            }]
-
-                            if(that.data !== undefined){
-                                var oModel = new JSONModel(that.data[0]);
-                            } else{
-                                var oModel = new JSONModel(data[0]);
-                            }
+                            var oModel = new JSONModel(that.data[0]);
                             
                             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
