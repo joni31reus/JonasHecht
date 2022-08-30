@@ -428,6 +428,7 @@
                         if (!this._oPopoverForLine) {
                             this._oPopoverForLine = new Popover({
                                 title: "From" + sFromNode + "to" + sToNode,
+                                contentWidth: "100%",
                                 content: [
                                     new sap.m.HBox({
                                         class: "sapUiSmallMargin",
