@@ -431,11 +431,11 @@
                                 content: [
                                     new sap.m.Label({
                                         text: "Test",
-                                        labelFor: "123"
+                                        labelFor: "txt_Batch"
                                     }),
                                     new sap.m.Text({
                                         text: "Test",
-                                        id: "123"
+                                        id: "txt_Batch"
                                     })
                                 ]
                             });
