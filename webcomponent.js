@@ -431,7 +431,6 @@
                                 contentWidth: "100%",
                                 content: [
                                     new sap.m.HBox({
-                                        class: "sapUiSmallMargin",
                                         items:[
                                             new sap.m.VBox({
                                                 width: "50%",
@@ -444,8 +443,7 @@
                                                                 alignItems: "End",
                                                                 items:[
                                                                     new sap.m.Label({
-                                                                        text: "Transferstart:",
-                                                                        class: "sapUiTinyMarginEnd sapUiSmallMarginBottom"
+                                                                        text: "Transferstart:"
                                                                     })
                                                                 ]
                                                             }),
@@ -454,8 +452,7 @@
                                                                 alignItems: "Start",
                                                                 items:[
                                                                     new sap.m.Label({
-                                                                        text: aSelectedSource[0].STARTTRANSFER.id,
-                                                                        class: "sapUiTinyMarginEnd sapUiSmallMarginBottom"
+                                                                        text: aSelectedSource[0].STARTTRANSFER.id
                                                                     })
                                                                 ]
                                                             })
