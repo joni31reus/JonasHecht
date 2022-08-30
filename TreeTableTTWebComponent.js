@@ -58,8 +58,8 @@
                             "Transfers":{
                                 "Multiple": [ {                         
                                 "Batch": aRootNodes[0].Child_TargetBatch.id,
-                                "Unit": "",
-                                "MaterialNr": "",
+                                "Unit": aRootNodes[0].DESTEQUIIDENT.id,
+                                "MaterialNr": aRootNodes[0].DESTPRODUCTID.id,
                                 "MaterialDesc": "",
                                 "QTY": "",
                                 "UOM": "",
@@ -134,8 +134,8 @@
                                                 "TransferEnd": oCurrObj.ENDTRANSFER.id,
                                                 "Multiple": [ {                         
                                                     "Batch": oCurrObj.Child_TargetBatch.id,
-                                                    "Unit": "",
-                                                    "MaterialNr": "",
+                                                    "Unit": oCurrObj.DESTEQUIIDENT.id,
+                                                    "MaterialNr": oCurrObj.DESTPRODUCTID.id,
                                                     "MaterialDesc": "",
                                                     "QTY": "",
                                                     "UOM": "",
