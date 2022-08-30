@@ -40,7 +40,6 @@
 
             this._firstConnection = 0;
             this.data = null;
-            this.ArrowOrientation = sap.suite.ui.commons.networkgraph.LineArrowOrientation.ChildOf;
         }
 
         //Get Table Data into Custom Widget Function
@@ -54,7 +53,6 @@
                 if(source[0].HierarchyType.id === "Upstream"){
                     //Bei dem ersten Eintrag die TargetBatch holen
                     if(i === 0){
-                        this.ArrowOrientation = sap.suite.ui.commons.networkgraph.LineArrowOrientation.ChildOf;
                         //Holen der Target Batch
                         nodes.push({
                             key: source[i].Child_TargetBatch.id,
@@ -141,7 +139,6 @@
                     }
 
                     if(i === source.length-1){
-                        this.ArrowOrientation = sap.suite.ui.commons.networkgraph.LineArrowOrientation.ParentOf;
                         //Holen der Source Batch
                         nodes.push({
                             key: source[i].Child_SourceBatch.id,
@@ -435,7 +432,7 @@
                                 nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
                                 nodeSpacing: 50,
                                 lineSpacingFactor: 0.25,
-                                ArrowOrientation: that.ArrowOrientation
+                                ArrowOrientation: sap.suite.ui.commons.networkgraph.LineArrowOrientation.ChildOf
                             });
                             this_.getView().setModel(this_.oModelSettings, "settings");
 
