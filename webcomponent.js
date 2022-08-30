@@ -52,8 +52,9 @@
 
             //Schleife über alle vorhandenen Zeilen
             for(var i = 0; i < source.length; i++){
-                //Bei dem ersten Eintrag die TargetBacht holen
+                //Bei dem ersten Eintrag die TargetBatch holen
                 if(i === 0){
+                    //Holen der Target Batch
                     nodes.push({
                         key: source[i].Child_TargetBatch.id,
                         title: source[i].Child_TargetBatch.id,
@@ -68,6 +69,7 @@
                             value: source[i].DESTEQUIIDENT.id
                         }]
                     })
+                    //Holen der Source Batch
                     nodes.push({
                         key: source[i].Child_SourceBatch.id,
                         title: source[i].Child_SourceBatch.id,
@@ -82,6 +84,30 @@
                             value: source[i].SOURCEEQUIIDENT.id
                         }]
                     })
+                    //Create Lines
+                    lines.push({
+                        from: source[i].Child_TargetBatch.id,
+                        to: source[i].Child_SourceBatch.id
+                    })
+                }
+                //Alle anderen Einträge 
+                if(i > 0){
+                    //Source Batch
+                    nodes.push({
+                        key: source[i].Child_SourceBatch.id,
+                        title: source[i].Child_SourceBatch.id,
+                        attributes:[{
+                            label: "Transfer status",
+                            value: source[i].TRANSFERTYPE.id
+                        },{
+                            label: "Materialnumber",
+                            value: source[i].SOURCEPRODUCTID.id
+                        },{
+                            label: "Equipment",
+                            value: source[i].SOURCEEQUIIDENT.id
+                        }]
+                    })
+                    //Lines
                     lines.push({
                         from: source[i].Child_TargetBatch.id,
                         to: source[i].Child_SourceBatch.id
