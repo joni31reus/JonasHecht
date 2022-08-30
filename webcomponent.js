@@ -184,7 +184,7 @@
                 lines: lines
             });
             var that = this;
-            loadthis(that);
+            loadthis(that, source[0].HierarchyType.id);
         }
 
         connectedCallback() {
@@ -348,7 +348,7 @@
     customElements.define("com-fd-djaja-sap-sac-networkgraphforcebased", NetworkGraphForceBased);
 
     // UTILS
-    function loadthis(that) {
+    function loadthis(that, setHierarchyType) {
         var that_ = that;
 
         widgetName = "networkgraphForcebased_1";
@@ -423,17 +423,33 @@
 
                             this_.getView().setModel(oModel, that.widgetName);
 
-                            this_.oModelSettings = new JSONModel({
-                                maxIterations: 200,
-                                maxTime: 500,
-                                initialTemperature: 200,
-                                coolDownStep: 1,
-                                mergeEdges: true,
-                                nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
-                                nodeSpacing: 50,
-                                lineSpacingFactor: 0.25,
-                                ArrowOrientation: sap.suite.ui.commons.networkgraph.LineArrowOrientation.ChildOf
-                            });
+                            if(setHierarchyType === "Upstream"){
+                                this_.oModelSettings = new JSONModel({
+                                    maxIterations: 200,
+                                    maxTime: 500,
+                                    initialTemperature: 200,
+                                    coolDownStep: 1,
+                                    mergeEdges: true,
+                                    nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
+                                    nodeSpacing: 50,
+                                    lineSpacingFactor: 0.25,
+                                    ArrowOrientation: sap.suite.ui.commons.networkgraph.LineArrowOrientation.ParentOf
+                                });
+                            }
+                            else{
+                                this_.oModelSettings = new JSONModel({
+                                    maxIterations: 200,
+                                    maxTime: 500,
+                                    initialTemperature: 200,
+                                    coolDownStep: 1,
+                                    mergeEdges: true,
+                                    nodePlacement: sap.suite.ui.commons.networkgraph.NodePlacement.LinearSegments,
+                                    nodeSpacing: 50,
+                                    lineSpacingFactor: 0.25,
+                                    ArrowOrientation: sap.suite.ui.commons.networkgraph.LineArrowOrientation.ChildOf
+                                });
+                            }
+                            
                             this_.getView().setModel(this_.oModelSettings, "settings");
 
                             this_.oGraph = this_.byId("graph_" + widgetName);
