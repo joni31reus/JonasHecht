@@ -424,7 +424,7 @@
                             sToNode = oEvent.getSource().getProperty("to"),
                             oOverallModel = [],
                             aSelectedSource = [];
-                            oOverallModel = aSelectedSource[0].ENDTRANSFER.id;
+                            oOverallModel = that.oModel;
                             aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
                         console.log(aSelectedSource);
                         if (!this._oPopoverForLine) {
