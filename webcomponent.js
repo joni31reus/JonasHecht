@@ -436,13 +436,13 @@
                                     width: "100%",
                                     items:[
                                         new sap.m.VBox({
-                                            width: "50%",
+                                            width: "100%",
                                             items:[
                                                 new sap.m.HBox({
                                                     width: "100%",
                                                     items:[
                                                         new sap.m.VBox({
-                                                            width: "35%",
+                                                            width: "50%",
                                                             alignItems: "End",
                                                             items:[
                                                                 new sap.m.Label({
@@ -466,7 +466,7 @@
                                                             ]
                                                         }),
                                                         new sap.m.VBox({
-                                                            width: "65%",
+                                                            width: "50%",
                                                             alignItems: "Start",
                                                             items:[
                                                                 new sap.m.Label({
