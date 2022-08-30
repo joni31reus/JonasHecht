@@ -372,6 +372,7 @@
 
             if(that._firstConnection === 1){
                 _shadowRoot.removeChild(_shadowRoot.lastChild);
+                _shadowRoot.removeChild(_shadowRoot.lastChild);
                 _shadowRoot.appendChild(div0);
             }else{
                 _shadowRoot.appendChild(div0);
@@ -380,12 +381,7 @@
             let div1 = document.createElement('div');
             div1.innerHTML = '<div id="ui5_content_' + widgetName + '" name="ui5_content_' + widgetName + '"><slot name="content_' + widgetName + '"></slot></div>';
 
-            if(that._firstConnection === 1){
-                _shadowRoot.removeChild(_shadowRoot.lastChild);
-                _shadowRoot.appendChild(div1);
-            }else{
-                _shadowRoot.appendChild(div1);
-            }
+            _shadowRoot.appendChild(div1);
 
             if(that_.childElementCount > 0){
                 that_.removeChild(that_.firstChild);
