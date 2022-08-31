@@ -59,7 +59,7 @@
                                 "Multiple": [ {                         
                                 "Batch": aRootNodes[0].Child_TargetBatch.id,
                                 "Unit": aRootNodes[0].DESTEQUIIDENT.id,
-                                "MaterialNr": aRootNodes[0].DESTPRODUCTID.id,
+                                "MaterialNr": aRootNodes[0].DESTPRODUCTDESC.id,
                                 "MaterialDesc": "",
                                 "QTY": "",
                                 "UOM": "",
@@ -100,7 +100,7 @@
                                         aChildNodes.push({
                                             "Batch": oCurrObj.Child_SourceBatch.id,
                                             "Unit": oCurrObj.SOURCEEQUIIDENT.id,
-                                            "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                            "MaterialNr": oCurrObj.SOURCEPRODUCTDESC.id,
                                             "MaterialDesc": "",
                                             "QTY": oCurrObj['@MeasureDimension'].rawValue,
                                             "UOM": oCurrObj.UNITOFMEASURE.id,
@@ -114,7 +114,7 @@
                                             aChildNodes.push({
                                                 "Batch": oCurrObj.Child_SourceBatch.id,
                                                 "Unit": oCurrObj.SOURCEEQUIIDENT.id,
-                                                "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                                "MaterialNr": oCurrObj.SOURCEPRODUCTDESC.id,
                                                 "MaterialDesc": "",
                                                 "QTY": oCurrObj['@MeasureDimension'].rawValue,
                                                 "UOM": oCurrObj.UNITOFMEASURE.id,
@@ -126,7 +126,7 @@
                                             aChildNodes.push({
                                                 "Batch": oCurrObj.Child_SourceBatch.id,
                                                 "Unit": oCurrObj.SOURCEEQUIIDENT.id,
-                                                "MaterialNr": oCurrObj.SOURCEPRODUCTID.id,
+                                                "MaterialNr": oCurrObj.SOURCEPRODUCTDESC.id,
                                                 "MaterialDesc": "",
                                                 "QTY": oCurrObj['@MeasureDimension'].rawValue,
                                                 "UOM": oCurrObj.UNITOFMEASURE.id,
@@ -135,7 +135,7 @@
                                                 "Multiple": [ {                         
                                                     "Batch": oCurrObj.Child_TargetBatch.id,
                                                     "Unit": oCurrObj.DESTEQUIIDENT.id,
-                                                    "MaterialNr": oCurrObj.DESTPRODUCTID.id,
+                                                    "MaterialNr": oCurrObj.DESTPRODUCTDESC.id,
                                                     "MaterialDesc": "",
                                                     "QTY": "",
                                                     "UOM": "",
@@ -164,7 +164,7 @@
                                 this.aTransferOverviewTree.Transfers.Multiple[0].Multiple.push({
                                     "Batch": oCurrRootObj.Child_SourceBatch.id,
                                     "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
-                                    "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
+                                    "MaterialNr": oCurrRootObj.SOURCEPRODUCTDESC.id,
                                     "MaterialDesc": "",
                                     "QTY": oCurrRootObj['@MeasureDimension'].rawValue,
                                     "UOM": oCurrRootObj.UNITOFMEASURE.id,
@@ -178,7 +178,7 @@
                                 this.aTransferOverviewTree.Transfers.Multiple.push({
                                     "Batch": oCurrRootObj.Child_SourceBatch.id,
                                     "Unit": oCurrRootObj.SOURCEEQUIIDENT.id,
-                                    "MaterialNr": oCurrRootObj.SOURCEPRODUCTID.id,
+                                    "MaterialNr": oCurrRootObj.SOURCEPRODUCTDESC.id,
                                     "MaterialDesc": "",
                                     "QTY": oCurrRootObj['@MeasureDimension'].rawValue,
                                     "UOM": oCurrRootObj.UNITOFMEASURE.id,
