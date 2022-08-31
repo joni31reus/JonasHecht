@@ -41,6 +41,7 @@
             this._firstConnection = 0;
             this.data = null;
             this.oModel = null;
+            this.sSelDisplayOption = "Upstream";
         }
 
         //Get Table Data into Custom Widget Function
@@ -49,6 +50,7 @@
             var nodes = [], 
                 lines = [];
             this.oModel = source;
+            this.sSelDisplayOption = source[0].HierarchyType.id;
 
             //Schleife über alle vorhandenen Zeilen
             for(var i = 0; i < source.length; i++){
@@ -425,67 +427,71 @@
                             oOverallModel = [],
                             aSelectedSource = [];
                             oOverallModel = that.oModel;
-                            aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
-                        console.log(aSelectedSource);
 
-                        this._oPopoverForLine = new Popover({
-                            title: "From " + sToNode + " to " + sFromNode,
-                            contentWidth: "20%",
-                            content: [
-                                new sap.m.HBox({
-                                    width: "100%",
-                                    items:[
-                                        new sap.m.VBox({
+
+                            if(this.sSelDisplayOption === "Upstream"){
+                                aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
+
+                                this._oPopoverForLine = new Popover({
+                                    title: "From " + sToNode + " to " + sFromNode,
+                                    contentWidth: "20%",
+                                    content: [
+                                        new sap.m.HBox({
                                             width: "100%",
                                             items:[
-                                                new sap.m.HBox({
+                                                new sap.m.VBox({
                                                     width: "100%",
                                                     items:[
-                                                        new sap.m.VBox({
-                                                            width: "50%",
-                                                            alignItems: "Start",
+                                                        new sap.m.HBox({
+                                                            width: "100%",
                                                             items:[
-                                                                new sap.m.Label({
-                                                                    text: "Transferstart: "
+                                                                new sap.m.VBox({
+                                                                    width: "50%",
+                                                                    alignItems: "Start",
+                                                                    items:[
+                                                                        new sap.m.Label({
+                                                                            text: "Transferstart: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Transferend: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Quantity: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Best before date: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Status: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "System ID: "
+                                                                        })
+                                                                    ]
                                                                 }),
-                                                                new sap.m.Label({
-                                                                    text: "Transferend: "
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: "Quantity: "
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: "Best before date: "
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: "Status: "
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: "System ID: "
-                                                                })
-                                                            ]
-                                                        }),
-                                                        new sap.m.VBox({
-                                                            width: "50%",
-                                                            alignItems: "Start",
-                                                            items:[
-                                                                new sap.m.Label({
-                                                                    text: " " + aSelectedSource[0].STARTTRANSFER.id
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: " " + aSelectedSource[0].ENDTRANSFER.id
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: " " + aSelectedSource[0]['@MeasureDimension'].formattedValue
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: " " + "Noch null Werte in der Tabelle"
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: " " + aSelectedSource[0].SOURCESTATUS.id
-                                                                }),
-                                                                new sap.m.Label({
-                                                                    text: " " + aSelectedSource[0].SOURCESYSTEMIDENT.id
+                                                                new sap.m.VBox({
+                                                                    width: "50%",
+                                                                    alignItems: "Start",
+                                                                    items:[
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].STARTTRANSFER.id
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].ENDTRANSFER.id
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].formattedValue
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + "Noch null Werte in der Tabelle"
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].SOURCESTATUS.id
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].SOURCESYSTEMIDENT.id
+                                                                        })
+                                                                    ]
                                                                 })
                                                             ]
                                                         })
@@ -494,9 +500,85 @@
                                             ]
                                         })
                                     ]
-                                })
-                            ]
-                        });
+                                });
+                            }
+                            else{
+                                aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sFromNode && oOverallModel.Child_TargetBatch.id === sToNode);
+
+                                this._oPopoverForLine = new Popover({
+                                    title: "From " + sFromNode + " to " + sToNode,
+                                    contentWidth: "20%",
+                                    content: [
+                                        new sap.m.HBox({
+                                            width: "100%",
+                                            items:[
+                                                new sap.m.VBox({
+                                                    width: "100%",
+                                                    items:[
+                                                        new sap.m.HBox({
+                                                            width: "100%",
+                                                            items:[
+                                                                new sap.m.VBox({
+                                                                    width: "50%",
+                                                                    alignItems: "Start",
+                                                                    items:[
+                                                                        new sap.m.Label({
+                                                                            text: "Transferstart: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Transferend: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Quantity: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Best before date: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "Status: "
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: "System ID: "
+                                                                        })
+                                                                    ]
+                                                                }),
+                                                                new sap.m.VBox({
+                                                                    width: "50%",
+                                                                    alignItems: "Start",
+                                                                    items:[
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].STARTTRANSFER.id
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].ENDTRANSFER.id
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].formattedValue
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + "Noch null Werte in der Tabelle"
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].SOURCESTATUS.id
+                                                                        }),
+                                                                        new sap.m.Label({
+                                                                            text: " " + aSelectedSource[0].SOURCESYSTEMIDENT.id
+                                                                        })
+                                                                    ]
+                                                                })
+                                                            ]
+                                                        })
+                                                    ]
+                                                })
+                                            ]
+                                        })
+                                    ]
+                                });
+                            }
+                            
+                        console.log(aSelectedSource);
+
+                        
                         // Prevents render a default tooltip
                         oEvent.preventDefault();
                         this._oPopoverForLine.openBy(oEvent.getParameter("opener"));
