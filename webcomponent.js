@@ -65,8 +65,8 @@
                                 label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
-                                label: "Materialnumber",
-                                value: source[i].DESTPRODUCTID.id
+                                label: "Mat. Desc.",
+                                value: source[i].DESTPRODUCTDESC.id
                             },{
                                 label: "Equipment",
                                 value: source[i].DESTEQUIIDENT.id
@@ -80,8 +80,8 @@
                                 label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
-                                label: "Materialnumber",
-                                value: source[i].SOURCEPRODUCTID.id
+                                label: "Mat. Desc.",
+                                value: source[i].SOURCEPRODUCTDESC.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -103,8 +103,8 @@
                                 label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
-                                label: "Materialnumber",
-                                value: source[i].SOURCEPRODUCTID.id
+                                label: "Mat. Desc.",
+                                value: source[i].SOURCEPRODUCTDESC.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -128,8 +128,8 @@
                                 label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
-                                label: "Materialnumber",
-                                value: source[i].SOURCEPRODUCTID.id
+                                label: "Mat. Desc.",
+                                value: source[i].SOURCEPRODUCTDESC.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -151,8 +151,8 @@
                                 label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
-                                label: "Materialnumber",
-                                value: source[i].SOURCEPRODUCTID.id
+                                label: "Mat. Desc.",
+                                value: source[i].SOURCEPRODUCTDESC.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -166,8 +166,8 @@
                                 label: "Status",
                                 value: source[i].TRANSFERTYPE.id
                             },{
-                                label: "Materialnumber",
-                                value: source[i].DESTPRODUCTID.id
+                                label: "Mat. Desc.",
+                                value: source[i].DESTPRODUCTDESC.id
                             },{
                                 label: "Equipment",
                                 value: source[i].DESTEQUIIDENT.id
