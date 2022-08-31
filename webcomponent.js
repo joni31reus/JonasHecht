@@ -66,7 +66,7 @@
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Mat. Desc.",
-                                value: source[i].DESTPRODUCTDESC.id
+                                value: source[i].toDestProductMD_MATKTX.id
                             },{
                                 label: "Equipment",
                                 value: source[i].DESTEQUIIDENT.id
@@ -81,7 +81,7 @@
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Mat. Desc.",
-                                value: source[i].SOURCEPRODUCTDESC.id
+                                value: source[i].toSourceProductMD_MATKTX.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -104,7 +104,7 @@
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Mat. Desc.",
-                                value: source[i].SOURCEPRODUCTDESC.id
+                                value: source[i].toSourceProductMD_MATKTX.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -129,7 +129,7 @@
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Mat. Desc.",
-                                value: source[i].SOURCEPRODUCTDESC.id
+                                value: source[i].toSourceProductMD_MATKTX.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -152,7 +152,7 @@
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Mat. Desc.",
-                                value: source[i].SOURCEPRODUCTDESC.id
+                                value: source[i].toSourceProductMD_MATKTX.id
                             },{
                                 label: "Equipment",
                                 value: source[i].SOURCEEQUIIDENT.id
@@ -167,7 +167,7 @@
                                 value: source[i].TRANSFERTYPE.id
                             },{
                                 label: "Mat. Desc.",
-                                value: source[i].DESTPRODUCTDESC.id
+                                value: source[i].toDestProductMD_MATKTX.id
                             },{
                                 label: "Equipment",
                                 value: source[i].DESTEQUIIDENT.id
