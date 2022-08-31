@@ -429,7 +429,7 @@
                             oOverallModel = that.oModel;
 
 
-                            if(this.sSelDisplayOption === "Upstream"){
+                            if(that.sSelDisplayOption === "Upstream"){
                                 aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
 
                                 this._oPopoverForLine = new Popover({
