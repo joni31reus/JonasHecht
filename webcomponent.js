@@ -480,10 +480,10 @@
                                                                             text: " " + aSelectedSource[0].ENDTRANSFER.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue + aSelectedSource[0].UNITOFMEASURE.id
+                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + "Noch null Werte in der Tabelle"
+                                                                            text: " " + aSelectedSource[0].SOURCEBESTBEFOREDATE.id.split(" ")[0]
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: " " + aSelectedSource[0].SOURCESTATUS.id
@@ -553,10 +553,10 @@
                                                                             text: " " + aSelectedSource[0].ENDTRANSFER.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue + aSelectedSource[0].UNITOFMEASURE.id
+                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + "Noch null Werte in der Tabelle"
+                                                                            text: " " + aSelectedSource[0].SOURCEBESTBEFOREDATE.id.split(" ")[0]
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: " " + aSelectedSource[0].SOURCESTATUS.id
