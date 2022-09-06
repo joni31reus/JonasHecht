@@ -144,20 +144,23 @@
 
                     if(i === source.length-1){
                         //Holen der Source Batch
-                        nodes.push({
-                            key: source[i].Child_SourceBatch.id,
-                            title: source[i].Child_SourceBatch.id,
-                            attributes: [{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toSourceProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].SOURCEEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_SourceBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_SourceBatch.id,
+                                title: source[i].Child_SourceBatch.id,
+                                attributes: [{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toSourceProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].SOURCEEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Holen der Target Batch
                         nodes.push({
                             key: source[i].Child_TargetBatch.id,
