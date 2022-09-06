@@ -54,8 +54,8 @@
 
             var iHighestValues = 0;
             for(var i = 0; i < source.length; i++){
-                if(source[0].ReferenceID_Child.id.length / 36 > iHighestValues){
-                    iHighestValues = source[0].ReferenceID_Child.id.length / 36;
+                if(source[i].ReferenceID_Child.id.length / 36 > iHighestValues){
+                    iHighestValues = source[i].ReferenceID_Child.id.length / 36;
                 }
             }
 
@@ -126,7 +126,7 @@
                 }
                 else{
                     //Alle anderen Einträge 
-                    if(i < iHighestValues){
+                    if(source[i].ReferenceID_Child.id.length / 36 < iHighestValues){
                         //Source Batch
                         nodes.push({
                             key: source[i].Child_SourceBatch.id,
@@ -149,7 +149,7 @@
                         })
                     }
 
-                    if(i === iHighestValues){
+                    if(source[i].ReferenceID_Child.id.length / 36 === iHighestValues){
                         //Holen der Source Batch
                         var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_SourceBatch.id);
                         if(aAvailableNodes.length === 0){
