@@ -52,6 +52,13 @@
             this.oModel = source;
             this.sSelDisplayOption = source[0].HierarchyType.id;
 
+            var iHighestValues = 0;
+            for(var i = 0; i < source.length; i++){
+                if(source[0].ReferenceID_Child.id.length / 36 > iHighestValues){
+                    iHighestValues = source[0].ReferenceID_Child.id.length / 36;
+                }
+            }
+
             //Schleife über alle vorhandenen Zeilen
             for(var i = 0; i < source.length; i++){
                 if(source[0].HierarchyType.id === "Upstream"){
@@ -119,7 +126,7 @@
                 }
                 else{
                     //Alle anderen Einträge 
-                    if(i < source.length-1){
+                    if(i < iHighestValues){
                         //Source Batch
                         nodes.push({
                             key: source[i].Child_SourceBatch.id,
@@ -142,22 +149,25 @@
                         })
                     }
 
-                    if(i === source.length-1){
+                    if(i === iHighestValues){
                         //Holen der Source Batch
-                        nodes.push({
-                            key: source[i].Child_SourceBatch.id,
-                            title: source[i].Child_SourceBatch.id,
-                            attributes: [{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toSourceProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].SOURCEEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_SourceBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_SourceBatch.id,
+                                title: source[i].Child_SourceBatch.id,
+                                attributes: [{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toSourceProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].SOURCEEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Holen der Target Batch
                         nodes.push({
                             key: source[i].Child_TargetBatch.id,
