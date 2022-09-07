@@ -53,31 +53,38 @@
                 //Preparing the data
                     var aRootNodes = source.filter(source => source.ReferenceID_Child.id.length / 36 === 1);
 
-                    if(aRootNodes[0].HierarchyType.id === "Upstream"){
-                        this.aTransferOverviewTree = {
-                            "Transfers":{
-                                "Multiple": [ {                         
-                                "Batch": aRootNodes[0].Child_TargetBatch.id,
-                                "Unit": aRootNodes[0].DESTEQUIIDENT.id,
-                                "MaterialNr": aRootNodes[0].toDestProductMD.id,
-                                "MaterialDesc": aRootNodes[0].toDestProductMD_MATKTX.id,
-                                "QTY": "",
-                                "UOM": "",
-                                "TransferStart": "",
-                                "TransferEnd": "",
-                                "Multiple": []}]
-                            }
-                        };
-                    }
-                    else{
-                        this.aTransferOverviewTree = {
-                            "Transfers":{
-                                "Multiple":[]
-                            }
+                    var iHighestValues = 0;
+                    for(var i = 0; i < source.length; i++){
+                        if(source[i].ReferenceID_Child.id.length / 36 > iHighestValues){
+                            iHighestValues = source[i].ReferenceID_Child.id.length / 36;
                         }
                     }
 
-                    if(aRootNodes !== undefined && aRootNodes.length > 0){
+                    if(aRootNodes !== undefined && aRootNodes.length > 0 && iHighestValues > 1){
+                        if(aRootNodes[0].HierarchyType.id === "Upstream"){
+                            this.aTransferOverviewTree = {
+                                "Transfers":{
+                                    "Multiple": [ {                         
+                                    "Batch": aRootNodes[0].Child_TargetBatch.id,
+                                    "Unit": aRootNodes[0].DESTEQUIIDENT.id,
+                                    "MaterialNr": aRootNodes[0].toDestProductMD.id,
+                                    "MaterialDesc": aRootNodes[0].toDestProductMD_MATKTX.id,
+                                    "QTY": "",
+                                    "UOM": "",
+                                    "TransferStart": "",
+                                    "TransferEnd": "",
+                                    "Multiple": []}]
+                                }
+                            };
+                        }
+                        else{
+                            this.aTransferOverviewTree = {
+                                "Transfers":{
+                                    "Multiple":[]
+                                }
+                            }
+                        }
+
                         function recrusiveHeriarchie(sID){
                             var aChildNodes = [];
                             if(aRootNodes[0].HierarchyType.id === "Upstream"){
@@ -188,6 +195,36 @@
                                     "RootNode": true
                                 });
                             }
+                        }
+                    }
+                    else{
+                        this.aTransferOverviewTree = {
+                            "Transfers":{
+                                "Multiple":[]
+                            }
+                        }
+
+                        for(var i = 0; i < source.length; i++){
+                            this.aTransferOverviewTree.Transfers.Multiple.push({
+                                "Batch": source[i].Child_SourceBatch.id,
+                                "Unit": source[i].SOURCEEQUIIDENT.id,
+                                "MaterialNr": source[i].toSourceProductMD.id,
+                                "MaterialDesc": source[i].toSourceProductMD_MATKTX.id,
+                                "QTY": source[i]['@MeasureDimension'].rawValue,
+                                "UOM": source[i].UNITOFMEASURE.id,
+                                "TransferStart": source[i].STARTTRANSFER.id,
+                                "TransferEnd": source[i].ENDTRANSFER.id,
+                                "Multiple": [ {                         
+                                    "Batch": source[i].Child_TargetBatch.id,
+                                    "Unit": source[i].DESTEQUIIDENT.id,
+                                    "MaterialNr": source[i].toDestProductMD.id,
+                                    "MaterialDesc": source[i].toDestProductMD_MATKTX.id,
+                                    "QTY": "",
+                                    "UOM": "",
+                                    "TransferStart": "",
+                                    "TransferEnd": "",
+                                    "Multiple": []}]
+                            });
                         }
                     }
 
