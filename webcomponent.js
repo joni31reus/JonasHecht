@@ -65,35 +65,41 @@
                     //Bei dem ersten Eintrag die TargetBatch holen
                     if(i === 0){
                         //Holen der Target Batch
-                        nodes.push({
-                            key: source[i].Child_TargetBatch.id,
-                            title: source[i].Child_TargetBatch.id,
-                            attributes: [{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toDestProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].DESTEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_TargetBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_TargetBatch.id,
+                                title: source[i].Child_TargetBatch.id,
+                                attributes: [{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toDestProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].DESTEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Holen der Source Batch
-                        nodes.push({
-                            key: source[i].Child_SourceBatch.id,
-                            title: source[i].Child_SourceBatch.id,
-                            attributes: [{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toSourceProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].SOURCEEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_SourceBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_SourceBatch.id,
+                                title: source[i].Child_SourceBatch.id,
+                                attributes: [{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toSourceProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].SOURCEEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Create Lines
                         lines.push({
                             from: source[i].Child_TargetBatch.id,
@@ -103,20 +109,23 @@
                     //Alle anderen Einträge 
                     if(i > 0){
                         //Source Batch
-                        nodes.push({
-                            key: source[i].Child_SourceBatch.id,
-                            title: source[i].Child_SourceBatch.id,
-                            attributes:[{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toSourceProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].SOURCEEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_SourceBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_SourceBatch.id,
+                                title: source[i].Child_SourceBatch.id,
+                                attributes:[{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toSourceProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].SOURCEEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Lines
                         lines.push({
                             from: source[i].Child_TargetBatch.id,
@@ -128,20 +137,23 @@
                     //Alle anderen Einträge 
                     if(source[i].ReferenceID_Child.id.length / 36 < iHighestValues){
                         //Source Batch
-                        nodes.push({
-                            key: source[i].Child_SourceBatch.id,
-                            title: source[i].Child_SourceBatch.id,
-                            attributes:[{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toSourceProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].SOURCEEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_SourceBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_SourceBatch.id,
+                                title: source[i].Child_SourceBatch.id,
+                                attributes:[{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toSourceProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].SOURCEEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Lines
                         lines.push({
                             from: source[i].Child_SourceBatch.id,
@@ -169,20 +181,23 @@
                             })
                         }
                         //Holen der Target Batch
-                        nodes.push({
-                            key: source[i].Child_TargetBatch.id,
-                            title: source[i].Child_TargetBatch.id,
-                            attributes: [{
-                                label: "Status",
-                                value: source[i].TRANSFERTYPE.id
-                            },{
-                                label: "Mat. Desc.",
-                                value: source[i].toDestProductMD_MATKTX.id
-                            },{
-                                label: "Equipment",
-                                value: source[i].DESTEQUIIDENT.id
-                            }]
-                        })
+                        var aAvailableNodes = nodes.filter(nodes => nodes.key === source[i].Child_TargetBatch.id);
+                        if(aAvailableNodes.length === 0){
+                            nodes.push({
+                                key: source[i].Child_TargetBatch.id,
+                                title: source[i].Child_TargetBatch.id,
+                                attributes: [{
+                                    label: "Status",
+                                    value: source[i].TRANSFERTYPE.id
+                                },{
+                                    label: "Mat. Desc.",
+                                    value: source[i].toDestProductMD_MATKTX.id
+                                },{
+                                    label: "Equipment",
+                                    value: source[i].DESTEQUIIDENT.id
+                                }]
+                            })
+                        }
                         //Create Lines
                         lines.push({
                             from: source[i].Child_SourceBatch.id,
