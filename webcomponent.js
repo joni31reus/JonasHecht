@@ -526,7 +526,7 @@
                                                                             text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.id
+                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.description
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: " " + aSelectedSource[0].SOURCESTATUS.id
@@ -599,7 +599,7 @@
                                                                             text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.id
+                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.description
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: " " + aSelectedSource[0].SOURCESTATUS.id
