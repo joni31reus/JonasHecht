@@ -79,6 +79,9 @@
                                 },{
                                     label: "Equipment",
                                     value: source[i].DESTEQUIIDENT.id
+                                },{
+                                    label: "Best before date",
+                                    value: source[i].DESTBESTBEFOREDATE.id.split(" ")[0]
                                 }]
                             })
                         }
@@ -97,6 +100,9 @@
                                 },{
                                     label: "Equipment",
                                     value: source[i].SOURCEEQUIIDENT.id
+                                },{
+                                    label: "Best before date",
+                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
                                 }]
                             })
                         }
@@ -123,6 +129,9 @@
                                 },{
                                     label: "Equipment",
                                     value: source[i].SOURCEEQUIIDENT.id
+                                },{
+                                    label: "Best before date",
+                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
                                 }]
                             })
                         }
@@ -151,6 +160,9 @@
                                 },{
                                     label: "Equipment",
                                     value: source[i].SOURCEEQUIIDENT.id
+                                },{
+                                    label: "Best before date",
+                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
                                 }]
                             })
                         }
@@ -177,6 +189,9 @@
                                 },{
                                     label: "Equipment",
                                     value: source[i].SOURCEEQUIIDENT.id
+                                },{
+                                    label: "Best before date",
+                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
                                 }]
                             })
                         }
@@ -195,6 +210,9 @@
                                 },{
                                     label: "Equipment",
                                     value: source[i].DESTEQUIIDENT.id
+                                },{
+                                    label: "Best before date",
+                                    value: source[i].DESTBESTBEFOREDATE.id.split(" ")[0]
                                 }]
                             })
                         }
@@ -484,7 +502,7 @@
                                                                             text: "Quantity: "
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: "Best before date: "
+                                                                            text: "Production ordernumber: "
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: "Status: "
@@ -508,7 +526,7 @@
                                                                             text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].SOURCEBESTBEFOREDATE.id.split(" ")[0]
+                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.id
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: " " + aSelectedSource[0].SOURCESTATUS.id
@@ -557,7 +575,7 @@
                                                                             text: "Quantity: "
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: "Best before date: "
+                                                                            text: "Production ordernumber: "
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: "Status: "
@@ -581,7 +599,7 @@
                                                                             text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
                                                                         }),
                                                                         new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].SOURCEBESTBEFOREDATE.id.split(" ")[0]
+                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.id
                                                                         }),
                                                                         new sap.m.Label({
                                                                             text: " " + aSelectedSource[0].SOURCESTATUS.id
