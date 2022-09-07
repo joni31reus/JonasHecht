@@ -472,7 +472,7 @@
                         this_.getView().setModel(oModel, that.widgetName);
 
                         this_.oModelSettings = new JSONModel({
-                            RowCount: 20
+                            RowCount: "20"
                         });
                         this_.getView().setModel(this_.oModelSettings, "settings");
                         }
