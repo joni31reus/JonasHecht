@@ -81,7 +81,7 @@
                                     value: source[i].DESTEQUIIDENT.id
                                 },{
                                     label: "Best before date",
-                                    value: source[i].DESTBESTBEFOREDATE.id.split(" ")[0]
+                                    value: source[i].DESTBESTBEFOREDATE.description
                                 }]
                             })
                         }
@@ -102,7 +102,7 @@
                                     value: source[i].SOURCEEQUIIDENT.id
                                 },{
                                     label: "Best before date",
-                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
+                                    value: source[i].SOURCEBESTBEFOREDATE.description
                                 }]
                             })
                         }
@@ -131,7 +131,7 @@
                                     value: source[i].SOURCEEQUIIDENT.id
                                 },{
                                     label: "Best before date",
-                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
+                                    value: source[i].SOURCEBESTBEFOREDATE.description
                                 }]
                             })
                         }
@@ -162,7 +162,7 @@
                                     value: source[i].SOURCEEQUIIDENT.id
                                 },{
                                     label: "Best before date",
-                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
+                                    value: source[i].SOURCEBESTBEFOREDATE.description
                                 }]
                             })
                         }
@@ -191,7 +191,7 @@
                                     value: source[i].SOURCEEQUIIDENT.id
                                 },{
                                     label: "Best before date",
-                                    value: source[i].SOURCEBESTBEFOREDATE.id.split(" ")[0]
+                                    value: source[i].SOURCEBESTBEFOREDATE.description
                                 }]
                             })
                         }
@@ -212,7 +212,7 @@
                                     value: source[i].DESTEQUIIDENT.id
                                 },{
                                     label: "Best before date",
-                                    value: source[i].DESTBESTBEFOREDATE.id.split(" ")[0]
+                                    value: source[i].DESTBESTBEFOREDATE.description
                                 }]
                             })
                         }
