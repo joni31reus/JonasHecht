@@ -71,9 +71,6 @@
                                 key: source[i].Child_TargetBatch.id,
                                 title: source[i].Child_TargetBatch.id,
                                 attributes: [{
-                                    label: "Status",
-                                    value: source[i].TRANSFERTYPE.id
-                                },{
                                     label: "Mat. Desc.",
                                     value: source[i].toDestProductMD_MATKTX.id
                                 },{
@@ -92,9 +89,6 @@
                                 key: source[i].Child_SourceBatch.id,
                                 title: source[i].Child_SourceBatch.id,
                                 attributes: [{
-                                    label: "Status",
-                                    value: source[i].TRANSFERTYPE.id
-                                },{
                                     label: "Mat. Desc.",
                                     value: source[i].toSourceProductMD_MATKTX.id
                                 },{
@@ -121,9 +115,6 @@
                                 key: source[i].Child_SourceBatch.id,
                                 title: source[i].Child_SourceBatch.id,
                                 attributes:[{
-                                    label: "Status",
-                                    value: source[i].TRANSFERTYPE.id
-                                },{
                                     label: "Mat. Desc.",
                                     value: source[i].toSourceProductMD_MATKTX.id
                                 },{
@@ -152,9 +143,6 @@
                                 key: source[i].Child_SourceBatch.id,
                                 title: source[i].Child_SourceBatch.id,
                                 attributes:[{
-                                    label: "Status",
-                                    value: source[i].TRANSFERTYPE.id
-                                },{
                                     label: "Mat. Desc.",
                                     value: source[i].toSourceProductMD_MATKTX.id
                                 },{
@@ -181,9 +169,6 @@
                                 key: source[i].Child_SourceBatch.id,
                                 title: source[i].Child_SourceBatch.id,
                                 attributes: [{
-                                    label: "Status",
-                                    value: source[i].TRANSFERTYPE.id
-                                },{
                                     label: "Mat. Desc.",
                                     value: source[i].toSourceProductMD_MATKTX.id
                                 },{
@@ -202,9 +187,6 @@
                                 key: source[i].Child_TargetBatch.id,
                                 title: source[i].Child_TargetBatch.id,
                                 attributes: [{
-                                    label: "Status",
-                                    value: source[i].TRANSFERTYPE.id
-                                },{
                                     label: "Mat. Desc.",
                                     value: source[i].toDestProductMD_MATKTX.id
                                 },{
