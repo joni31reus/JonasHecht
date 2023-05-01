@@ -150,7 +150,7 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             console.log(changedProperties);
             var that = this;
-            //loadthis(that, changedProperties);
+            loadthis(that);
         }
 
         _renderExportButton() {
@@ -218,7 +218,7 @@
     customElements.define("sac-mock-network-graph", MockUpNetworkGraph);
 
     // UTILS
-    function loadthis(that, setHierarchyType) {
+    function loadthis(that) {
         this.data = [{
             "nodes": [
                 {
