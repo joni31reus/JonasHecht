@@ -720,7 +720,7 @@
         }
 
     }
-    customElements.define("com.fd.djaja.sap.sac.mockupNetworkGraph", NetworkGraphForceBased);
+    customElements.define("com-fd-djaja-sap-sac-mockupNetworkGraph", NetworkGraphForceBased);
 
     // UTILS
     function loadthis(that, setHierarchyType) {
