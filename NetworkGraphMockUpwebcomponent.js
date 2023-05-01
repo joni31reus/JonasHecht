@@ -150,7 +150,7 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             console.log(changedProperties);
             var that = this;
-            loadthis(that, changedProperties);
+            //loadthis(that, changedProperties);
         }
 
         _renderExportButton() {
