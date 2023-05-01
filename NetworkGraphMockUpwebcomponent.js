@@ -37,8 +37,6 @@
                 console.log('click');
 
             });
-            var that = this;
-            this.loadthis(that);
 
             this._firstConnection = 0;
             this.data = null;
@@ -60,6 +58,8 @@
         }
 
         connectedCallback() {
+
+            loadthis(this);
             try {
                 if (window.commonApp) {
                     let outlineContainer = commonApp.getShell().findElements(true, ele => ele.hasStyleClass && ele.hasStyleClass("sapAppBuildingOutline"))[0]; // sId: "__container0"
