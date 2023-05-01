@@ -23,8 +23,6 @@
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
             _id = createGuid();
-            var that = this;
-            loadthis(that);
 
             //_shadowRoot.querySelector("#oView").id = "oView";
 
@@ -39,6 +37,8 @@
                 console.log('click');
 
             });
+            var that = this;
+            this.loadthis(that);
 
             this._firstConnection = 0;
             this.data = null;
