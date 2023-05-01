@@ -559,7 +559,7 @@
                 ]
             }];
             var that = this;
-            loadthis(that, source[0].HierarchyType.id);
+            loadthis(that, "Upstream");
         }
 
         connectedCallback() {
