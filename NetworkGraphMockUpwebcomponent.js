@@ -634,7 +634,7 @@
                             
                             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
-                            this_.getView().setModel(oModel, that.data[0]);
+                            this_.getView().setModel(oModel, that.widgetName);
 
                             this_.oModelSettings = new JSONModel({
                                 maxIterations: 200,
