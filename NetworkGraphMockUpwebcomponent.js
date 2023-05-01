@@ -221,7 +221,7 @@
 
     // UTILS
     function loadthis(that) {
-        this.data = [{
+        that.data = [{
             "nodes": [
                 {
                     "key": 0,
