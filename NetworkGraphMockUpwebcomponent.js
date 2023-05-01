@@ -458,78 +458,6 @@
                             "value": "James Gunn"
                         }
                     ]
-                },{
-                    "key": 16,
-                    "title": "Spider-Man: Homecoming",
-                    "group": 3,
-                    "icon": "sap-icon://tree",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "July 7, 2017"
-                        },{
-                            "label": "Director",
-                            "value": "Jon Watts"
-                        }
-                    ]
-                },{
-                    "key": 17,
-                    "title": "Black Panther",
-                    "group": 3,
-                    "icon": "sap-icon://circle-task-2",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "February 16, 2018"
-                        },{
-                            "label": "Director",
-                            "value": "Ryan Coogler"
-                        }
-                    ]
-                },{
-                    "key": 18,
-                    "title": "Guardians of the Galaxy Vol. 2",
-                    "icon": "sap-icon://shield",
-                    "group": 3,
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "May 5, 2017"
-                        },{
-                            "label": "Director",
-                            "value": "James Gunn"
-                        }
-                    ]
-                },{
-                    "key": 19,
-                    "title": "'Avengers 4'",
-                    "group": 3,
-                    "status": "Error",
-                    "icon": "sap-icon://text-color",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "May 3, 2019"
-                        },{
-                            "label": "Director",
-                            "value": "Anthony & Joe Russo"
-                        }
-                    ]
-                },{
-                    "key": 20,
-                    "title": "Avengers: Infinity War",
-                    "group": 3,
-                    "status": "Error",
-                    "icon": "sap-icon://text-color",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "April 27, 2018"
-                        },{
-                            "label": "Director",
-                            "value": "Anthony & Joe Russo"
-                        }
-                    ]
                 }
             ],
             "lines": [
@@ -549,22 +477,11 @@
                 {"from": 10, "to": 13},
                 {"from": 13, "to": 11},
                 {"from": 10, "to": 14},
-                {"from": 13, "to": 14},
-                {"from": 14, "to": 16},
-                {"from": 14, "to": 17},
-                {"from": 12, "to": 20},
-                {"from": 16, "to": 20},
-                {"from": 17, "to": 20},
-                {"from": 15, "to": 18},
-                {"from": 18, "to": 20},
-                {"from": 5, "to": 19},
-                {"from": 10, "to": 19},
-                {"from": 20, "to": 19}
+                {"from": 13, "to": 14}
             ],
             "groups": [
                 {"key": 1, "title": "Phase One"},
-                {"key": 2, "title": "Phase Two"},
-                {"key": 3, "title": "Phase Three"}
+                {"key": 2, "title": "Phase Two"}
             ]
         }];
         var that_ = that;
@@ -581,7 +498,7 @@
             console.log("--First Time --");
         
             let div0 = document.createElement('div');
-            div0.innerHTML = '<?xml version="1.0"?><script id="oView_UpStream' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout"><l:FixFlex><l:fixContent><m:FlexBox fitContainer="true" renderType="Bare" wrap="Wrap"><m:items><Graph  enableWheelZoom="true"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="LeftRight"> <layoutData> <m:FlexItemData/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <statuses><Status key="CustomKrones" title="Standard" backgroundColor="#0060AD" borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor"/></statuses> <nodes> <Node key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="CustomKrones" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false" width="auto" maxWidth="500"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}" arrowOrientation="ChildOf" arrowPosition="Middle" press="linePress"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph></m:items></m:FlexBox></l:fixContent></l:FixFlex> </mvc:View></script>';
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_UpStream' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout"><l:FixFlex><l:fixContent><m:FlexBox fitContainer="true" renderType="Bare" wrap="Wrap"><m:items><Graph  enableWheelZoom="true"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="LeftRight"> <layoutData> <m:FlexItemData/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <statuses><Status key="CustomKrones" title="Standard" backgroundColor="#0060AD" borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor"/></statuses> <nodes> <Node key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="CustomKrones" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false" width="auto" maxWidth="500"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}" arrowOrientation="ParentOf" arrowPosition="Middle" press="linePress"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph></m:items></m:FlexBox></l:fixContent></l:FixFlex> </mvc:View></script>';
 
 
             if(that._firstConnection === 1){
