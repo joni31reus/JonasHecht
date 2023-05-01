@@ -39,7 +39,7 @@
             });
 
             this._firstConnection = 0;
-            this.data = null;
+            this.data = [];
             this.oModel = null;
             this.sSelDisplayOption = "Upstream";
         }
