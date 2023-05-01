@@ -360,7 +360,7 @@
                 },{
                     "key": 9,
                     "title": "Doctor Strange",
-                    "group": 3,
+                    "group": 2,
                     "icon": "sap-icon://activate",
                     "attributes": [
                         {
@@ -389,7 +389,7 @@
                 },{
                     "key": 11,
                     "title": "Ant-Man and the Wasp",
-                    "group": 3,
+                    "group": 2,
                     "icon": "sap-icon://chain-link",
                     "attributes": [
                         {
@@ -403,7 +403,7 @@
                 },{
                     "key": 12,
                     "title": "Thor: Ragnarok",
-                    "group": 3,
+                    "group": 2,
                     "status": "Warning",
                     "icon": "sap-icon://wrench",
                     "attributes": [
@@ -432,7 +432,7 @@
                 },{
                     "key": 14,
                     "title": "Captain America: Civil War",
-                    "group": 3,
+                    "group": 2,
                     "status": "Success",
                     "icon": "sap-icon://unfavorite",
                     "attributes": [
@@ -462,22 +462,19 @@
             ],
             "lines": [
                 {"from": 0, "to": 1},
-                {"from": 1, "to": 5},
-                {"from": 2, "to": 5},
-                {"from": 3, "to": 5},
+                {"from": 1, "to": 2},
+                {"from": 2, "to": 3},
+                {"from": 3, "to": 4},
                 {"from": 4, "to": 5},
                 {"from": 5, "to": 6},
-                {"from": 5, "to": 7},
-                {"from": 5, "to": 8},
-                {"from": 6, "to": 10},
-                {"from": 7, "to": 10},
-                {"from": 8, "to": 10},
-                {"from": 9, "to": 12},
-                {"from": 10, "to": 12},
-                {"from": 10, "to": 13},
-                {"from": 13, "to": 11},
-                {"from": 10, "to": 14},
-                {"from": 13, "to": 14}
+                {"from": 6, "to": 7},
+                {"from": 7, "to": 8},
+                {"from": 9, "to": 10},
+                {"from": 10, "to": 11},
+                {"from": 11, "to": 12},
+                {"from": 12, "to": 13},
+                {"from": 13, "to": 14},
+                {"from": 14, "to": 15}
             ],
             "groups": [
                 {"key": 1, "title": "Phase One"},
