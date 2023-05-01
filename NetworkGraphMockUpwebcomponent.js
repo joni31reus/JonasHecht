@@ -738,12 +738,8 @@
             console.log("--First Time --");
         
             let div0 = document.createElement('div');
-            if(setHierarchyType === "Upstream"){
-                div0.innerHTML = '<?xml version="1.0"?><script id="oView_UpStream' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout"><l:FixFlex><l:fixContent><m:FlexBox fitContainer="true" renderType="Bare" wrap="Wrap"><m:items><Graph  enableWheelZoom="true"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="TopBottom"> <layoutData> <m:FlexItemData/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <statuses><Status key="CustomKrones" title="Standard" backgroundColor="#0060AD" borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor"/></statuses> <nodes> <Node key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="CustomKrones" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false" width="auto" maxWidth="500"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}" arrowOrientation="ChildOf" arrowPosition="Middle" press="linePress"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph></m:items></m:FlexBox></l:fixContent></l:FixFlex> </mvc:View></script>';
-            }
-            else{
-                div0.innerHTML = '<?xml version="1.0"?><script id="oView_DownStream' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout"><l:FixFlex><l:fixContent><m:FlexBox fitContainer="true" renderType="Bare" wrap="Wrap"><m:items><Graph  enableWheelZoom="true"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="TopBottom"> <layoutData> <m:FlexItemData/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <statuses><Status key="CustomKrones" title="Standard" backgroundColor="#0060AD" borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor"/></statuses> <nodes> <Node key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="CustomKrones" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false" width="auto" maxWidth="500"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}" arrowOrientation="ParentOf" arrowPosition="Middle" press="linePress"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph></m:items></m:FlexBox></l:fixContent></l:FixFlex> </mvc:View></script>';
-            }
+            div0.innerHTML = '<?xml version="1.0"?><script id="oView_UpStream' + widgetName + '" name="oView_' + widgetName + '" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns="sap.suite.ui.commons.networkgraph" xmlns:layout="sap.suite.ui.commons.networkgraph.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns:l="sap.ui.layout"><l:FixFlex><l:fixContent><m:FlexBox fitContainer="true" renderType="Bare" wrap="Wrap"><m:items><Graph  enableWheelZoom="true"  nodes="{' + widgetName + '>/nodes}" lines="{' + widgetName + '>/lines}" groups="{' + widgetName + '>/groups}" id="graph_' + widgetName + '" orientation="TopBottom"> <layoutData> <m:FlexItemData/> </layoutData> <layoutAlgorithm> <layout:LayeredLayout mergeEdges="{settings>mergeEdges}" nodePlacement="{settings>nodePlacement}" nodeSpacing="{settings>nodeSpacing}" lineSpacingFactor="{settings>lineSpacingFactor}"> </layout:LayeredLayout> </layoutAlgorithm> <statuses><Status key="CustomKrones" title="Standard" backgroundColor="#0060AD" borderColor="sapUiContentShadowColor" hoverBorderColor="sapUiContentShadowColor"/></statuses> <nodes> <Node key="{' + widgetName +'>key}"  title="{' + widgetName + '>title}" icon="{' + widgetName + '>icon}" group="{' + widgetName + '>group}" attributes="{' + widgetName + '>attributes}"  shape="Box" status="CustomKrones" x="{' + widgetName + '>x}"  y="{' + widgetName + '>y}" showDetailButton="false" width="auto" maxWidth="500"> <attributes> <ElementAttribute label="{' + widgetName + '>label}" value="{' + widgetName + '>value}"/> </attributes> </Node> </nodes> <lines> <Line from="{' + widgetName + '>from}" to="{' + widgetName + '>to}" status="{' + widgetName + '>status}" arrowOrientation="ChildOf" arrowPosition="Middle" press="linePress"></Line> </lines> <groups> <Group key="{' + widgetName + '>key}" title="{' + widgetName + '>title}"></Group> </groups> </Graph></m:items></m:FlexBox></l:fixContent></l:FixFlex> </mvc:View></script>';
+
 
             if(that._firstConnection === 1){
                 _shadowRoot.removeChild(_shadowRoot.lastChild);
@@ -764,12 +760,8 @@
 
             that_.appendChild(div);
 
-            if(setHierarchyType === "Upstream"){
-                var mapcanvas_divstr = _shadowRoot.getElementById('oView_UpStream' + widgetName);
-            }
-            else{
-                var mapcanvas_divstr = _shadowRoot.getElementById('oView_DownStream' + widgetName);
-            }
+            var mapcanvas_divstr = _shadowRoot.getElementById('oView_UpStream' + widgetName);
+
             Ar = [];
             Ar.push({
                 'id': widgetName,
@@ -790,171 +782,6 @@
                 "use strict";
 
                 return Controller.extend("myView.Template", {
-
-                    linePress: function (oEvent) {
-
-                        var sFromNode = oEvent.getSource().getProperty("from"),
-                            sToNode = oEvent.getSource().getProperty("to"),
-                            oOverallModel = [],
-                            aSelectedSource = [];
-                            oOverallModel = that.oModel;
-
-
-                            if(that.sSelDisplayOption === "Upstream"){
-                                aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sToNode && oOverallModel.Child_TargetBatch.id === sFromNode);
-
-                                this._oPopoverForLine = new Popover({
-                                    title: "From " + sToNode + " to " + sFromNode,
-                                    contentWidth: "20%",
-                                    content: [
-                                        new sap.m.HBox({
-                                            width: "100%",
-                                            items:[
-                                                new sap.m.VBox({
-                                                    width: "100%",
-                                                    items:[
-                                                        new sap.m.HBox({
-                                                            width: "100%",
-                                                            items:[
-                                                                new sap.m.VBox({
-                                                                    width: "50%",
-                                                                    alignItems: "Start",
-                                                                    items:[
-                                                                        new sap.m.Label({
-                                                                            text: "Transferstart: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Transferend: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Quantity: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Production ordernumber: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Status: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "System ID: "
-                                                                        })
-                                                                    ]
-                                                                }),
-                                                                new sap.m.VBox({
-                                                                    width: "50%",
-                                                                    alignItems: "Start",
-                                                                    items:[
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].STARTTRANSFER.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].ENDTRANSFER.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.description
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].SOURCESTATUS.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].SOURCESYSTEMIDENT.id
-                                                                        })
-                                                                    ]
-                                                                })
-                                                            ]
-                                                        })
-                                                    ]
-                                                })
-                                            ]
-                                        })
-                                    ]
-                                });
-                            }
-                            else{
-                                aSelectedSource = oOverallModel.filter(oOverallModel => oOverallModel.Child_SourceBatch.id === sFromNode && oOverallModel.Child_TargetBatch.id === sToNode);
-
-                                this._oPopoverForLine = new Popover({
-                                    title: "From " + sFromNode + " to " + sToNode,
-                                    contentWidth: "20%",
-                                    content: [
-                                        new sap.m.HBox({
-                                            width: "100%",
-                                            items:[
-                                                new sap.m.VBox({
-                                                    width: "100%",
-                                                    items:[
-                                                        new sap.m.HBox({
-                                                            width: "100%",
-                                                            items:[
-                                                                new sap.m.VBox({
-                                                                    width: "50%",
-                                                                    alignItems: "Start",
-                                                                    items:[
-                                                                        new sap.m.Label({
-                                                                            text: "Transferstart: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Transferend: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Quantity: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Production ordernumber: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "Status: "
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: "System ID: "
-                                                                        })
-                                                                    ]
-                                                                }),
-                                                                new sap.m.VBox({
-                                                                    width: "50%",
-                                                                    alignItems: "Start",
-                                                                    items:[
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].STARTTRANSFER.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].ENDTRANSFER.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0]['@MeasureDimension'].rawValue +" "+ aSelectedSource[0].UNITOFMEASURE.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].PRODUCTIONORDERIDENT.description
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].SOURCESTATUS.id
-                                                                        }),
-                                                                        new sap.m.Label({
-                                                                            text: " " + aSelectedSource[0].SOURCESYSTEMIDENT.id
-                                                                        })
-                                                                    ]
-                                                                })
-                                                            ]
-                                                        })
-                                                    ]
-                                                })
-                                            ]
-                                        })
-                                    ]
-                                });
-                            }
-                            
-                        console.log(aSelectedSource);
-
-                        
-                        // Prevents render a default tooltip
-                        oEvent.preventDefault();
-                        this._oPopoverForLine.openBy(oEvent.getParameter("opener"));
-                    },
-
                     onInit: function () {
                         var this_ = this;
 
@@ -964,7 +791,7 @@
                             
                             oModel.setSizeLimit(Number.MAX_SAFE_INTEGER);
 
-                            this_.getView().setModel(oModel, that.widgetName);
+                            this_.getView().setModel(oModel, that.data[0]);
 
                             this_.oModelSettings = new JSONModel({
                                 maxIterations: 200,
