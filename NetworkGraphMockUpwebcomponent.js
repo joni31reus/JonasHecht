@@ -12,7 +12,7 @@
     </style>      
     `;
 
-    class NetworkGraphForceBased extends HTMLElement {
+    class MockUpNetworkGraph extends HTMLElement {
 
         constructor() {
             super();
@@ -720,7 +720,7 @@
         }
 
     }
-    customElements.define("com-fd-djaja-sap-sac-mockupNetworkGraph", NetworkGraphForceBased);
+    customElements.define("com-fd-djaja-sap-sac-mockupNetworkGraph", MockUpNetworkGraph);
 
     // UTILS
     function loadthis(that, setHierarchyType) {
