@@ -23,6 +23,8 @@
             _shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
             _id = createGuid();
+            var that = this;
+            loadthis(that);
 
             //_shadowRoot.querySelector("#oView").id = "oView";
 
@@ -150,7 +152,7 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             console.log(changedProperties);
             var that = this;
-            loadthis(that);
+            //loadthis(that);
         }
 
         _renderExportButton() {
