@@ -720,13 +720,13 @@
         }
 
     }
-    customElements.define("com-fd-djaja-sap-sac-mockupNetworkGraph", MockUpNetworkGraph);
+    customElements.define("sac-mock-network-graph", MockUpNetworkGraph);
 
     // UTILS
     function loadthis(that, setHierarchyType) {
         var that_ = that;
 
-        widgetName = "mockupNetworkGraph_1";
+        widgetName = "mockNetworkGraph_1";
         console.log("widgetName:" + widgetName);
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
