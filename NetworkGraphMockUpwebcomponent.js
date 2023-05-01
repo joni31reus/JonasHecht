@@ -726,7 +726,7 @@
     function loadthis(that, setHierarchyType) {
         var that_ = that;
 
-        widgetName = "networkgraph";
+        widgetName = "mockupNetworkGraph_1";
         console.log("widgetName:" + widgetName);
         if (typeof widgetName === "undefined") {
             widgetName = that._export_settings.title.split("|")[0];
