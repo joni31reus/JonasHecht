@@ -225,260 +225,59 @@
             "nodes": [
                 {
                     "key": 0,
-                    "title": "Iron Man",
-                    "group": 1,
-                    "status": "Error",
-                    "icon": "sap-icon://key-user-settings",
+                    "title": "Stretch Blow Molder",
+                    "status": "Success",
                     "attributes": [
                         {
-                            "label": "Release date",
-                            "value": "May 2, 2008"
-                        },{
-                            "label": "Director",
-                            "value": "Jon Favreau"
+                            "label": "Technical Availability",
+                            "value": "92,59%"
                         }
                     ]
                 },{
                     "key": 1,
-                    "title": "Iron Man 2",
-                    "group": 1,
-                    "status": "Error",
-                    "icon": "sap-icon://key-user-settings",
+                    "title": "Filler",
+                    "status": "Warning",
                     "attributes": [
                         {
-                            "label": "Release date",
-                            "value": "May 7, 2010"
-                        },{
-                            "label": "Director",
-                            "value": "Jon Favreau"
+                            "label": "Technical Availability",
+                            "value": "81,81%"
                         }
                     ]
                 },{
                     "key": 2,
-                    "title": "The Incredible Hulk",
-                    "group": 1,
-                    "icon": "sap-icon://theater",
+                    "title": "Labeller",
+                    "status": "Error",
                     "attributes": [
                         {
-                            "label": "Release date",
-                            "value": "June 13, 2008"
-                        },{
-                            "label": "Director",
-                            "value": "Louis Leterrier"
+                            "label": "Technical Availability",
+                            "value": "59,06%"
                         }
                     ]
                 },{
                     "key": 3,
-                    "title": "Thor",
-                    "group": 1,
-                    "status": "Warning",
-                    "icon": "sap-icon://wrench",
+                    "title": "Non-returnable Packer",
+                    "status": "Success",
                     "attributes": [
                         {
-                            "label": "Release date",
-                            "value": "May 6, 2011"
-                        },{
-                            "label": "Director",
-                            "value": "Kenneth Branagh"
+                            "label": "Technical Availability",
+                            "value": "92,39%"
                         }
                     ]
                 },{
                     "key": 4,
-                    "title": "Captain America: The First Avenger",
-                    "group": 1,
+                    "title": "Palettizer",
                     "status": "Success",
-                    "icon": "sap-icon://unfavorite",
                     "attributes": [
                         {
-                            "label": "Release date",
-                            "value": "July 22, 2011"
-                        },{
-                            "label": "Director",
-                            "value": "Joe Johnston"
+                            "label": "Technical Availability",
+                            "value": "94,14%"
                         }
                     ]
-                },{
-                    "key": 5,
-                    "title": "Marvel's The Avengers",
-                    "group": 1,
-                    "status": "Error",
-                    "icon": "sap-icon://text-color",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "May 4, 2012"
-                        },{
-                            "label": "Director",
-                            "value": "Joss Whedon"
-                        }
-                    ]
-                },{
-                    "key": 6,
-                    "title": "Iron Man 3",
-                    "group": 2,
-                    "status": "Error",
-                    "icon": "sap-icon://key-user-settings",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "May 3, 2013"
-                        },{
-                            "label": "Director",
-                            "value": "Shane Black"
-                        }
-                    ]
-                },{
-                    "key": 7,
-                    "title": "Thor: The Dark World",
-                    "group": 2,
-                    "status": "Warning",
-                    "icon": "sap-icon://wrench",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "November 8, 2013"
-                        },{
-                            "label": "Director",
-                            "value": "Alan Taylor"
-                        }
-                    ]
-                },{
-                    "key": 8,
-                    "title": "Captain America: The Winter Soldier",
-                    "group": 2,
-                    "status": "Success",
-                    "icon": "sap-icon://unfavorite",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "April 4, 2014"
-                        },{
-                            "label": "Director",
-                            "value": "Anthony & Joe Russo"
-                        }
-                    ]
-                },{
-                    "key": 9,
-                    "title": "Doctor Strange",
-                    "group": 2,
-                    "icon": "sap-icon://activate",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "November 4, 2016"
-                        },{
-                            "label": "Director",
-                            "value": "Scott Derrickson"
-                        }
-                    ]
-                },{
-                    "key": 10,
-                    "title": "Avengers: Age of Ultron",
-                    "group": 2,
-                    "status": "Error",
-                    "icon": "sap-icon://text-color",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "May 1, 2015"
-                        },{
-                            "label": "Director",
-                            "value": "Joss Whedon"
-                        }
-                    ]
-                },{
-                    "key": 11,
-                    "title": "Ant-Man and the Wasp",
-                    "group": 2,
-                    "icon": "sap-icon://chain-link",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "July 6, 2018"
-                        },{
-                            "label": "Director",
-                            "value": "Peyton Reed"
-                        }
-                    ]
-                },{
-                    "key": 12,
-                    "title": "Thor: Ragnarok",
-                    "group": 2,
-                    "status": "Warning",
-                    "icon": "sap-icon://wrench",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "November 3, 2017"
-                        },{
-                            "label": "Director",
-                            "value": "Taika Waititi"
-                        }
-                    ]
-                },{
-                    "key": 13,
-                    "title": "Ant-Man",
-                    "group": 2,
-                    "icon": "sap-icon://chain-link",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "July 17, 2015"
-                        },{
-                            "label": "Director",
-                            "value": "Peyton Reed"
-                        }
-                    ]
-                },{
-                    "key": 14,
-                    "title": "Captain America: Civil War",
-                    "group": 2,
-                    "status": "Success",
-                    "icon": "sap-icon://unfavorite",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "May 6, 2016"
-                        },{
-                            "label": "Director",
-                            "value": "Anthony & Joe Russo"
-                        }
-                    ]
-                },{
-                    "key": 15,
-                    "title": "Guardians of the Galaxy",
-                    "group": 2,
-                    "icon": "sap-icon://shield",
-                    "attributes": [
-                        {
-                            "label": "Release date",
-                            "value": "August 1, 2014"
-                        },{
-                            "label": "Director",
-                            "value": "James Gunn"
-                        }
-                    ]
-                }
+                },
             ],
             "lines": [
                 {"from": 0, "to": 1},
-                {"from": 1, "to": 2},
-                {"from": 2, "to": 3},
-                {"from": 3, "to": 4},
-                {"from": 4, "to": 5},
-                {"from": 5, "to": 6},
-                {"from": 6, "to": 7},
-                {"from": 7, "to": 8},
-                {"from": 9, "to": 10},
-                {"from": 10, "to": 11},
-                {"from": 11, "to": 12},
-                {"from": 12, "to": 13},
-                {"from": 13, "to": 14},
-                {"from": 14, "to": 15}
-            ],
-            "groups": [
-                {"key": 1, "title": "Phase One"},
-                {"key": 2, "title": "Phase Two"}
+                {"from": 1, "to": 2}
             ]
         }];
         var that_ = that;
