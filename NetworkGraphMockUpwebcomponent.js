@@ -277,7 +277,9 @@
             ],
             "lines": [
                 {"from": 0, "to": 1},
-                {"from": 1, "to": 2}
+                {"from": 1, "to": 2},
+                {"from": 2, "to": 3},
+                {"from": 3, "to": 4}
             ]
         }];
         var that_ = that;
