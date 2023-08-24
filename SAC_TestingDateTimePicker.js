@@ -2,6 +2,7 @@
 
     let _shadowRoot,
         _id,
+        _dateTime,
         template = document.createElement("template");
     template.innerHTML = `
                             <style></style>
@@ -21,7 +22,8 @@
                                             <l:content>
                                                 <DateTimePicker
                                                     id="DTP_1"
-                                                    placeholder="Enter date..."/>
+                                                    placeholder="Enter date..."
+                                                    change="onDTPChanged"/>
                                             </l:content>
                                     </l:VerticalLayout>
                                 </mvc:View>
@@ -38,6 +40,9 @@
             _id = createGuid();
 
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
+
+            this._export_settings = {};
+            this._export_settings_dateTime = "";
         }
 
         connectedCallback() {
@@ -133,11 +138,30 @@
         onCustomWidgetAfterUpdate(changedProperties) {
             loadDateTimePicker(this);
         }
+
+        _firePropertiesChanged() {
+            this.dateTime = "";
+            this.dispatchEvent(new CustomEvent("propertiesChanged", {
+                detail: {
+                    properties: {
+                        dateTime: this.dateTime
+                    }
+                }
+            }));
+        }
+
+        get dateTime(){
+            return this._export_settings_dateTime;
+        }
+        set dateTime(value){
+            value = _dateTime;
+            this._export_settings_dateTime = value;
+        }
     }
     customElements.define("krones-sac-testing-sapui5-datatimepicker", TestingDateTimePicker);
 
     function loadDateTimePicker(that){
-        let that_ = that;
+        var that_ = that;
 
         let content = document.createElement('div');
         content.slot = "content";
@@ -154,6 +178,14 @@
                 return Controller.extend("myView.Template", {
                     onInit: function(){
                         console.log("onInit");
+                    },
+
+                    onDTPChanged: function(oEvent){
+                        _dateTime = oView.byId("DTP_1").getValue();
+                        this._firePropertiesChanged();
+
+                        this.settings = {};
+                        this.settings.dateTime = "";
                     }
                 });
             });
