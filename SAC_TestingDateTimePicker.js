@@ -40,9 +40,6 @@
             _id = createGuid();
 
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
-
-            this._export_settings = {};
-            this._export_settings_dateTime = "";
         }
 
         connectedCallback() {
@@ -148,14 +145,6 @@
                     }
                 }
             }));
-        }
-
-        get dateTime(){
-            return this._export_settings_dateTime;
-        }
-        set dateTime(value){
-            value = _dateTime;
-            this._export_settings_dateTime = value;
         }
     }
     customElements.define("krones-sac-testing-sapui5-datatimepicker", TestingDateTimePicker);
