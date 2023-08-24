@@ -5,7 +5,7 @@
         _dateTime,
         template = document.createElement("template");
 
-        
+
     template.innerHTML = `
                             <style></style>
                             <div id="ui5_content name="ui5_content>
@@ -19,7 +19,6 @@
                                     xmlns:mvc="sap.ui.core.mvc"
                                     xmlns="sap.m">
                                     <l:VerticalLayout
-                                        class="sapUiContentPadding"
                                         width="100%">
                                             <l:content>
                                                 <DateTimePicker
