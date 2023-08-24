@@ -23,7 +23,7 @@
                                             <l:content>
                                                 <DateTimePicker
                                                     id="DTP_1"
-                                                    placeholder="` + this.placeholderText + `"
+                                                    placeholder="enter date..."
                                                     change="onDTPChanged"/>
                                             </l:content>
                                     </l:VerticalLayout>
