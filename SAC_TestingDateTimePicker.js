@@ -28,6 +28,24 @@
             div         = document.createElement('div');
 
         div.innerHTML = '<?xml version="1.0"?><script type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout xmlns="sap.m"><DateTimePicker id="DTP1" placeholder="Enter Date"/></mvc:View></script>';
+        this.shadowRoot.appendChild(div);
+
+        sap.ui.getCore().attachInit(function(){
+            "use strict";
+
+            sap.ui.define([
+                "sap/ui/core/mvc/Controller"
+            ], function(Controller){
+                "use strict";
+
+                return Controller.extend("myView.Template", {
+                    onInit: function(){
+
+                    }
+                });
+            });
+            
+        });
     }
 
 })();
