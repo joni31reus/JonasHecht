@@ -9,6 +9,8 @@
 
             this.shadowRoot = this.attachShadow({mode: "open"});
             this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+            loadDateTimePicker();
         }
 
         onCustomWidgetBeforeUpdate(oChangedProperties){
@@ -23,7 +25,7 @@
     }
     customElements.define("krones-sac-testing-sapui5-datatimepicker", TestingDateTimePicker);
 
-    function loadDateTimePicker(oEvent){
+    function loadDateTimePicker(){
         let sWidgetName = "",
             div         = document.createElement('div');
 
