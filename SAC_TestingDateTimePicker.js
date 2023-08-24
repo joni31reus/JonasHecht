@@ -50,7 +50,7 @@
 
                 return Controller.extend("myView.Template", {
                     onInit: function(){
-
+                        console.log("onInit");
                     }
                 });
             });
