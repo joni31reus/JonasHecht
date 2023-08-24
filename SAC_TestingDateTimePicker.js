@@ -1,14 +1,15 @@
 (function(){
 
-    let template = document.createElement("template");
+    let shadowRoot,
+        template = document.createElement("template");
     template.innerHTML = `<style></style>`;
                         
     class TestingDateTimePicker extends HTMLElement{
         constructor(){
             super();
 
-            this.shadowRoot = this.attachShadow({mode: "open"});
-            this.shadowRoot.appendChild(template.content.cloneNode(true));
+            shadowRoot = this.attachShadow({mode: "open"});
+            shadowRoot.appendChild(template.content.cloneNode(true));
 
             loadDateTimePicker();
         }
@@ -30,9 +31,9 @@
             div         = document.createElement('div');
 
         div.innerHTML = '<?xml version="1.0"?><script id="oView" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout xmlns="sap.m"><DateTimePicker id="DTP1" placeholder="Enter Date"/></mvc:View></script>';
-        this.shadowRoot.appendChild(div);
+        shadowRoot.appendChild(div);
 
-        let mapcanvas_divstr = this.shadowRoot.getElementbyId('oView' + sWidgetName),
+        let mapcanvas_divstr = shadowRoot.getElementbyId('oView' + sWidgetName),
             aArray = [];
             aArray.push({
                 'id': sWidgetName,
