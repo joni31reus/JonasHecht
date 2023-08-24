@@ -33,7 +33,7 @@
         div.innerHTML = '<?xml version="1.0"?><script id="oView" type="sapui5/xmlview"><mvc:View controllerName="myView.Template" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout xmlns="sap.m"><DateTimePicker id="DTP1" placeholder="Enter Date"/></mvc:View></script>';
         shadowRoot.appendChild(div);
 
-        let mapcanvas_divstr = shadowRoot.getElementbyId('oView' + sWidgetName),
+        let mapcanvas_divstr = shadowRoot.getElementById('oView' + sWidgetName),
             aArray = [];
             aArray.push({
                 'id': sWidgetName,
