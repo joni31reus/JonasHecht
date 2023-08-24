@@ -182,7 +182,7 @@
 
                     onDTPChanged: function(oEvent){
                         _dateTime = oView.byId("DTP_1").getValue();
-                        this._firePropertiesChanged();
+                        that._firePropertiesChanged();
 
                         this.settings = {};
                         this.settings.dateTime = "";
