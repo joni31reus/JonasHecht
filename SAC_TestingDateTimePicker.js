@@ -1,7 +1,7 @@
 (function(){
 
     let _shadowRoot,
-        _placeholder = "enter date...",
+        _placeholder,
         _id,
         _dateTime,
         template = document.createElement("template");
@@ -23,7 +23,7 @@
                         <l:content>
                             <DateTimePicker
                                 id="DTP_1"
-                                placeholder="`+ _placeholder +`"
+                                placeholder="enter date..."
                                 change="onDTPChanged"/>
                         </l:content>
                 </l:VerticalLayout>
@@ -193,6 +193,7 @@
         var oView  = sap.ui.xmlview({
             viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
         });
+        oView.byId("DTP_1").setPlaceholder(_placeholder);
         oView.placeAt(content);
     }
 
