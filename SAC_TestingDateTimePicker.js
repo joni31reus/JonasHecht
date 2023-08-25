@@ -185,8 +185,8 @@
                         _dateTime = oView.byId("DTP_1").getValue();
                         that._firePropertiesChanged();
 
-                        this.settings = {};
-                        this.settings.dateTime = "";
+                        //this.settings = {};
+                        //this.settings.dateTime = "";
                     }
                 });
             });
