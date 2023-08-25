@@ -1,6 +1,7 @@
 (function(){
 
     let _shadowRoot,
+        _placeholder = "enter date...",
         _id,
         _dateTime,
         template = document.createElement("template");
@@ -23,7 +24,7 @@
                                             <l:content>
                                                 <DateTimePicker
                                                     id="DTP_1"
-                                                    placeholder="enter date..."
+                                                    placeholder="`+ _placeholder +`"
                                                     change="onDTPChanged"/>
                                             </l:content>
                                     </l:VerticalLayout>
@@ -134,6 +135,10 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
+            if("placeholder" in changedProperties){
+                _placeholder = changedProperties.placeholder;
+            }
+
             loadDateTimePicker(this);
         }
 
