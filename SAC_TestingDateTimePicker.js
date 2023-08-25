@@ -188,7 +188,9 @@
         var oView  = sap.ui.xmlview({
             viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
         });
-        oView.byId("DTP_1").setPlaceholder(that._placeholder);
+        if(that.placeholder != undefiend){
+            oView.byId("DTP_1").setPlaceholder(that.placeholder);
+        }
         oView.placeAt(content);
     }
 
