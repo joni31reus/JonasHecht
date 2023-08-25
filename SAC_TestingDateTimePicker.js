@@ -41,9 +41,6 @@
             _id = createGuid();
 
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
-
-            //this._export_settings = {};
-            //this._export_settings_dateTime = "";
         }
 
         connectedCallback() {
@@ -145,7 +142,7 @@
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
                 detail: {
                     properties: {
-                        dateTime: this.dateTime
+                        dateTimeT: this.dateTime
                     }
                 }
             }));
