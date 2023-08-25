@@ -142,7 +142,7 @@
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
                 detail: {
                     properties: {
-                        dateTime: this.dateTimeT
+                        dateTime: this.dateTime
                     }
                 }
             }));
