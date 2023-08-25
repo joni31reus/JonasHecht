@@ -165,9 +165,9 @@
     function loadDateTimePicker(that){
         var that_ = that;
 
-        /*let content = document.createElement('div');
+        let content = document.createElement('div');
         content.slot = "content";
-        that_.appendChild(content);*/
+        that_.appendChild(content);
 
         sap.ui.getCore().attachInit(function(){
             "use strict";
