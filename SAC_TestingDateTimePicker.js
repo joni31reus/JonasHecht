@@ -139,6 +139,7 @@
 
         _firePropertiesChanged() {
             this.dateTime = "";
+            this.placeholderText = "";
             this.dispatchEvent(new CustomEvent("propertiesChanged", {
                 detail: {
                     properties: {
