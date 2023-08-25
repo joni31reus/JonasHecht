@@ -133,10 +133,6 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            if("placeholder" in changedProperties){
-                this._placeholder = changedProperties.placeholder;
-            }
-
             loadDateTimePicker(this);
         }
 
@@ -192,7 +188,7 @@
         var oView  = sap.ui.xmlview({
             viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
         });
-        oView.byId("DTP_1").setPlaceholder(this._placeholder);
+        oView.byId("DTP_1").setPlaceholder(that._placeholder);
         oView.placeAt(content);
     }
 
