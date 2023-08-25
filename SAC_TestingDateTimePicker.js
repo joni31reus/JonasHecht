@@ -1,7 +1,6 @@
 (function(){
 
     let _shadowRoot,
-        _placeholder,
         _id,
         _dateTime,
         template = document.createElement("template");
@@ -135,7 +134,7 @@
 
         onCustomWidgetAfterUpdate(changedProperties) {
             if("placeholder" in changedProperties){
-                _placeholder = changedProperties.placeholder;
+                this._placeholder = changedProperties.placeholder;
             }
 
             loadDateTimePicker(this);
@@ -193,7 +192,7 @@
         var oView  = sap.ui.xmlview({
             viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
         });
-        oView.byId("DTP_1").setPlaceholder(_placeholder);
+        oView.byId("DTP_1").setPlaceholder(this._placeholder);
         oView.placeAt(content);
     }
 
