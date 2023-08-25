@@ -42,8 +42,8 @@
 
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
 
-            this._export_settings = {};
-            this._export_settings_dateTime = "";
+            //this._export_settings = {};
+            //this._export_settings_dateTime = "";
         }
 
         connectedCallback() {
@@ -184,9 +184,6 @@
                     onDTPChanged: function(oEvent){
                         _dateTime = oView.byId("DTP_1").getValue();
                         that._firePropertiesChanged();
-
-                        //this.settings = {};
-                        //this.settings.dateTime = "";
                     }
                 });
             });
