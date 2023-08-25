@@ -6,31 +6,30 @@
         _dateTime,
         template = document.createElement("template");
 
-
     template.innerHTML = `
-                            <style></style>
-                            <div id="ui5_content name="ui5_content>
-                                <slot name="content"></slot>
-                            </div>
+        <style></style>
+        <div id="ui5_content name="ui5_content>
+            <slot name="content"></slot>
+        </div>
 
-                            <script id="oView" name="oView" type="sapui5/xmlview">
-                                <mvc:View
-                                    controllerName="myView.Template"
-                                    xmlns:l="sap.ui.layout"
-                                    xmlns:mvc="sap.ui.core.mvc"
-                                    xmlns="sap.m">
-                                    <l:VerticalLayout
-                                        width="100%">
-                                            <l:content>
-                                                <DateTimePicker
-                                                    id="DTP_1"
-                                                    placeholder="`+ _placeholder +`"
-                                                    change="onDTPChanged"/>
-                                            </l:content>
-                                    </l:VerticalLayout>
-                                </mvc:View>
-                            </script>
-                        `;
+        <script id="oView" name="oView" type="sapui5/xmlview">
+            <mvc:View
+                controllerName="myView.Template"
+                xmlns:l="sap.ui.layout"
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns="sap.m">
+                <l:VerticalLayout
+                    width="100%">
+                        <l:content>
+                            <DateTimePicker
+                                id="DTP_1"
+                                placeholder="`+ _placeholder +`"
+                                change="onDTPChanged"/>
+                        </l:content>
+                </l:VerticalLayout>
+            </mvc:View>
+        </script>
+    `;
                         
     class TestingDateTimePicker extends HTMLElement{
         constructor(){
@@ -166,9 +165,9 @@
     function loadDateTimePicker(that){
         var that_ = that;
 
-        let content = document.createElement('div');
+        /*let content = document.createElement('div');
         content.slot = "content";
-        that_.appendChild(content);
+        that_.appendChild(content);*/
 
         sap.ui.getCore().attachInit(function(){
             "use strict";
