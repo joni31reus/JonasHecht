@@ -6,6 +6,37 @@
 
     template.innerHTML = `
         <style></style>
+        <div id="ui5_content" name="ui5_content">
+            <slot name="content"/>
+        </div>
+
+        <script id="oView" name="oView" type="sapui5/xmlview">
+            <mvc:View
+                controllerName="myView.Template"
+                xmlns="sap.m"
+                xmlns:viz="sap.viz.ui5.controls"
+                xmlns:layout="sap.ui.layout"
+                xmlns:mvc="sap.ui.core.mvc"
+                xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+                xmlns:viz.data="sap.viz.ui5.data">
+                    <layout:FixFlex>
+                        <layout:fixContent>
+                            <viz:VizFrame
+                                id="idVizFrame"
+                                uiConfig="{applicationSet: 'fiori'}"
+                                height="100%"
+                                width="100%"
+                                vizType="line">
+                                <viz:dataset>
+                                    <viz.data:FlattenedDataset
+                                        data="">
+                                    </viz.data:FlattenedDataset>
+                                </viz:dataset>
+                            </viz:VizFrame>
+                        </layout:fixContent>
+                    </layout:FixFlex>
+            </mvc:View>
+        </script>
     `;
                         
     class TestingVizFrameLineChart extends HTMLElement{
@@ -130,6 +161,7 @@
         content.slot = "content";
         that_.appendChild(content);
 
+//--------------------Controller--------------------
         sap.ui.getCore().attachInit(function(){
             "use strict";
 
@@ -141,15 +173,11 @@
                 return Controller.extend("myView.Template", {
                     onInit: function(){
                         console.log("onInit");
-                    },
-
-                    onDTPChanged: function(oEvent){
-                        _dateTime = oView.byId("DTP_1").getValue();
-                        that._firePropertiesChanged();
                     }
                 });
             });
         });
+//--------------------Controller--------------------
 
         var oView  = sap.ui.xmlview({
             viewContent: jQuery(_shadowRoot.getElementById(_id + "_oView")).html(),
