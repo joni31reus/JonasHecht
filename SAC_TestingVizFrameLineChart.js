@@ -203,7 +203,8 @@
                     i++;
                 }
             }
-            this.data.Items = aChartData;
+            this.data = [],
+            this.data.push({chartData: aChartData});
             loadVizFrameLineChart(this);
         }
     }
