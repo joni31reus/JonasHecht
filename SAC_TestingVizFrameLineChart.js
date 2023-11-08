@@ -11,60 +11,22 @@
         </div>
 
         <script id="oView" name="oView" type="sapui5/xmlview">
-            <mvc:View
-                controllerName="myView.Template"
-                xmlns="sap.m"
-                xmlns:viz="sap.viz.ui5.controls"
-                xmlns:layout="sap.ui.layout"
-                xmlns:mvc="sap.ui.core.mvc"
-                xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
-                xmlns:viz.data="sap.viz.ui5.data">
-                    <layout:FixFlex>
-                        <layout:fixContent>
-                            <viz:VizFrame
-                                id="idVizFrame"
-                                uiConfig="{applicationSet: 'fiori'}"
-                                height="100%"
-                                width="100%"
-                                vizType="line"
-                                vizProperties="{title: {text: 'Test'}}">
-                                <viz:dataset>
-                                    <viz.data:FlattenedDataset
-                                        data="{LineChartData>/chartData}">
-                                        <viz.data:dimensions>
-                                            <viz.data:DimensionDefinition
-                                                name="Day"
-                                                value="{LineChartData>Date}"/>
-                                        </viz.data:dimensions>
-                                        <viz.data:measures>
-                                            <viz.data:MeasureDefinition 
-                                                name="Availability"
-                                                value="{LineChartData>Percent}"/>
-                                        </viz.data:measures>
-                                    </viz.data:FlattenedDataset>
-                                </viz:dataset>
-
-                                <viz:feeds>
-                                    <viz.feeds:FeedItem 
-                                        id='valueAxisFeed' 
-                                        uid="valueAxis" 
-                                        type="Measure"
-                                        values="Availability"/>
-                                    <viz.feeds:FeedItem 
-                                        id='categoryAxisFeed' 
-                                        uid="categoryAxis" 
-                                        type="Dimension"
-                                        values="Day"/>
-                                </viz:feeds>
-                                <viz:dependents>
-                                    <viz:Popover 
-                                        id="idPopOver"/>
-                                </viz:dependents>
-                            </viz:VizFrame>
-                        </layout:fixContent>
-                    </layout:FixFlex>
-            </mvc:View>
-        </script>
+        <mvc:View
+            controllerName="myView.Template"
+            xmlns:l="sap.ui.layout"
+            xmlns:mvc="sap.ui.core.mvc"
+            xmlns="sap.m">
+            <l:VerticalLayout
+                width="100%">
+                    <l:content>
+                        <DateTimePicker
+                            id="DTP_1"
+                            placeholder="enter date..."
+                            change="onDTPChanged"/>
+                    </l:content>
+            </l:VerticalLayout>
+        </mvc:View>
+    </script>
     `;
                         
     class TestingVizFrameLineChart extends HTMLElement{
