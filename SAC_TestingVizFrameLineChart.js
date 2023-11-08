@@ -29,7 +29,7 @@
                                 vizType="line">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
-                                        data="">
+                                        data="{LineChartData>/Row}">
                                     </viz.data:FlattenedDataset>
                                 </viz:dataset>
                             </viz:VizFrame>
@@ -149,7 +149,33 @@
         }
 
         async setDataSource(source){
-            let that = this;
+            let that = this,
+                sDate, sDuration, sPercent,
+                aChartData = [];
+
+            for(var i = 0; i < source.length; i++){
+                //Check if two rows available
+                if(source.filter((row) => row.toDateTimeDimension.id == source[i].toDateTimeDimension.id).length === 2){
+
+                    sDate = source[i].toDateTimeDimension.id;
+
+                    if(source[i]['@MeasureDimension'].description === "DayLevel_MachineWorkingTime"){
+                        sDuration = source[i]['@MeasureDimension'].rawValue;
+                        sPercent = source[i+1]['@MeasureDimension'].rawValue;
+                    }
+                    else{
+                        sDuration = source[i+1]['@MeasureDimension'].rawValue;
+                        sPercent = source[i]['@MeasureDimension'].rawValue;
+                    }
+                    
+                    aChartData.push({
+                        "Date": sDate,
+                        "Duration": sDuration,
+                        "Percent": sPercent
+                    })
+                    i++;
+                }
+            }
         }
     }
     customElements.define("krones-sac-testing-sapui5-vizframe-line", TestingVizFrameLineChart);
