@@ -19,8 +19,7 @@
                 xmlns:mvc="sap.ui.core.mvc"
                 xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
                 xmlns:viz.data="sap.viz.ui5.data">
-                    <layout:FixFlex
-                        width="100%">
+                    <layout:FixFlex>
                         <layout:fixContent>
                             <viz:VizFrame
                                 id="idVizFrame"
