@@ -26,10 +26,11 @@
                                 uiConfig="{applicationSet: 'fiori'}"
                                 height="100%"
                                 width="100%"
-                                vizType="line">
+                                vizType="line"
+                                vizProperties="{title: {text: 'Test'}}">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
-                                        data="{LineChartData>/Items}">
+                                        data="{LineChartData>/chartData}">
                                         <viz.data:dimensions>
                                             <viz.data:DimensionDefinition
                                                 name="Day"
@@ -233,9 +234,6 @@
                         this.getView().setModel(oModel, "LineChartData");
 
                         var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
-                        oVizFrame.setVizProperties({
-                            
-                        });
                     }
                 });
             });
