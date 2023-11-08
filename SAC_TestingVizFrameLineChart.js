@@ -26,8 +26,7 @@
                                 uiConfig="{applicationSet: 'fiori'}"
                                 height="auto"
                                 width="auto"
-                                vizType="line"
-                                vizProperties="{title: {text: 'Test'}}">
+                                vizType="line">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
                                         data="{LineChartData>/chartData}">
@@ -230,6 +229,11 @@
                         this.getView().setModel(oModel, "LineChartData");
 
                         var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+                        oVizFrame.setVizProperties({
+                            title:{
+                                visible: true
+                            }
+                        })
                     }
                 });
             });
