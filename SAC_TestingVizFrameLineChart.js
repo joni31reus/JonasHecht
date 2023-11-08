@@ -29,9 +29,36 @@
                                 vizType="line">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
-                                        data="{LineChartData>/Row}">
+                                        data="{/LineChartData}">
+                                        <viz.data:dimensions>
+                                            <viz.data:DimensionDefinition
+                                                name="Day"
+                                                value="{Date}"/>
+                                        </viz.data:dimensions>
+                                        <viz.data:measures>
+                                            <viz.data:MeasureDefinition 
+                                                name="Availability"
+                                                value="{Percent}"/>
+                                        </viz.data:measures>
                                     </viz.data:FlattenedDataset>
                                 </viz:dataset>
+
+                                <viz:feeds>
+                                    <viz.feeds:FeedItem 
+                                        id='valueAxisFeed' 
+                                        uid="valueAxis" 
+                                        type="Measure"
+                                        values="Availability"/>
+                                    <viz.feeds:FeedItem 
+                                        id='categoryAxisFeed' 
+                                        uid="categoryAxis" 
+                                        type="Dimension"
+                                        values="Day"/>
+                                </viz:feeds>
+                                <viz:dependents>
+                                    <viz:Popover 
+                                        id="idPopOver"/>
+                                </viz:dependents>
                             </viz:VizFrame>
                         </layout:fixContent>
                     </layout:FixFlex>
@@ -202,7 +229,7 @@
                 return Controller.extend("myView.Template", {
                     onInit: function(){
                         let oModel = new JSONModel(that_.data);
-                        that_.getView().setModel(oModel, "LineChartData");
+                        this.getView().setModel(oModel, "LineChartData");
                     }
                 });
             });
