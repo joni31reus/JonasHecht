@@ -19,13 +19,12 @@
                 xmlns:mvc="sap.ui.core.mvc"
                 xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
                 xmlns:viz.data="sap.viz.ui5.data">
-                    <layout:VerticalLayout>
-                        <layout:content>
+                    <layout:FixFlex
+                        width="100%">
+                        <layout:fixContent>
                             <viz:VizFrame
                                 id="idVizFrame"
                                 uiConfig="{applicationSet: 'fiori'}"
-                                height="auto"
-                                width="auto"
                                 vizType="line">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
@@ -56,8 +55,8 @@
                                         values="Day"/>
                                 </viz:feeds>
                             </viz:VizFrame>
-                        </layout:content>
-                    </layout:VerticalLayout>
+                        </layout:fixContent>
+                    </layout:FixFlex>
             </mvc:View>
         </script>
     `;
