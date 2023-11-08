@@ -29,16 +29,16 @@
                                 vizType="line">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
-                                        data="{/LineChartData}">
+                                        data="{LineChartData>/Items}">
                                         <viz.data:dimensions>
                                             <viz.data:DimensionDefinition
                                                 name="Day"
-                                                value="{Date}"/>
+                                                value="{LineChartData>Date}"/>
                                         </viz.data:dimensions>
                                         <viz.data:measures>
                                             <viz.data:MeasureDefinition 
                                                 name="Availability"
-                                                value="{Percent}"/>
+                                                value="{LineChartData>Percent}"/>
                                         </viz.data:measures>
                                     </viz.data:FlattenedDataset>
                                 </viz:dataset>
@@ -203,7 +203,7 @@
                     i++;
                 }
             }
-            this.data = aChartData;
+            this.data.Items = aChartData;
             loadVizFrameLineChart(this);
         }
     }
@@ -230,6 +230,11 @@
                     onInit: function(){
                         let oModel = new JSONModel(that_.data);
                         this.getView().setModel(oModel, "LineChartData");
+
+                        var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
+                        oVizFrame.setVizProperties({
+                            
+                        });
                     }
                 });
             });
