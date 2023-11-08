@@ -24,8 +24,6 @@
                             <viz:VizFrame
                                 id="idVizFrame"
                                 uiConfig="{applicationSet: 'fiori'}"
-                                height="auto"
-                                width="auto"
                                 vizType="line">
                                 <viz:dataset>
                                     <viz.data:FlattenedDataset
