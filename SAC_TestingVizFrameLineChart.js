@@ -226,7 +226,7 @@
 
                 return Controller.extend("myView.Template", {
                     onInit: function(){
-                        let oModel = new JSONModel(that_.data);
+                        let oModel = new JSONModel(that_.data[0]);
                         this.getView().setModel(oModel, "LineChartData");
 
                         var oVizFrame = this.oVizFrame = this.getView().byId("idVizFrame");
