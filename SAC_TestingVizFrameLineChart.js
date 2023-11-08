@@ -176,8 +176,8 @@
                     i++;
                 }
             }
-
-            console.log(aChartData);
+            this.data = aChartData;
+            loadVizFrameLineChart(this);
         }
     }
     customElements.define("krones-sac-testing-sapui5-vizframe-line", TestingVizFrameLineChart);
@@ -200,7 +200,8 @@
 
                 return Controller.extend("myView.Template", {
                     onInit: function(){
-                        console.log("onInit");
+                        let oModel = new JSONModel(that_.data);
+                        that_.getView().setModel(oModel, "LineChartData");
                     }
                 });
             });
