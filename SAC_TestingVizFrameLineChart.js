@@ -161,11 +161,11 @@
 
                     if(source[i]['@MeasureDimension'].description === "DayLevel_MachineWorkingTime"){
                         sDuration = source[i]['@MeasureDimension'].rawValue;
-                        sPercent = source[i+1]['@MeasureDimension'].rawValue;
+                        sPercent = (parseFloat(source[i+1]['@MeasureDimension'].rawValue) * 100).toFixed(2);
                     }
                     else{
                         sDuration = source[i+1]['@MeasureDimension'].rawValue;
-                        sPercent = source[i]['@MeasureDimension'].rawValue;
+                        sPercent = (parseFloat(source[i]['@MeasureDimension'].rawValue) * 100).toFixed(2);
                     }
                     
                     aChartData.push({
@@ -176,6 +176,8 @@
                     i++;
                 }
             }
+
+            console.log(aChartData);
         }
     }
     customElements.define("krones-sac-testing-sapui5-vizframe-line", TestingVizFrameLineChart);
