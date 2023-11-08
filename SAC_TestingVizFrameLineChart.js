@@ -19,8 +19,8 @@
                 xmlns:mvc="sap.ui.core.mvc"
                 xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
                 xmlns:viz.data="sap.viz.ui5.data">
-                    <layout:FixFlex>
-                        <layout:fixContent>
+                    <layout:VerticalLayout>
+                        <layout:content>
                             <viz:VizFrame
                                 id="idVizFrame"
                                 uiConfig="{applicationSet: 'fiori'}"
@@ -56,8 +56,8 @@
                                         values="Day"/>
                                 </viz:feeds>
                             </viz:VizFrame>
-                        </layout:fixContent>
-                    </layout:FixFlex>
+                        </layout:content>
+                    </layout:VerticalLayout>
             </mvc:View>
         </script>
     `;
