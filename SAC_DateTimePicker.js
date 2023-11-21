@@ -180,7 +180,7 @@
                     onDTPChanged: function(oEvent){
                         _dateTime = oView.byId("DTP_1").getValue();
                         that._firePropertiesChanged();
-                        //that.dispatchEvent(new Event('onChange'));
+                        that.dispatchEvent(new Event('onChange'));
                     }
                 });
             });
