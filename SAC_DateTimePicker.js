@@ -155,7 +155,7 @@
             this._export_settings_dateTime = value;
         }
     }
-    customElements.define("krones-sac-customWidget-sapui5-datatimepicker", DateTimePicker);
+    customElements.define("krones-sac-customWidget-sapui5-datetimepicker", DateTimePicker);
 
     function loadDateTimePicker(that){
         var that_ = that;
