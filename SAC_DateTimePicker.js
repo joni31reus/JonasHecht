@@ -82,6 +82,10 @@
     function loadDateTimePicker(that){
         var that_ = that;
 
+        if(that_.childElementCount > 0){
+            that_.removeChild(that_.childNodes[0]);
+        }
+
         let content = document.createElement('div');
         content.slot = "content";
         that_.appendChild(content);
