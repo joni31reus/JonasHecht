@@ -49,7 +49,7 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            //loadDateTimePicker(this);
+            loadDateTimePicker(this);
         }
 
         _firePropertiesChanged() {
