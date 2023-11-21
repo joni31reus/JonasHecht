@@ -42,7 +42,7 @@
             _shadowRoot.querySelector("#oView").id = _id + "_oView";
         }
 
-        connectedCallback() {
+        /*connectedCallback() {
             try {
                 if (window.commonApp) {
                     let outlineContainer = commonApp.getShell().findElements(true, ele => ele.hasStyleClass && ele.hasStyleClass("sapAppBuildingOutline"))[0];
@@ -124,7 +124,7 @@
                 this._subscription();
                 this._subscription = null;
             }
-        }
+        }*/
 
         onCustomWidgetBeforeUpdate(changedProperties) {
             if ("designMode" in changedProperties) {
@@ -180,6 +180,7 @@
                     onDTPChanged: function(oEvent){
                         _dateTime = oView.byId("DTP_1").getValue();
                         that._firePropertiesChanged();
+                        that.dispatchEvent(new Event('onChange'));
                     }
                 });
             });
