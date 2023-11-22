@@ -65,12 +65,14 @@
 
         setPlaceholder(sPlaceholderText){
             console.log(sPlaceholderText);
-            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <l:VerticalLayout width="100%"> <l:content> <DateTimePicker id="DTP_1" placeholder="'+ sPlaceholderText +'" change="onDTPChanged"/> </l:content> </l:VerticalLayout></mvc:View>';
-            loadDateTimePicker(this);
+            //_shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <l:VerticalLayout width="100%"> <l:content> <DateTimePicker id="DTP_1" placeholder="'+ sPlaceholderText +'" change="onDTPChanged"/> </l:content> </l:VerticalLayout></mvc:View>';
+            //loadDateTimePicker(this);
         }
 
         setDateTime(sDateTime){
             console.log(sDateTime);
+            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"> <l:VerticalLayout width="100%"> <l:content> <DateTimePicker id="DTP_1" placeholder="Enter date" change="onDTPChanged" value="'+sDateTime+'"/> </l:content> </l:VerticalLayout></mvc:View>';
+            loadDateTimePicker(this);
         }
 
         get dateTime(){
