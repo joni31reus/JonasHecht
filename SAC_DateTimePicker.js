@@ -20,7 +20,7 @@
                 <l:VerticalLayout
                     width="100%">
                         <l:content>
-                            <Label text="Enter date"/>
+                            <Label text="Enter date:"/>
                             <DateTimePicker
                                 id="DTP_1"
                                 placeholder="Enter date"
@@ -76,6 +76,12 @@
 
             let dtInputDateTime = new Date(sDateTime).toISOString().split(".")[0];
             _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('value=""', 'value="'+dtInputDateTime+'" ');
+            loadDateTimePicker(this);
+        }
+
+        setTitle(sTitle){
+            console.log(sTitle);
+            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('text=""', 'text="'+sTitle+'" ');
             loadDateTimePicker(this);
         }
 
