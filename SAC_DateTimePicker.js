@@ -20,9 +20,10 @@
                 <l:VerticalLayout
                     width="100%">
                         <l:content>
+                            <Label text="Enter date"/>
                             <DateTimePicker
                                 id="DTP_1"
-                                placeholder="enter date..."
+                                placeholder="Enter date"
                                 change="onDTPChanged"
                                 value=""/>
                         </l:content>
@@ -66,7 +67,7 @@
 
         setPlaceholder(sPlaceholderText){
             console.log(sPlaceholderText);
-            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('placeholder="enter date..."', 'placeholder="'+sPlaceholderText+'" ');
+            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('placeholder="Enter date"', 'placeholder="'+sPlaceholderText+'" ');
             loadDateTimePicker(this);
         }
 
