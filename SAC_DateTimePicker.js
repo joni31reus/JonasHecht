@@ -66,6 +66,7 @@
         }
 
         setPlaceholder(sPlaceholderText){
+            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><l:VerticalLayout width="100%"><l:content><Label text="Enter date:"/><DateTimePicker id="DTP_1" placeholder="Enter date"  change="onDTPChanged" value=""/> </l:content></l:VerticalLayout></mvc:View>'
             console.log(sPlaceholderText);
             _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('placeholder="Enter date"', 'placeholder="'+sPlaceholderText+'" ');
             loadDateTimePicker(this);
