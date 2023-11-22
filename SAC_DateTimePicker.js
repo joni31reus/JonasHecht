@@ -69,6 +69,10 @@
             loadDateTimePicker(this);
         }
 
+        setDateTime(sDateTime){
+            console.log(sDateTime);
+        }
+
         get dateTime(){
             return this._export_settings_dateTime;
         }
