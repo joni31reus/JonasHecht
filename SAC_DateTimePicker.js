@@ -81,7 +81,7 @@
 
         setTitle(sTitle){
             console.log(sTitle);
-            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('text=""', 'text="'+sTitle+'" ');
+            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('text="Enter date:"', 'text="'+sTitle+':" ');
             loadDateTimePicker(this);
         }
 
