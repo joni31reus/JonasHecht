@@ -73,7 +73,7 @@
         setDateTime(sDateTime){
             console.log(sDateTime);
 
-            let dtInputDateTime = new Date(sDateTime);
+            let dtInputDateTime = new Date(sDateTime).toISOString().split(".")[0];
             _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('value=""', 'value="'+dtInputDateTime+'" ');
             loadDateTimePicker(this);
         }
