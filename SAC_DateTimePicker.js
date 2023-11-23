@@ -58,13 +58,13 @@
                 this.dateTimeUI = "";
             }
             if(changedProperties.placeholder !== undefined){
-                this.dateTimeUIthis = changedProperties.placeholder;
+                this.placeholderUI = changedProperties.placeholder;
             }
             if(changedProperties.title !== undefined){
-                this.dateTitleUI = changedProperties.title;
+                this.titleUI = changedProperties.title;
             }
 
-            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><l:VerticalLayout width="100%"><l:content><Label text="'+this.dateTitleUI+':"/><DateTimePicker id="DTP_1" placeholder="'+this.dateTimeUI+'"  change="onDTPChanged" value="'+this.dateTimeUI+'"/> </l:content></l:VerticalLayout></mvc:View>'
+            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><l:VerticalLayout width="100%"><l:content><Label text="'+this.titleUI+':"/><DateTimePicker id="DTP_1" placeholder="'+this.placeholderUI+'"  change="onDTPChanged" value="'+this.dateTimeUI+'"/> </l:content></l:VerticalLayout></mvc:View>'
 
             loadDateTimePicker(this);
         }
