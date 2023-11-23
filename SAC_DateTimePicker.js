@@ -118,7 +118,7 @@
                     onDTPChanged: function(oEvent){
                         _dateTime = oView.byId("DTP_1").getValue();
 
-                        if(new Date(_dateTime).toDateString() !== "Invalid Date"){
+                        if(new Date(_dateTime).toDateString() !== "Invalid Date" || _dateTime === ""){
                             that._firePropertiesChanged();
                             that.dispatchEvent(new Event('onChange'));
                         }
