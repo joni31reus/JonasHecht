@@ -51,6 +51,18 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
+            if(changedProperties.dateTime !== ""){
+                this.dateTimeUI = new Date(changedProperties.dateTime).toISOString().split(".")[0];
+            }
+            if(changedProperties.placeholder !== ""){
+                this.dateTimeUIthis.dateTimeUI = changedProperties.placeholder;
+            }
+            if(changedProperties.title !== ""){
+                this.dateTitleUI = changedProperties.title;
+            }
+
+            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><l:VerticalLayout width="100%"><l:content><Label text="'+this.dateTitleUI+':"/><DateTimePicker id="DTP_1" placeholder="'+this.dateTimeUI+'"  change="onDTPChanged" value="'+this.dateTimeUI+'"/> </l:content></l:VerticalLayout></mvc:View>'
+
             loadDateTimePicker(this);
         }
 
@@ -63,27 +75,6 @@
                     }
                 }
             }));
-        }
-
-        setPlaceholder(sPlaceholderText){
-            _shadowRoot.querySelector("script").innerHTML = '<mvc:View controllerName="myView.Template" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"><l:VerticalLayout width="100%"><l:content><Label text="Enter date:"/><DateTimePicker id="DTP_1" placeholder="Enter date"  change="onDTPChanged" value=""/> </l:content></l:VerticalLayout></mvc:View>'
-            console.log(sPlaceholderText);
-            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('placeholder="Enter date"', 'placeholder="'+sPlaceholderText+'" ');
-            loadDateTimePicker(this);
-        }
-
-        setDateTime(sDateTime){
-            console.log(sDateTime);
-
-            let dtInputDateTime = new Date(sDateTime).toISOString().split(".")[0];
-            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('value=""', 'value="'+dtInputDateTime+'" ');
-            loadDateTimePicker(this);
-        }
-
-        setTitle(sTitle){
-            console.log(sTitle);
-            _shadowRoot.querySelector("script").innerHTML = _shadowRoot.querySelector("script").innerHTML.replace('text="Enter date:"', 'text="'+sTitle+':" ');
-            loadDateTimePicker(this);
         }
 
         get dateTime(){
