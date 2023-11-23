@@ -51,13 +51,13 @@
         }
 
         onCustomWidgetAfterUpdate(changedProperties) {
-            if(changedProperties.dateTime !== ""){
+            if(changedProperties.dateTime !== undefined){
                 this.dateTimeUI = new Date(changedProperties.dateTime).toISOString().split(".")[0];
             }
-            if(changedProperties.placeholder !== ""){
-                this.dateTimeUIthis.dateTimeUI = changedProperties.placeholder;
+            if(changedProperties.placeholder !== undefined){
+                this.dateTimeUIthis = changedProperties.placeholder;
             }
-            if(changedProperties.title !== ""){
+            if(changedProperties.title !== undefined){
                 this.dateTitleUI = changedProperties.title;
             }
 
