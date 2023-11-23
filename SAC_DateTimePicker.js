@@ -111,8 +111,9 @@
             "use strict";
 
             sap.ui.define([
-                "sap/ui/core/mvc/Controller"
-            ], function(Controller){
+                "sap/ui/core/mvc/Controller",
+                "sap/m/MessageBox"
+            ], function(Controller, MessageBox){
                 "use strict";
 
                 return Controller.extend("myView.Template", {
@@ -122,8 +123,17 @@
 
                     onDTPChanged: function(oEvent){
                         _dateTime = oView.byId("DTP_1").getValue();
-                        that._firePropertiesChanged();
-                        that.dispatchEvent(new Event('onChange'));
+
+                        if(new Date(_dateTime).toDateString() !== "Invalid Date"){
+                            that._firePropertiesChanged();
+                            that.dispatchEvent(new Event('onChange'));
+                        }
+                        else{
+                            MessageBox.error("The entered date is invalid. Please enter a valid date.", {
+                                actions: [MessageBox.Action.OK],
+                                emphasizedAction: MessageBox.Action.OK
+                            });
+                        }
                     }
                 });
             });
